@@ -1,0 +1,22 @@
+!!! Strict
+%html{html_attrs}
+  %head
+    %title Cios
+    //%link{:rel=>"shortcut icon", :href=>"/images/ball.ico"}
+    = stylesheet_link_tag "cios"
+    = javascript_include_tag 'jquery', 'application'
+  %body
+    %ul
+      %li= link_to "posts", posts_path
+      %li= link_to 'gallery', gallery_path
+      -if current_user
+        %li= link_to "Logout #{current_user.login}", user_session_path, :method => :delete
+        %li= link_to "Show profile", user_path (current_user)
+        %li= link_to "Edit profile", edit_user_path( current_user)
+      -else
+        %li= link_to "Login", new_user_session_path
+        %li= link_to "Register", new_account_path
+      #main
+        = flash_messages
+        = yield 
+      #footer

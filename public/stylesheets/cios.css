@@ -1,0 +1,64 @@
+* { margin: 0; padding: 0; outline: 0 }
+
+body {
+  font: 70%/1.5em Verdana, Tahoma, arial, sans-serif;
+  color: #555; 
+  text-align: center;
+}
+
+a, a:visited {
+  text-decoration: none;
+  color: #2180BC;
+  background: inherit;
+}
+a:hover {
+  color: #88ac0b;
+  background: inherit;
+  text-decoration: underline;
+}
+
+#notice {
+  padding: 5px;
+  color: black;
+  background-color: #dfffdf;
+  border: 1px solid #62df61;
+}
+#error {
+  padding: 5px;
+  color: black;
+  background-color: #ff9394;
+  border: 1px solid #ff0f11;
+
+
+}
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}

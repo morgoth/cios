@@ -10,6 +10,8 @@ Rails::Initializer.run do |config|
   config.gem 'thoughtbot-factory_girl', :lib => 'factory_girl'
   config.gem 'haml'
   config.gem 'thoughtbot-shoulda', :lib => 'shoulda'
+	config.gem "mislav-will_paginate", :lib => "will_paginate", :version => ">= 2.3.8"
+	config.gem "authlogic"
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
   # -- all .rb files in that directory are automatically loaded.
