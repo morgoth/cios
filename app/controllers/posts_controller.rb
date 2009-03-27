@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :login_required, :except => [:index, :show]
 	
   def index
-    @posts = Post.paginate :page => params[:page], :per_page =>5
+    @posts = Post.paginate :page => params[:page], :per_page =>4
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @posts }

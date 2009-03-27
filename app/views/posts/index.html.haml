@@ -1,24 +1,24 @@
 %h1= "posts"
+- if current_user
+  = link_to 'New', new_post_path
 - for post in @posts
-  %h3= link_to "#{post.title}", post
+  %h1.title= post.title
+  %p.byline
+    Posted by
+    = post.user.login.capitalize if post.user
+    = post.created_at.strftime("%d.%m.%y %H:%M")
+    - if current_user
+      = link_to 'Edit', edit_post_path(post)
+      = " | "
+      = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
   %p
     = h post.content
     %br
-    %br
-    %span.post-footer 
-      = post.user.login.capitalize if post.user
-      %span.date= post.created_at.strftime("%d.%m.%y %H:%M")
-      %span.comments
-        Ilośc komentarzy: 
+      %p.meta
+        = link_to "Read more", post_path( post )
+        = "  Comments:"
         = post.comments.count
     %br
-    %br
-    - if current_user
-      = link_to 'Edit', edit_post_path(post)
-      = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
     = will_paginate @posts
-  %br
   %hr
 %p
-  - if current_user
-    = link_to 'New', new_post_path

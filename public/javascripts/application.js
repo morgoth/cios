@@ -1,7 +1,7 @@
   $(document).ready(
   function()
   {
-    $("input#login").focus();
+    $("input#user_session_login").focus();
 		
 		$("#new_comment").submitWithAjax();
   }
