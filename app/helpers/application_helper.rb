@@ -1,4 +1,5 @@
 module ApplicationHelper
+	require 'redcloth'
   def hour_minute(date)
     date.strftime("%d.%m.%y - %H:%M")
   end
@@ -10,7 +11,7 @@ module ApplicationHelper
   def flash_messages
     messages = []
     flash.each do |key, msg|
-     messages <<  content_tag( :div, msg, :id => key)
+			messages <<  content_tag( :span, msg, :id => key)
     end
     messages
   end
@@ -23,8 +24,8 @@ module ApplicationHelper
 		txt
 	end
 	
-	#def textilize( text )
-	#	RedCloth.new(text, [:filter_html]).to_html
-	#end
+	def textilize( text )
+		RedCloth.new(text, [:filter_html]).to_html
+	end
 
 end

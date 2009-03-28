@@ -1,7 +1,8 @@
 %h1= "posts"
 - if current_user
-  = link_to 'New', new_post_path
+  = link_to 'New post', new_post_path
 - for post in @posts
+  %hr
   %h1.title= post.title
   %p.byline
     Posted by
@@ -12,13 +13,9 @@
       = " | "
       = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
   %p
-    = h post.content
-    %br
-      %p.meta
-        = link_to "Read more", post_path( post )
-        = "  Comments:"
-        = post.comments.count
-    %br
-    = will_paginate @posts
-  %hr
-%p
+    = textilize( post.content )
+    %p.meta
+      = link_to "Read more", post_path( post )
+      Comments:
+      = post.comments.count
+= will_paginate @posts

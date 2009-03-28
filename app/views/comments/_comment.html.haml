@@ -1,14 +1,14 @@
 %hr
 %p
-  = h comment.content
-  %br
-  %br
-  %span.post-footer
-    =h comment.name.capitalize if comment.name
-    %span.date= hour_minute( comment.created_at )
-  %br
-  %br
+  = textilize( comment.content )
+%br
+%p.byline
+  Posted by
+  = comment.name
+  = comment.created_at.strftime("%d.%m.%y %H:%M")
   - if current_user
-    %br
     = link_to 'Edit', edit_comment_path(comment)
+    = " | "
     = link_to 'Destroy', comment, :confirm => 'Are you sure?', :method => :delete
+%br
+

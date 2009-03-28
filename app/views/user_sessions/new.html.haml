@@ -1,11 +1,11 @@
 - form_for @user_session, :url => user_session_path do |f|
   %fieldset
-    %legend Login information
-    %ol
-      %li
-        = f.label :login, "Login"
-        = f.text_field :login
-      %li
-        = f.label :password
-        = f.password_field :password
-  = f.submit "Login"
+    %p
+      = f.label :login, "Login"
+      %br
+      = f.text_field :login
+    %p
+      = f.label :password
+      %br
+      = f.password_field :password
+    = f.submit "Login"

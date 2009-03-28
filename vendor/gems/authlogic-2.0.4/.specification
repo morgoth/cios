@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: authlogic
 version: !ruby/object:Gem::Version 
-  version: 2.0.3
+  version: 2.0.4
 platform: ruby
 authors: 
 - Ben Johnson of Binary Logic
@@ -9,7 +9,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2009-03-26 00:00:00 +01:00
+date: 2009-03-28 00:00:00 +01:00
 default_executable: 
 dependencies: 
 - !ruby/object:Gem::Dependency 
@@ -100,6 +100,7 @@ files:
 - lib/authlogic/session/unauthorized_record.rb
 - lib/authlogic/session/validation.rb
 - lib/authlogic/test_case.rb
+- lib/authlogic/test_case/controller_adapter.rb
 - lib/authlogic/test_case/mock_controller.rb
 - lib/authlogic/test_case/mock_cookie_jar.rb
 - lib/authlogic/test_case/mock_request.rb

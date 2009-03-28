@@ -24,11 +24,10 @@
                   %ul
                     %li= link_to "posts", posts_path
                     %li= link_to 'gallery', gallery_path
+                    %br
                     -if current_user
                       %li= link_to "Logout #{current_user.login}", user_session_path, :method => :delete
                       %li= link_to "Show profile", user_path (current_user)
-                      %li= link_to "Edit profile", edit_user_path( current_user)
-                      %li= link_to "Register", new_account_path
                     -else
                       %li= link_to "Login", new_user_session_path
                 %li
@@ -39,5 +38,6 @@
             %div.clearb
     %div#footer
       %p
+        &copy; 2009, KS „Cios Adamek”
         = "Design by"
         = link_to "Free CSS Templates", "http://www.freecsstemplates.org", :popup => true
