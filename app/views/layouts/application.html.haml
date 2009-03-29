@@ -35,6 +35,8 @@
                 %li
                   %h2= "Współpraca"
                   =link_to "Tomasz Adamek", "http://www.tomaszadamek.com.pl", :popup => true
+                %li
+                  %h3= "Odwiedzin: #{@web_counter.counter if @web_counter}"
             %div.clearb
     %div#footer
       %p
