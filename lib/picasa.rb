@@ -1,7 +1,7 @@
 module Picasa
 require 'net/http'
 require "xmlsimple"
-GOOGLE_USER = 'saps.gliwice'
+GOOGLE_USER = 'cios.gilowice'
 
   def  albums
     #returns [ {:id => "id", :title => "title"}, {another one} ]
