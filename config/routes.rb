@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :sponsors
+
 	map.resources :posts
 	map.resources :comments, :except => [:show, :index, :new]
 	map.resource :user_session

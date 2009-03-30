@@ -1,0 +1,13 @@
+%h1= 'Editing sponsor'
+- form_for(@sponsor) do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :link
+    %br
+    = f.text_field :link
+  %p
+    = f.submit "Update", :class => "button"

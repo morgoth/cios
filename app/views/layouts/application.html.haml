@@ -32,6 +32,16 @@
                       %li= link_to "Login", new_user_session_path
                 %li
                   %h2= "Sponsorzy"
+                  %ul
+                    - if current_user
+                      = link_to "New sponsor", new_sponsor_path
+                    -  @sponsors.each do |sponsor|
+                      %li
+                        = link_to "#{sponsor.name}", sponsor.link, :popup => true
+                        - if current_user
+                          = link_to "Edit", edit_sponsor_path(sponsor)
+                          =" | "
+                          = link_to "Delete", sponsor_path(sponsor), :method => :delete, :confirm => "Are you sure?"
                 %li
                   %h2= "Współpraca"
                   =link_to "Tomasz Adamek", "http://www.tomaszadamek.com.pl", :popup => true

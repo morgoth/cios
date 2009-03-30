@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: authlogic
 version: !ruby/object:Gem::Version 
-  version: 2.0.4
+  version: 2.0.5
 platform: ruby
 authors: 
 - Ben Johnson of Binary Logic
@@ -9,7 +9,7 @@ autorequire:
 bindir: bin
 cert_chain: []
 
-date: 2009-03-28 00:00:00 +01:00
+date: 2009-03-30 00:00:00 +02:00
 default_executable: 
 dependencies: 
 - !ruby/object:Gem::Dependency 
@@ -103,6 +103,7 @@ files:
 - lib/authlogic/test_case/controller_adapter.rb
 - lib/authlogic/test_case/mock_controller.rb
 - lib/authlogic/test_case/mock_cookie_jar.rb
+- lib/authlogic/test_case/mock_logger.rb
 - lib/authlogic/test_case/mock_request.rb
 - lib/authlogic/version.rb
 - shoulda_macros/authlogic.rb
@@ -158,7 +159,7 @@ files:
 - test/test_helper.rb
 has_rdoc: true
 homepage: http://github.com/binarylogic/authlogic
-post_install_message: "Version 2.0 introduces some changes that break backwards compatibility. The big change is how acts_as_authentic accepts configuration options. Instead of a hash, it now accepts a block: acts_as_authentic { |c| c.my_config_option = my_value}. See the docs for more details."
+post_install_message: 
 rdoc_options: 
 - --main
 - README.rdoc
@@ -184,6 +185,8 @@ signing_key:
 specification_version: 2
 summary: A clean, simple, and unobtrusive ruby authentication solution.
 test_files: 
+- test/authenticates_many_test.rb
+- test/random_test.rb
 - test/acts_as_authentic_test/base_test.rb
 - test/acts_as_authentic_test/email_test.rb
 - test/acts_as_authentic_test/logged_in_status_test.rb
