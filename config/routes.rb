@@ -9,6 +9,8 @@ ActionController::Routing::Routes.draw do |map|
 	
 	map.gallery '/gallery', :controller => 'galleries', :action => 'albums'
 	map.login '/login', :controller => 'user_sessions', :action =>'new'
+	map.contact 'contact', :controller => 'static', :action => 'contact'
+	map.trainings 'trainings', :controller => 'static', :action => 'trainings'
 	map.root :controller => 'Posts'
 	
 	map.connect ':controller/:action/:id'

@@ -22,7 +22,9 @@
                   %h2= 'Menu'
                   %ul
                     %li= link_to "Aktualności", posts_path
+                    %li= link_to "Treningi", trainings_path
                     %li= link_to 'Galeria', gallery_path
+                    %li= link_to 'Kontakt', contact_path
                     %br
                     -if current_user
                       %li= link_to "Logout #{current_user.login}", user_session_path, :method => :delete
