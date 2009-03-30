@@ -1,26 +1,26 @@
 %h1.title= @post.title
 %p.byline
-  Posted by
+  Autor
   = @post.user.login.capitalize if @post.user
   = @post.created_at.strftime("%d.%m.%y %H:%M")
 %p
   = textilize( @post.content )
 %br
 %div#comments
-  %h2 Comments:
+  %h2 Komentarze:
   = render :partial => @post.comments
-%h2 Add comment:
+%h2 Dodaj komentarz:
 - form_for Comment.new(:post => @post) do |f|
   = f.error_messages
   = f.hidden_field :post_id
   %p
-    = f.label :name
+    = f.label :name, "Imię:"
     %br
     = f.text_field :name
   %p
-    = f.label :content, "Comment:"
-    %small= "You can use #{link_to "textile", "http://www.textism.com/tools/textile/", :popup => true}"
+    = f.label :content, "Treść:"
+    %small= "Możesz użyć #{link_to "textile", "http://www.textism.com/tools/textile/", :popup => true}"
     %br
     = f.text_area :content, :rows => 8
   %p
-    = f.submit "Add Comment"
+    = f.submit "Dodaj"

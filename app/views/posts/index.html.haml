@@ -1,11 +1,11 @@
-%h1= "posts"
+%h1= "Aktualności"
 - if current_user
   = link_to 'New post', new_post_path
 - for post in @posts
   %hr
   %h1.title= post.title
   %p.byline
-    Posted by
+    Autor:
     = post.user.login.capitalize if post.user
     = post.created_at.strftime("%d.%m.%y %H:%M")
     - if current_user
@@ -13,9 +13,9 @@
       = " | "
       = link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
   %p
-    = textilize( post.content )
+    = truncate( textilize( post.content ), :length => 1000 )
     %p.meta
-      = link_to "Read more", post_path( post )
-      Comments:
+      = link_to "Czytaj dalej", post_path( post )
+      Komentarze:
       = post.comments.count
 = will_paginate @posts
