@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
 	before_filter :login_required
+	before_filter :account_owner, :only => [:edit, :update]
 	
 	def index
 		@users=User.all
@@ -27,7 +28,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = @current_user # makes our views "cleaner" and more consistent
+    @user = @current_user
     if @user.update_attributes(params[:user])
       flash[:notice] = "Account updated!"
       redirect_to account_url
@@ -50,5 +51,13 @@ class UsersController < ApplicationController
       format.html { redirect_to(users_path) }
     end
   end 
+
+	private
+	def account_owner
+    unless @current_user==User.find(params[:id])
+      redirect_to users_path
+      flash[:notice] = "You can't edit others profile"
+    end
+  end
 
 end
