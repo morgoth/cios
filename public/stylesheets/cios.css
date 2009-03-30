@@ -367,7 +367,7 @@ img {
   padding: 7px;
   padding-bottom: 12px;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: #2E2200;
 }
 #errorExplanation h2 {
   text-align: left;
@@ -376,10 +376,10 @@ img {
   font-size: 12px;
   margin: -7px;
   background-color: #c00;
-  color: #fff;
+  color: white;
 }
 #errorExplanation p {
-  color: #333;
+  color: white;
   margin-bottom: 0;
   padding: 5px;
 }

@@ -4,6 +4,4 @@
   %dt Login count
   %dd= user.login_count
   %dt Last login at
-  %dd= user.last_login_at
-  %dt Current login at
-  %dd= user.current_login_at
+  %dd= user.last_login_at.strftime("%d.%m.%y %H:%M") if user.last_login_at

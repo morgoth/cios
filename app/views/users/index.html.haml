@@ -1,0 +1,12 @@
+%p
+  = link_to "Change password", edit_user_path(@current_user)
+  = " | "
+  = link_to "Create new user", new_user_path
+  = " | "
+  = link_to "List users", users_path
+%h2 Users
+%ul
+  - @users.each do |user|
+    %li
+      =user.login
+      = link_to "Delete", user, :cofnirm => "Are you sure?", :method => :delete
