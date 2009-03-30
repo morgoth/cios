@@ -31,7 +31,11 @@ h3 {
 	font-size: 1em;
 }
 
-p, ul, ol {
+p {
+	line-height: 200%;
+}
+ul, ol {
+	text-align: left;
 	line-height: 200%;
 }
 
