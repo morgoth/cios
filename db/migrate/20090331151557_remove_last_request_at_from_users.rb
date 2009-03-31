@@ -4,6 +4,6 @@ class RemoveLastRequestAtFromUsers < ActiveRecord::Migration
   end
 
   def self.down
-		add_column :users, :last_request_at
+		add_column :users, :last_request_at, :datetime
   end
 end
