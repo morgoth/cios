@@ -343,7 +343,9 @@ img {
 #footer p a {
 	color: #FFB300;
 }
-
+.handle {
+	cursor: move;
+}
 
 
 #notice {

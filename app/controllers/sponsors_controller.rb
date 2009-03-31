@@ -1,13 +1,11 @@
 class SponsorsController < ApplicationController
 	before_filter :login_required
-  def new
-    @sponsor = Sponsor.new
-
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @sponsor }
-    end
-  end
+	protect_from_forgery :except => :sort
+	
+	def index
+		@sponsors ||= Sponsors.all
+		@sponsor = Sponsor.new
+	end
 
   def edit
     @sponsor = Sponsor.find(params[:id])
@@ -19,9 +17,9 @@ class SponsorsController < ApplicationController
     respond_to do |format|
       if @sponsor.save
         flash[:notice] = 'Sponsor was successfully created.'
-        format.html { redirect_to(posts_path) }
+        format.html { redirect_to(sponsors_path) }
       else
-        format.html { render :action => "new" }
+        format.html { render :action => "index" }
       end
     end
   end
@@ -32,7 +30,7 @@ class SponsorsController < ApplicationController
     respond_to do |format|
       if @sponsor.update_attributes(params[:sponsor])
         flash[:notice] = 'Sponsor was successfully updated.'
-        format.html { redirect_to(posts_path) }
+        format.html { redirect_to(sponsors_path) }
       else
         format.html { render :action => "edit" }
       end
@@ -44,7 +42,15 @@ class SponsorsController < ApplicationController
     @sponsor.destroy
 
     respond_to do |format|
-      format.html { redirect_to(posts_url) }
+      format.html { redirect_to(sponsors_url) }
     end
   end
+	
+	def sort
+		logger.info params
+	  params[:sponsor].each_with_index do |id, index|
+			Sponsor.update_all(['position=?', index+1], ['id=?', id])
+		end
+		render :nothing => true
+	end
 end

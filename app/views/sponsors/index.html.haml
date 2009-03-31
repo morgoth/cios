@@ -1,0 +1,23 @@
+%h1 Sponsors
+%ul.sponsors
+  - @sponsors.each do |sponsor|
+    - content_tag_for :li, sponsor do
+      %span.handle [drag]
+      = sponsor.name
+      - if current_user
+        = link_to "Edit", edit_sponsor_path(sponsor)
+        = " | "
+        = link_to "Delete", sponsor_path(sponsor), :method => :delete, :confirm => "Are you sure?"
+%h1= 'New sponsor'
+- form_for(@sponsor) do |f|
+  = f.error_messages
+  %p
+    = f.label :name
+    %br
+    = f.text_field :name
+  %p
+    = f.label :link
+    %br
+    = f.text_field :link, :size => 50
+  %p
+    = f.submit "Create", :class => "button"

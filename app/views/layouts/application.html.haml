@@ -7,7 +7,7 @@
     %title KS „Cios Adamek”
     %link{:rel=>"shortcut icon", :href=>"/images/glove.ico"}
     = stylesheet_link_tag "cios"
-    = javascript_include_tag 'jquery', 'application'
+    = javascript_include_tag 'jquery', 'jquery-ui','application'
   %body
     %div#header
       %h1= "KS „Cios Adamek”"
@@ -38,19 +38,17 @@
                   %h2= "Sponsorzy"
                   %ul
                     - if current_user
-                      = link_to "New sponsor", new_sponsor_path
+                      = link_to "Administer sponsors", sponsors_path
                     -  @sponsors.each do |sponsor|
                       %li
-                        = link_to "#{sponsor.name}", sponsor.link, :popup => true
-                        - if current_user
-                          = link_to "Edit", edit_sponsor_path(sponsor)
-                          =" | "
-                          = link_to "Delete", sponsor_path(sponsor), :method => :delete, :confirm => "Are you sure?"
+                        = link_to_if sponsor.link?, "#{sponsor.name}", sponsor.link, :popup => true
                 %li
                   %h2= "Współpraca"
                   =link_to "Tomasz Adamek", "http://www.tomaszadamek.com.pl", :popup => true
                   %br
                   =link_to "Gmina Gilowice", "http://www.zywiecczyzna.pl/gilowice", :popup => true
+                  %br
+                  =link_to "Gimnazjum Gilowice", "http://www.gilowicegim.hostdmk.net/", :popup => true
             %div.clearb
     %div#footer
       %p
