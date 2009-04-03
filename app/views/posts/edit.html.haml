@@ -1,13 +1,14 @@
-%h1 Editing post
+%h1= t ('Editing')
 - form_for(@post) do |f|
   = f.error_messages
   %p
-    = f.label :title
+    = f.label :title, t ("Title")
     %br
     = f.text_field :title
   %p
-    = f.label :content
+    = f.label :content, t ('Content')
+    %small= "#{t ('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/", :popup => true}"
     %br
     = f.text_area :content, :cols => 50
   %p
-    = f.submit "Update", :class => "button"
+    = f.submit t ("Update"), :class => "button"

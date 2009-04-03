@@ -42,6 +42,6 @@ Rails::Initializer.run do |config|
   config.time_zone = 'Warsaw'
 
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
-  # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
-  # config.i18n.default_locale = :de
+	config.i18n.load_path += Dir[File.join(RAILS_ROOT, 'config', 'locales', 'defaults', '*.{rb,yml}')]
+  config.i18n.default_locale = :pl
 end

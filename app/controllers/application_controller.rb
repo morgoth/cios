@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
-	before_filter :sponsors_index
+	before_filter :sponsors_index, :set_locale
 
   private
 	def sponsors_index
@@ -39,5 +39,10 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
+		
+		def set_locale
+			cookies[:locale] = params[:locale] || cookies[:locale]
+			I18n.locale = params[:locale] || cookies[:locale]
+		end
 
 end

@@ -106,7 +106,16 @@ img {
 	text-decoration: none;
 	color: #F79F1A;
 }
-
+#header #links {
+  position: absolute;
+  top: 35px; right: 110px;  
+  font-size: 10px; 
+}
+#header #links img {
+  background: none;
+  border: none;
+  padding: 5px;
+}
 #banner {
 	margin: 0 auto;
 	margin-bottom: 15px;

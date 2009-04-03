@@ -1,21 +1,21 @@
-%h1= "Aktualności"
+%h1= t ("News")
 - if current_user
-  = link_to 'New post', new_post_path
+  = link_to t ('New post'), new_post_path
 - for post in @posts
   %hr
   %h1.title= post.title
   %p.byline
-    Autor:
+    = t ('Author')+':'
     = post.user.login.capitalize if post.user
     = post.created_at.strftime("%d.%m.%y %H:%M")
     - if current_user
-      = link_to 'Edit', edit_post_path(post)
+      = link_to t ('Edit'), edit_post_path(post)
       = " | "
-      = link_to 'Delete', post, :confirm => 'Are you sure?', :method => :delete
+      = link_to t ('Delete'), post, :confirm => t ('Are you sure?'), :method => :delete
   %p
     = truncate( textilize( post.content ), :length => 1000 )
     %p.meta
-      = link_to "Czytaj dalej", post_path( post )
-      Komentarze:
+      = link_to t ("Read more"), post_path( post )
+      = t ('Comments')+':'
       = post.comments.count
 = will_paginate @posts

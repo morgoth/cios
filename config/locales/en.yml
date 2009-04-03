@@ -1,5 +1,37 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  Contact: Contact
+  Read more: Read more
+  Comments: Comments
+  comment: comment
+  Update: Update
+  Edit: Edit
+  Add: Add
+  Trainings: Trainings
+  Name: Name
+  New post: New post
+  Content: Content
+  Assistance: Assistance
+  Author: Author
+  You can use: You can use
+  Title: Title
+  Editing: Editing
+  Account: Account
+  Create account: Create account
+  Login count: Login count
+  Sponsors: Sponsors
+  Edit account: Edit account
+  Administer sponsors: Administer sponsors
+  Show profile: Show profile
+  Delete: Delete
+  Destroy: Destroy
+  New sponsor: New sponsor
+  Password: Password
+  Confirm password: Confirm password
+  Create: Create
+  List users: List users
+  Gallery: Gallery
+  Are you sure?: Are you sure?
+  Last login at: Last login at
+  News: News
+  Users: Users
+  Comment was successfully created: Comment was successfully created

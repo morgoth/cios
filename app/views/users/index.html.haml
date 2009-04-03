@@ -1,12 +1,12 @@
 %p
-  = link_to "Change password", edit_user_path(@current_user)
+  = link_to t ("Edit account"), edit_user_path(@current_user)
   = " | "
-  = link_to "Create new user", new_user_path
+  = link_to t ("Create account"), new_user_path
   = " | "
-  = link_to "List users", users_path
-%h2 Users
+  = link_to t ("List users"), users_path
+%h2= t ('Users')
 %ul
   - @users.each do |user|
     %li
       =user.login
-      = link_to "Delete", user, :confirm => "Are you sure?", :method => :delete
+      = link_to t ("Delete"), user, :confirm => t ("Are you sure?"), :method => :delete

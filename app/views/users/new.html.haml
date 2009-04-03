@@ -1,6 +1,4 @@
 - form_for @user, :url => account_path do |f|
   = f.error_messages
   = render :partial => 'form', :locals => { :f => f }
-  = submit_tag 'Sign up'
-  or
-  = link_to "Back", new_user_session_path
+  = submit_tag t ('Create account')
