@@ -47,7 +47,6 @@ class SponsorsController < ApplicationController
   end
 	
 	def sort
-		logger.info params
 	  params[:sponsor].each_with_index do |id, index|
 			Sponsor.update_all(['position=?', index+1], ['id=?', id])
 		end

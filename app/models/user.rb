@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
-	acts_as_authentic do |conf|
+	acts_as_authentic do |config|
+		#config.last_request_at_threshold (10.minutes)
 		#conf.validates_length_of_password_field_options :minimum=>3
 		#conf.validates_length_of_password_confirmation_field_options :minimum => 3
 	end
