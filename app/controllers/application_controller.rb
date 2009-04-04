@@ -41,8 +41,8 @@ class ApplicationController < ActionController::Base
     end
 		
 		def set_locale
-			cookies[:locale] = params[:locale] || cookies[:locale]
-			I18n.locale = params[:locale] || cookies[:locale]
+			cookies[:cios_locale] = params[:locale] || cookies[:cios_locale]
+			I18n.locale = params[:locale] || cookies[:cios_locale]
 		end
 
 end

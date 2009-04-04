@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 	before_filter :account_owner, :only => [:edit, :update]
 	
 	def index
-		@users=User.all
+		@users=User.all( :order => "login")
 	end
 	def new
     @user = User.new
