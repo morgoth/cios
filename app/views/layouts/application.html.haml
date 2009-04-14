@@ -12,16 +12,17 @@
     %div#header
       %h1= "KS „Cios Adamek”"
       %span#links
-        - if I18n.locale == 'en'
-          = link_to image_tag( "/images/pl.gif"), current('pl')
+        - if I18n.locale.to_sym == :en
+          = link_to image_tag( "/images/pl.gif"), current(:pl)
         - else
-          = link_to image_tag( "/images/en.gif"), current('en')
+          = link_to image_tag( "/images/en.gif"), current(:en)
     %div#banner
     %div#wrapper
       %div#page
         %div.bgtop
           %div.bgbtm
             %div#content
+              = cookies[:cios_locale].nil?
               = flash_messages
               = yield
             %div#sidebar
