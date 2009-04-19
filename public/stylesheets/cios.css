@@ -332,8 +332,11 @@ img {
 	text-align: left;
 }
 
-/* Footer */
+#gallery li {
+	margin-bottom: 10px;
+}
 
+/* Footer */
 #footer {
 	width: 800px;
 	height: 60px;

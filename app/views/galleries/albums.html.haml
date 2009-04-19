@@ -1,5 +1,5 @@
 %h1= t ('Gallery')
-%ul
-- @albums.each do |album|
-  %li=  link_to "#{album[:title]}", :controller => 'galleries', :action=> 'photos', :id => album[:id]
-  %br
+%div#gallery
+  %ul
+  - @albums.each do |album|
+    %li=  link_to "#{album[:title]}", :controller => 'galleries', :action=> 'photos', :id => album[:id]
