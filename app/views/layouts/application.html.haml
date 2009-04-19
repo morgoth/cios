@@ -11,7 +11,7 @@
   %body
     %div#header
       %h1= "KS „Cios Adamek”"
-      %span#links
+      %div#links
         - if I18n.locale.to_sym == :en
           = link_to image_tag( "/images/pl.gif"), current(:pl)
         - else
@@ -32,8 +32,7 @@
                     %li= link_to t ("News"), posts_path
                     %li= link_to t ("Trainings"), trainings_path
                     %li= link_to t ('Gallery'), gallery_path
-                    %li= link_to t ('Contact'), contact_path
-                    %br
+                    %li.last= link_to t ('Contact'), contact_path
                     -if current_user
                       %li= link_to "Logout #{current_user.login}", user_session_path, :method => :delete
                       %li= link_to t ("Show profile"), user_path (current_user)
@@ -41,9 +40,9 @@
                       %li= link_to "Login", new_user_session_path
                 %li
                   %h2= t ("Sponsors")
+                  - if current_user
+                    = link_to t ("Administer sponsors"), sponsors_path
                   %ul
-                    - if current_user
-                      = link_to t ("Administer sponsors"), sponsors_path
                     -  @sponsors.each do |sponsor|
                       %li
                         = link_to_if sponsor.link?, "#{sponsor.name}", sponsor.link, :popup => true

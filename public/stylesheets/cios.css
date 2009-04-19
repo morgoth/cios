@@ -283,7 +283,9 @@ img {
 #sidebar a:hover {
 	text-decoration: none;
 }
-
+#sidebar .last{
+	margin-bottom: 15px;
+}
 /* Search */
 
 #search input {

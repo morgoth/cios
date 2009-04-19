@@ -12,9 +12,9 @@
       = link_to t ('Edit'), edit_post_path(post)
       = " | "
       = link_to t ('Delete'), post, :confirm => t ('Are you sure?'), :method => :delete
-  %p
+  %div.post
     = truncate( textilize( post.content ), :length => 1000 )
-    %p.meta
+    %div.meta
       = link_to t ("Read more"), post_path( post )
       = t ('Comments')+':'
       = post.comments.count
