@@ -1,7 +1,7 @@
 %dl
   %dt Login
   %dd= user.login
-  %dt= t ('Login count')
+  %dt= t('Login count')
   %dd= user.login_count
-  %dt= t ('Last login at')
+  %dt= t('Last login at')
   %dd= user.last_login_at.strftime("%d.%m.%y %H:%M") if user.last_login_at

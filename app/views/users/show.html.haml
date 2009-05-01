@@ -1,7 +1,7 @@
 %p
-  = link_to t ("Edit account"), edit_user_path(@current_user)
+  = link_to t("Edit account"), edit_user_path(@current_user)
   = " | "
-  = link_to t ("Create account"), new_user_path
+  = link_to t("Create account"), new_user_path
   = " | "
-  = link_to t ("List users"), users_path
+  = link_to t("List users"), users_path
 = render :partial => @user

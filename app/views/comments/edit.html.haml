@@ -1,4 +1,4 @@
-%h1= t ('Editing')
+%h1= t('Editing')
 - form_for(@comment) do |f|
   = f.error_messages
   %p
@@ -6,8 +6,8 @@
     %br
     = f.text_field :name
   %p
-    = f.label :content, t ("Content")+':'
+    = f.label :content, t("Content")+':'
     %br
     = f.text_area :content, :rows => 8
   %p
-    = f.submit t ("Update")
+    = f.submit t("Update")

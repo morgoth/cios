@@ -30,25 +30,25 @@
                 %li
                   %h2= 'Menu'
                   %ul
-                    %li= link_to t ("News"), posts_path
-                    %li= link_to t ("Trainings"), trainings_path
-                    %li= link_to t ('Gallery'), gallery_path
-                    %li.last= link_to t ('Contact'), contact_path
+                    %li= link_to t("News"), posts_path
+                    %li= link_to t("Trainings"), trainings_path
+                    %li= link_to t('Gallery'), gallery_path
+                    %li.last= link_to t('Contact'), contact_path
                     -if current_user
                       %li= link_to "Logout #{current_user.login}", user_session_path, :method => :delete
-                      %li= link_to t ("Show profile"), user_path (current_user)
+                      %li= link_to t("Show profile"), user_path(current_user)
                     -else
                       %li= link_to "Login", new_user_session_path
                 %li
-                  %h2= t ("Sponsors")
+                  %h2= t("Sponsors")
                   - if current_user
-                    = link_to t ("Administer sponsors"), sponsors_path
+                    = link_to t("Administer sponsors"), sponsors_path
                   %ul
                     -  @sponsors.each do |sponsor|
                       %li
                         = link_to_if sponsor.link?, "#{sponsor.name}", sponsor.link, :popup => true
                 %li
-                  %h2= t ("Assistance")
+                  %h2= t("Assistance")
                   =link_to "Tomasz Adamek", "http://www.tomaszadamek.com.pl", :popup => true
                   %br
                   =link_to "Gmina Gilowice", "http://www.zywiecczyzna.pl/gilowice", :popup => true

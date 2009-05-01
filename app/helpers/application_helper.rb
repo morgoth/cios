@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def flash_messages
-    messages = []
+    messages = ''
     flash.each do |key, msg|
 			messages <<  content_tag( :span, msg, :id => key)
     end

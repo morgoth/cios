@@ -1,21 +1,21 @@
-%h1= t ("News")
+%h1= t("News")
 - if current_user
-  = link_to t ('New post'), new_post_path
+  = link_to t('New post'), new_post_path
 - for post in @posts
   %hr
   %h1.title= post.title
   %p.byline
-    = t ('Author')+':'
+    = t('Author')+':'
     = post.user.login.capitalize if post.user
     = post.created_at.strftime("%d.%m.%y %H:%M")
     - if current_user
-      = link_to t ('Edit'), edit_post_path(post)
+      = link_to t('Edit'), edit_post_path(post)
       = " | "
-      = link_to t ('Delete'), post, :confirm => t ('Are you sure?'), :method => :delete
+      = link_to t('Delete'), post, :confirm => t('Are you sure?'), :method => :delete
   %div.post
     = truncate( textilize( post.content ), :length => 1000 )
     %div.meta
-      = link_to t ("Read more"), post_path( post )
-      = t ('Comments')+':'
+      = link_to t("Read more"), post_path( post )
+      = t('Comments')+':'
       = post.comments.count
 = will_paginate @posts
