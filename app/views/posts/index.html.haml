@@ -4,7 +4,7 @@
 - for post in @posts
   %hr
   %h1.title= post.title
-  %p.byline
+  %div.byline
     = t('Author')+':'
     = post.user.login.capitalize if post.user
     = post.created_at.strftime("%d.%m.%y %H:%M")
@@ -13,7 +13,7 @@
       = " | "
       = link_to t('Delete'), post, :confirm => t('Are you sure?'), :method => :delete
   %div.post
-    = truncate( textilize( post.content ), :length => 1000 )
+    = truncate( textilize_without_paragraph( post.content ), :length => 1000 )
     %div.meta
       = link_to t("Read more"), post_path( post )
       = t('Comments')+':'

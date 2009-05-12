@@ -24,9 +24,9 @@ module ApplicationHelper
 		txt
 	end
 	
-	def textilize( text )
-		RedCloth.new(text, [:filter_html]).to_html
-	end
+	#def textilize( text )
+	#	RedCloth.new(text, [:filter_html]).to_html
+	#end
 
   def current(lang)
     {:controller=>controller.controller_name, :action => controller.action_name, :locale =>lang, :id=>params[:id]}

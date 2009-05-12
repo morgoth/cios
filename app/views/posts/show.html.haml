@@ -1,10 +1,10 @@
 %h1.title= @post.title
-%p.byline
+%div.byline
   = t('Author')
   = @post.user.login.capitalize if @post.user
   = @post.created_at.strftime("%d.%m.%y %H:%M")
-%p
-  = textilize( @post.content )
+%div
+  = textilize_without_paragraph( @post.content )
 %br
 %div#comments
   - unless @post.comments.blank?

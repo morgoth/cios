@@ -1,8 +1,8 @@
 %hr
-%p
-  = textilize( comment.content )
+%div
+  = textilize_without_paragraph( comment.content )
 %br
-%p.byline
+%div.byline
   = t('Author')
   = comment.name
   = comment.created_at.strftime("%d.%m.%y %H:%M")
@@ -10,5 +10,3 @@
     = link_to t('Edit'), edit_comment_path(comment)
     = " | "
     = link_to t('Destroy'), comment, :confirm => t('Are you sure?'), :method => :delete
-%br
-
