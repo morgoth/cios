@@ -3,7 +3,7 @@
   = t('Author')
   = @post.user.login.capitalize if @post.user
   = @post.created_at.strftime("%d.%m.%y %H:%M")
-%div
+%div.post
   = textilize_without_paragraph( @post.content )
 %br
 %div#comments
