@@ -7,11 +7,11 @@ RAILS_GEM_VERSION = '2.3.2' unless defined? RAILS_GEM_VERSION
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  config.gem 'thoughtbot-factory_girl', :lib => 'factory_girl'
   config.gem 'haml'
-  config.gem 'thoughtbot-shoulda', :lib => 'shoulda'
 	config.gem "mislav-will_paginate", :lib => "will_paginate", :version => ">= 2.3.8"
-	config.gem "authlogic", :version => ">= 2.0.5"
+	config.gem "authlogic", :version => ">= 2.0.11"
+	config.gem 'morgoth-picasa', :lib => 'picasa'
+	config.gem 'xml-simple', :lib => 'xmlsimple', :version => '>= 1.0.12'
 	#config.gem "RedCloth", :lib => "redcloth"
   # Settings in config/environments/* take precedence over those specified here.
   # Application configuration should go into files in config/initializers
