@@ -21,7 +21,18 @@ pl:
       format:
         delimiter: ""
         precision: 1
-      storage_units: [B, KB, MB, GB, TB]
+      storage_units:
+        # Storage units output formatting.
+        # %u is the storage unit, %n is the number (default: 2 MB)
+        format: "%n %u"
+        units:
+          byte:
+            one:   "Bajt"
+            other: "Bajty"
+            kb: "KB"
+            mb: "MB"
+            gb: "GB"
+            tb: "TB"
  
   date:
     formats:
@@ -116,4 +127,25 @@ pl:
     array:
       sentence_connector: "i"
       skip_last_comma: true
- 
+      
+  authlogic:
+    error_messages:
+      login_blank: nie może być pusty
+      login_not_found: nie istnieje
+      login_invalid: should use only letters, numbers, spaces, and .-_@ please.
+      consecutive_failed_logins_limit_exceeded: Consecutive failed logins limit exceeded, account is disabled.
+      email_invalid: should look like an email address.
+      password_blank: nie może być puste
+      password_invalid: niepoprawne
+      not_active: Your account is not active
+      not_confirmed: Your account is not confirmed
+      not_approved: Your account is not approved
+      no_authentication_details: Nie wpisałeś danych
+    models:
+      user_session: Sesja
+    attributes:
+      user_session:
+        login: Login
+        email: email
+        password: Hasło
+        remember_me: remember me
