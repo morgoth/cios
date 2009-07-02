@@ -1,11 +1,11 @@
 class GalleriesController < ApplicationController
 
   def albums
-      @albums=Picasa.albums 'cios.gilowice'
+    @albums = Picasa.albums :google_user => 'cios.gilowice'
   end
 
   def photos
-      @album=Picasa.photos('cios.gilowice', params[:id])
+    @album = Picasa.photos(:google_user => 'cios.gilowice', :album_id => params[:id])
   end
 
 end
