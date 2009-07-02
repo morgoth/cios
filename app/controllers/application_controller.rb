@@ -5,13 +5,13 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
   filter_parameter_logging :password, :password_confirmation
   helper_method :current_user_session, :current_user
-	before_filter :sponsors_index, :set_locale
+  before_filter :sponsors_index, :set_locale
 
   private
-	def sponsors_index
-		@sponsors = Sponsor.all
-	end
-	
+  def sponsors_index
+    @sponsors = Sponsor.all
+  end
+
     def current_user_session
       return @current_user_session if defined?(@current_user_session)
       @current_user_session = UserSession.find
@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
       return @current_user if defined?(@current_user)
       @current_user = current_user_session && current_user_session.user
     end
-		
+
     def login_required
       unless current_user
         store_location
@@ -39,10 +39,10 @@ class ApplicationController < ActionController::Base
       redirect_to(session[:return_to] || default)
       session[:return_to] = nil
     end
-		
-		def set_locale
-			cookies[:cios_locale] = params[:locale] if params[:locale]
-			I18n.locale = params[:locale] || cookies[:cios_locale]
-		end
+
+    def set_locale
+      cookies[:cios_locale] = params[:locale] if params[:locale]
+      I18n.locale = params[:locale] || cookies[:cios_locale]
+    end
 
 end

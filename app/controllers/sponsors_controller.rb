@@ -1,11 +1,11 @@
 class SponsorsController < ApplicationController
-	before_filter :login_required
-	protect_from_forgery :except => :sort
-	
-	def index
-		@sponsors ||= Sponsors.all
-		@sponsor = Sponsor.new
-	end
+  before_filter :login_required
+  protect_from_forgery :except => :sort
+
+  def index
+    @sponsors ||= Sponsors.all
+    @sponsor = Sponsor.new
+  end
 
   def edit
     @sponsor = Sponsor.find(params[:id])
@@ -45,11 +45,11 @@ class SponsorsController < ApplicationController
       format.html { redirect_to(sponsors_url) }
     end
   end
-	
-	def sort
-	  params[:sponsor].each_with_index do |id, index|
-			Sponsor.update_all(['position=?', index+1], ['id=?', id])
-		end
-		render :nothing => true
-	end
+
+  def sort
+    params[:sponsor].each_with_index do |id, index|
+      Sponsor.update_all(['position=?', index+1], ['id=?', id])
+    end
+    render :nothing => true
+  end
 end

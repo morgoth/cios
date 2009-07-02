@@ -1,12 +1,12 @@
 class PostsController < ApplicationController
   before_filter :login_required, :except => [:index, :show]
-	
+
   def index
     @posts = Post.paginate :page => params[:page], :per_page =>5
     respond_to do |format|
       format.html
       format.xml  { render :xml => @posts }
-			format.rss
+      format.rss
     end
   end
 

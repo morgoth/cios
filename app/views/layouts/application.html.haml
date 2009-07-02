@@ -44,7 +44,7 @@
                   - if current_user
                     = link_to t("Administer sponsors"), sponsors_path
                   %ul
-                    -  @sponsors.each do |sponsor|
+                    - @sponsors.each do |sponsor|
                       %li
                         = link_to_if sponsor.link?, "#{sponsor.name}", sponsor.link, :popup => true
                 %li
