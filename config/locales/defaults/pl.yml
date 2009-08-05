@@ -1,6 +1,6 @@
 # Polish translations for Ruby on Rails
 # by Jacek Becela (jacek.becela@gmail.com, http://github.com/ncr)
- 
+
 pl:
   number:
     format:
@@ -33,20 +33,20 @@ pl:
             mb: "MB"
             gb: "GB"
             tb: "TB"
- 
+
   date:
     formats:
       default: "%Y-%m-%d"
       short: "%d %b"
       long: "%d %B %Y"
-    
+
     day_names: [Niedziela, Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota]
     abbr_day_names: [nie, pon, wto, śro, czw, pia, sob]
-    
+
     month_names: [~, Styczeń, Luty, Marzec, Kwiecień, Maj, Czerwiec, Lipiec, Sierpień, Wrzesień, Październik, Listopad, Grudzień]
     abbr_month_names: [~, sty, lut, mar, kwi, maj, cze, lip, sie, wrz, paź, lis, gru]
     order: [ :year, :month, :day ]
- 
+
   time:
     formats:
       default: "%a, %d %b %Y, %H:%M:%S %z"
@@ -54,7 +54,7 @@ pl:
       long: "%d %B %Y, %H:%M"
     am: "przed południem"
     pm: "po południu"
- 
+
   datetime:
     distance_in_words:
       half_a_minute: "pół minuty"
@@ -94,14 +94,22 @@ pl:
         one: "ponad rok"
         few: "ponad {{count}} lata"
         other: "ponad {{count}} lat"
- 
+
   activerecord:
     errors:
+      models:
+        comment:
+          attributes:
+            name:
+              blank: "nie może być puste"
+            content:
+              blank: "nie może być pusta"
       template:
         header:
           one: "{{model}} nie został zachowany z powodu jednego błędu"
           other: "{{model}} nie został zachowany z powodu {{count}} błędów"
         body: "Błędy dotyczą następujących pól:"
+
       messages:
         inclusion: "nie znajduje się na liście dopuszczalnych wartości"
         exclusion: "znajduje się na liście zabronionych wartości"
@@ -122,12 +130,17 @@ pl:
         less_than_or_equal_to: "musi być mniejsze lub równe {{count}}"
         odd: "musi być nieparzyste"
         even: "musi być parzyste"
-      
+
+    attributes:
+      comment:
+        name: "Imię"
+        content: "Treść"
+
   support:
     array:
       sentence_connector: "i"
       skip_last_comma: true
-      
+
   authlogic:
     error_messages:
       login_blank: nie może być pusty
