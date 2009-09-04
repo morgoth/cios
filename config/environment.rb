@@ -12,6 +12,7 @@ Rails::Initializer.run do |config|
   config.gem "authlogic"
   config.gem 'morgoth-picasa', :lib => 'picasa'
   config.gem 'xml-simple', :lib => 'xmlsimple'
+  config.gem 'ryanb-acts-as-list', :lib => 'acts_as_list'
   #config.gem "RedCloth", :lib => "redcloth"
 
   config.time_zone = 'Warsaw'
