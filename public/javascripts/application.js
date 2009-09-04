@@ -1,5 +1,5 @@
 //railscasts dynamic comments
-jQuery.ajaxSetup({ 
+jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 })
 
@@ -7,13 +7,13 @@ $(document).ready(
   function()
   {
     $("input#user_session_login").focus();
-		$(".sponsors").sortable({
-				handle: '.handle',
-				update: function() {
-					$.post('sponsors/sort', $(this).sortable('serialize'), null, "script");
-				}
-			});
-		$("#new_comment").submitWithAjax();
+    $(".sponsors").sortable({
+        handle: '.handle',
+        update: function() {
+          $.post('sponsors/sort', $(this).sortable('serialize'), null, "script");
+        }
+      });
+    $("#new_comment").submitWithAjax();
   }
   );
 

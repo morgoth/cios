@@ -5,6 +5,7 @@ class Sponsor < ActiveRecord::Base
   acts_as_list
 
   private
+
   def check_link
     unless link.blank?
       self.link = "http://"+link unless link =~ /^http:\/\//

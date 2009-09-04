@@ -53,8 +53,9 @@ class UsersController < ApplicationController
   end
 
   private
+
   def account_owner
-    unless @current_user==User.find(params[:id])
+    unless @current_user == User.find(params[:id])
       redirect_to users_path
       flash[:notice] = "You can't edit others profile"
     end
