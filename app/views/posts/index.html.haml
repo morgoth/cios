@@ -5,7 +5,7 @@
   %hr
   %h1.title= post.title
   %div.byline
-    = t('Author')+':'
+    = t('Author')+': '
     = post.user.login.capitalize if post.user
     = post.created_at.strftime("%d.%m.%y %H:%M")
     - if current_user
@@ -13,9 +13,9 @@
       = " | "
       = link_to t('Delete'), post, :confirm => t('Are you sure?'), :method => :delete
   %div.post
-    = truncate( textilize_without_paragraph( post.content ), :length => 1000 )
+    = textilize_without_paragraph( post.content )
     %div.meta
       = link_to t("Read more"), post_path( post )
-      = t('Comments')+':'
+      = t('Comments')+': '
       = post.comments.count
 = will_paginate @posts, :previous_label => t("pagination_previous"), :next_label => t("pagination_next")
