@@ -96,6 +96,10 @@ pl:
         other: "ponad {{count}} lat"
 
   activerecord:
+    models:
+      user_session: "Sesja"
+      sponsor: "Sponsor"
+      user: "Użytkownik"
     errors:
       models:
         comment:
@@ -116,8 +120,8 @@ pl:
         invalid: "jest nieprawidłowe"
         confirmation: "nie zgadza się z potwierdzeniem"
         accepted: "musi być zaakceptowane"
-        empty: "nie może być puste"
-        blank: "nie może być puste"
+        empty: "jest polem wymaganym"
+        blank: "jest polem wymaganym"
         too_long: "jest za długie (maksymalnie {{count}} znaków)"
         too_short: "jest za krótkie (minimalnie {{count}} znaków)"
         wrong_length: "jest nieprawidłowej długości (powinna wynosić {{count}} znaków)"
@@ -135,6 +139,12 @@ pl:
       comment:
         name: "Imię"
         content: "Treść"
+      sponsor:
+        name: "Nazwa"
+      user:
+        password: "Hasło"
+        password_confirmation: "Potwierdzenie hasła"
+        login: "Login"
 
   support:
     array:
@@ -145,7 +155,7 @@ pl:
     error_messages:
       login_blank: nie może być pusty
       login_not_found: nie istnieje
-      login_invalid: should use only letters, numbers, spaces, and .-_@ please.
+      login_invalid: powinien zawierać litery, cyfry i ._@
       consecutive_failed_logins_limit_exceeded: Consecutive failed logins limit exceeded, account is disabled.
       email_invalid: should look like an email address.
       password_blank: nie może być puste
@@ -155,7 +165,7 @@ pl:
       not_approved: Your account is not approved
       no_authentication_details: Nie wpisałeś danych
     models:
-      user_session: Sesja
+      user_session: "Sesja"
     attributes:
       user_session:
         login: Login

@@ -18,4 +18,4 @@
       = link_to t("Read more"), post_path( post )
       = t('Comments')+':'
       = post.comments.count
-= will_paginate @posts
+= will_paginate @posts, :previous_label => t("pagination_previous"), :next_label => t("pagination_next")

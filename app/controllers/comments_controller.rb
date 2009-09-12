@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         @saved = true
-        flash[:notice] = t ('Comment was successfully created')
+        flash[:notice] = t("comment_created")
         format.html { redirect_to @comment.post }
         format.js
         format.xml  { render :xml => @comment, :status => :created, :location => @comment }
@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        flash[:notice] = 'Comment was successfully updated.'
+        flash[:notice] = t("comment_updated")
         format.html { redirect_to @comment.post }
         format.xml  { head :ok }
       else
@@ -41,7 +41,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    flash[:notice] = 'Comment was deleted'
+    flash[:notice] = t("comment_destroyed")
 
     respond_to do |format|
       format.html { redirect_to @comment.post }

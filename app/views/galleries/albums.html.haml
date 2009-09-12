@@ -4,4 +4,4 @@
   - @albums.each do |album|
     %li
       = link_to "#{album[:title]}", :controller => 'galleries', :action=> 'photos', :id => album[:id]
-      = ' - ' + t('Photos')+':'+"#{album[:photos_count]}"
+      = ' - ' + t('Photos')+': '+"#{album[:photos_count]}"

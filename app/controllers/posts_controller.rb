@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   before_filter :login_required, :except => [:index, :show]
 
   def index
-    @posts = Post.paginate :page => params[:page], :per_page =>5
+    @posts = Post.paginate :page => params[:page], :per_page => 5
     respond_to do |format|
       format.html
       format.xml  { render :xml => @posts }
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        flash[:notice] = 'Post was successfully created.'
+        flash[:notice] = t("post_created")
         format.html { redirect_to(@post) }
         format.xml  { render :xml => @post, :status => :created, :location => @post }
       else
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
-        flash[:notice] = 'Post was successfully updated.'
+        flash[:notice] = t("post_updated")
         format.html { redirect_to(@post) }
         format.xml  { head :ok }
       else
@@ -66,6 +66,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
+    flash[:notice] = t("post_destroyed")
 
     respond_to do |format|
       format.html { redirect_to(posts_url) }

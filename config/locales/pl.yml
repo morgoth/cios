@@ -34,7 +34,18 @@ pl:
   Users: Użytkownicy
   Last login at: Ostatnie logowanie
   Login count: Ilość logowań
-  Comment was successfully created: Komentarz dodany
   Slideshow: Pokaz zdjęć
   Photos: Zdjęć
+  sponsor_name: "Nazwa"
   sponsor_drag_tip: "Ustal pozycję w jakiej mają być wyświetlani sponsorzy przeciągając ich w odpowiednie miejsce"
+  pagination_next: "Następne >>"
+  pagination_previous: "<< Poprzednie"
+
+  post_created: "Wiadomość została dodana"
+  post_updated: "Wiadomość została zaktualizowana"
+  post_destroyed: "Wiadomość została usunięta"
+  comment_created: "Komentarz został dodany"
+  comment_updated: "Komentarz został zaktualizowany"
+  comment_destroyed: "Komentarz został usunięty"
+  login_successful: "Logowanie pomyślne"
+  logout_successful: "Wylogowanie pomyślne"

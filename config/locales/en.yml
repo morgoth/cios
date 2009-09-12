@@ -34,7 +34,18 @@ en:
   Last login at: Last login at
   News: News
   Users: Users
-  Comment was successfully created: Comment was successfully created
   Slideshow: Slideshow
   Photos: Photos
+  sponsor_name: Name
   sponsor_drag_tip: Drag sponsors to correct place in the list
+  pagination_next: "Next >>"
+  pagination_previous: "<< Previous"
+
+  post_created: "Post created"
+  post_updated: "Post updated"
+  post_destroyed: "Post destroyed"
+  comment_created: "Comment created"
+  comment_updated: "Comment updated"
+  comment_destroyed: "Comment destroyed"
+  login_successful: "Login successful"
+  logout_successful: "Logout successful"
