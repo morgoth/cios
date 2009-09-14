@@ -1,0 +1,15 @@
+%h1= t("Boxers")
+- if current_user
+  %p
+    = link_to t('New boxer'), new_boxer_path
+%table
+  %tbody
+    - @boxers.each do |boxer|
+      %tr
+        %td
+          = link_to boxer.full_name, boxer_path(boxer)
+        - if current_user
+          %td
+            = link_to t('Edit'), edit_boxer_path(boxer)
+            = " | "
+            = link_to t("Delete"), boxer, :confirm => t("Are you sure?"), :method => :delete

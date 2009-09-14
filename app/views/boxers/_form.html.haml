@@ -1,0 +1,25 @@
+- form_for @boxer do |f|
+  = f.error_messages
+  %fieldset
+    %legend= t('Boxer')
+    %ul
+      %li
+        = f.label :first_name, t("first_name")
+        = f.text_field :first_name
+      %li
+        = f.label :last_name, t("last_name")
+        = f.text_field :last_name
+      %li
+        = f.label :birth_date, t("birth_date")
+        = f.date_select :birth_date, :include_blank => true, :start_year => 50.years.ago.year, :end_year => Time.now.year
+      %li
+        = f.label :photo_url, t("photo_url")
+        = f.text_area :photo_url, :size => "40x2"
+      %li
+        = f.label :active, t("active")
+        = f.check_box :active
+      %li
+        = f.label :about, t("about")
+        %small= "#{t('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/", :popup => true}"
+        = f.text_area :about
+    = f.submit t('Confirm')

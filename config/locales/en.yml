@@ -36,6 +36,20 @@ en:
   Users: Users
   Slideshow: Slideshow
   Photos: Photos
+  Boxer: Boxer
+  Boxers: Boxers
+  New boxer: New boxer
+  Confirm: Confirm
+
+  first_name: First name
+  last_name: Last name
+  full_name: Full name
+  birth_date: Birth date
+  active: Active?
+  photo_url: Photo url
+  about: About
+  photo: Photo
+
   sponsor_name: Name
   sponsor_drag_tip: Drag sponsors to correct place in the list
   pagination_next: "Next >>"
@@ -49,3 +63,7 @@ en:
   comment_destroyed: "Comment destroyed"
   login_successful: "Login successful"
   logout_successful: "Logout successful"
+  boxer_created: Boxer created
+  boxer_updated: Boxer updated
+  boxer_destroyed: Boxer destroyed
+  login_required: "You must be logged in to access this page"

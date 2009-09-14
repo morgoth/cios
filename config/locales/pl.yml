@@ -36,6 +36,20 @@ pl:
   Login count: Ilość logowań
   Slideshow: Pokaz zdjęć
   Photos: Zdjęć
+  Boxer: Bokser
+  Boxers: "Bokserzy"
+  New boxer: "Dodaj boksera"
+  Confirm: "Potwierdź"
+
+  first_name: "Imię"
+  last_name: "Nazwisko"
+  full_name: Imię i nazwisko
+  birth_date: Data urodzenia
+  active: Aktywny?
+  photo_url: URL zdjęcia
+  about: Informacje
+  photo: "Zdjęcie"
+
   sponsor_name: "Nazwa"
   sponsor_drag_tip: "Ustal pozycję w jakiej mają być wyświetlani sponsorzy przeciągając ich w odpowiednie miejsce"
   pagination_next: "Następne >>"
@@ -49,3 +63,7 @@ pl:
   comment_destroyed: "Komentarz został usunięty"
   login_successful: "Logowanie pomyślne"
   logout_successful: "Wylogowanie pomyślne"
+  boxer_created: "Bokser został utworzony"
+  boxer_updated: "Bokser został zaktualizowany"
+  boxer_destroyed: "Bokser został usunięty"
+  login_required: "Musisz być zalogowany aby obejrzeć tę stronę"

@@ -100,6 +100,8 @@ pl:
       user_session: "Sesja"
       sponsor: "Sponsor"
       user: "Użytkownik"
+      boxer: "Bokser"
+      post: "Wiadomość"
     errors:
       models:
         comment:
@@ -136,6 +138,9 @@ pl:
         even: "musi być parzyste"
 
     attributes:
+      post:
+        title: "Tytuł"
+        content: "Treść"
       comment:
         name: "Imię"
         content: "Treść"
@@ -145,6 +150,14 @@ pl:
         password: "Hasło"
         password_confirmation: "Potwierdzenie hasła"
         login: "Login"
+      boxer:
+        full_name: "Imię i nazwisko"
+        first_name: "Imię"
+        last_name: "Nazwisko"
+        birth_date: "Data urodzin"
+        photo_url: "URL zdjęcia"
+        active: "Aktywny?"
+        about: "Informacje"
 
   support:
     array:

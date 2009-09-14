@@ -1,5 +1,5 @@
 module ApplicationHelper
-  require 'redcloth'
+  #require 'redcloth'
   def hour_minute(date)
     date.strftime("%d.%m.%y - %H:%M")
   end
@@ -11,7 +11,7 @@ module ApplicationHelper
   def flash_messages
     messages = ''
     flash.each do |key, msg|
-      messages <<  content_tag( :span, msg, :id => key)
+      messages <<  content_tag( :div, msg, :id => key)
     end
     messages
   end

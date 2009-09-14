@@ -8,7 +8,7 @@ body {
 }
 
 body, th, td, input, textarea, select, option {
-  font-family: "Trebuchet MS", "Times New Roman", Arial, Times, serif;
+  font-family: Helvetica Neue, Arial, Helvetica, sans-serif;
 }
 
 h1, h2, h3 {
@@ -168,6 +168,11 @@ img {
 
 .post {
   line-height: 170%;
+}
+
+#content img {
+  max-width: 250px;
+  max-height: 250px;
 }
 
 .byline {
@@ -375,25 +380,24 @@ img {
   color: black;
   background-color: #dfffdf;
   border: 1px solid #62df61;
+  text-align: center;
 }
 #error {
   padding: 5px;
   color: black;
   background-color: #ff9394;
   border: 1px solid #ff0f11;
-
-
+  text-align: center;
 }
+
 .fieldWithErrors {
-  padding: 2px;
-  background-color: red;
-  display: table;
+  color: #ff3c00;
 }
 #errorExplanation {
   width: 400px;
-  border: 2px solid red;
+  border: 2px solid #ff3c00;
   padding: 7px;
-  padding-bottom: 12px;
+  padding-bottom: 8px;
   margin-bottom: 20px;
   background-color: #2E2200;
 }
