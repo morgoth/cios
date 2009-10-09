@@ -8,11 +8,11 @@ require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
   config.gem 'haml'
-  config.gem "mislav-will_paginate", :lib => "will_paginate"
+  config.gem "will_paginate"
   config.gem "authlogic"
-  config.gem 'morgoth-picasa', :lib => 'picasa'
+  config.gem 'picasa'
   config.gem 'xml-simple', :lib => 'xmlsimple'
-  config.gem 'ryanb-acts-as-list', :lib => 'acts_as_list'
+  config.gem 'acts-as-list', :lib => 'acts_as_list'
   #config.gem "RedCloth", :lib => "redcloth"
 
   config.time_zone = 'Warsaw'
