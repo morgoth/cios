@@ -7,6 +7,6 @@
     %li
       = link_to boxer.full_name, boxer_path(boxer)
       - if current_user
-          = link_to t('Edit'), edit_boxer_path(boxer)
-          = " | "
-          = link_to t("Delete"), boxer, :confirm => t("Are you sure?"), :method => :delete
+        = link_to t('Edit'), edit_boxer_path(boxer)
+        = " | "
+        = link_to t("Delete"), boxer, :confirm => t("Are you sure?"), :method => :delete
