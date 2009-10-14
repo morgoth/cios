@@ -55,17 +55,11 @@ ActiveRecord::Schema.define(:version => 20090914192604) do
     t.string   "perishable_token",                   :null => false
     t.integer  "login_count",         :default => 0, :null => false
     t.integer  "failed_login_count",  :default => 0, :null => false
+    t.datetime "last_request_at"
     t.datetime "current_login_at"
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "last_request_at"
-  end
-
-  create_table "web_counters", :force => true do |t|
-    t.integer  "counter",    :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
   end

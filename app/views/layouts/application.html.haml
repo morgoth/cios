@@ -34,7 +34,8 @@
                     %li= link_to t("Boxers"), boxers_path
                     %li= link_to t("Trainings"), trainings_path
                     %li= link_to t('Gallery'), gallery_path
-                    %li.last= link_to t('Contact'), contact_path
+                    %li= link_to t('Contact'), contact_path
+                    %li.last= link_to t('Bank account'), bank_account_path
                     -if current_user
                       %li= link_to "Logout #{current_user.login}", user_session_path, :method => :delete
                       %li= link_to t("Show profile"), user_path(current_user)

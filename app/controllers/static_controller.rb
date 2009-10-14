@@ -8,4 +8,6 @@ class StaticController < ApplicationController
   def statutes
   end
 
+  def bank_account
+  end
 end
