@@ -14,7 +14,7 @@ Rails::Initializer.run do |config|
   config.gem 'picasa'
   config.gem 'xml-simple', :lib => 'xmlsimple'
   config.gem 'acts-as-list', :lib => 'acts_as_list'
-  #config.gem "RedCloth", :lib => "redcloth"
+  config.gem "RedCloth", :lib => "redcloth"
 
   config.time_zone = 'Warsaw'
 
