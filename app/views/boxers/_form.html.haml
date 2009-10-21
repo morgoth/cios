@@ -13,6 +13,10 @@
         = f.label :birth_date, t("birth_date")
         = f.date_select :birth_date, :include_blank => true, :start_year => 50.years.ago.year, :end_year => Time.now.year
       %li
+        = f.label :weight, t("weight")
+        = f.text_field :weight
+      %li
+      %li
         = f.label :photo_url, t("photo_url")
         = f.text_area :photo_url, :size => "40x2"
       %li

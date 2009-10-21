@@ -1,0 +1,7 @@
+%h1= t('Gallery')
+%div#gallery
+  %ul
+  - @albums.each do |album|
+    %li
+      = link_to "#{album[:title]}", gallery_path(album[:id])
+      = ' - ' + t('Photos')+': '+"#{album[:photos_count]}"

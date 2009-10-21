@@ -50,6 +50,7 @@ pl:
   photo_url: URL zdjęcia
   about: Informacje
   photo: "Zdjęcie"
+  weight: "Kategoria wagowa"
 
   sponsor_name: "Nazwa"
   sponsor_drag_tip: "Ustal pozycję w jakiej mają być wyświetlani sponsorzy przeciągając ich w odpowiednie miejsce"
