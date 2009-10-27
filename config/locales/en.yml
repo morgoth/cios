@@ -50,6 +50,7 @@ en:
   photo_url: Photo url
   about: About
   photo: Photo
+  weight: Weight category
 
   sponsor_name: Name
   sponsor_drag_tip: Drag sponsors to correct place in the list

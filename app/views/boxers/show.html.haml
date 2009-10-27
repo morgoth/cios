@@ -1,8 +1,13 @@
 %h1.title=h @boxer.full_name
 %div.byline
   - if @boxer.birth_date.present?
-    %tr= t("birth_date") + ":"
-    %td=h year_month_day(@boxer.birth_date)
+    = t("birth_date") + ":"
+    =h year_month_day(@boxer.birth_date)
+  - if @boxer.weight.present?
+    %br
+    = t("weight") + ":"
+    =h @boxer.weight
+    = "kg"
   - if @boxer.photo_url.present?
     %div
       = image_tag @boxer.photo_url, :alt => t("photo")
