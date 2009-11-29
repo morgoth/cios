@@ -1,10 +1,10 @@
 class GalleriesController < ApplicationController
 
   def index
-    @albums = Picasa.albums( :google_user => "cios.gilowice" )
+    @albums = Picasa.albums
   end
 
   def show
-    @album = Picasa.photos( :google_user => 'cios.gilowice', :album_id => params[:id])
+    @album = Picasa.photos(:album_id => params[:id])
   end
 end

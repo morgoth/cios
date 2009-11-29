@@ -1,0 +1,1 @@
+Picasa::WebAlbums.google_user = "cios.gilowice"
