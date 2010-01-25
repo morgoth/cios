@@ -2,3 +2,5 @@ log/*.log
 tmp/**/*
 db/*.sqlite3
 config/database.yml
+bin
+vendor/bundler_gems

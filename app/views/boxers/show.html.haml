@@ -2,14 +2,14 @@
 %div.byline
   - if @boxer.birth_date.present?
     = t("birth_date") + ":"
-    =h year_month_day(@boxer.birth_date)
+    = year_month_day(@boxer.birth_date)
   - if @boxer.weight.present?
     %br
     = t("weight") + ":"
-    =h @boxer.weight
+    = @boxer.weight
     = "kg"
   - if @boxer.photo_url.present?
     %div
       = image_tag @boxer.photo_url, :alt => t("photo")
 %div.post
-  = textilize_without_paragraph( @boxer.about )
+  =raw textilize_without_paragraph( @boxer.about )

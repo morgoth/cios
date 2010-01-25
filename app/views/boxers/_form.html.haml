@@ -24,6 +24,6 @@
         = f.check_box :active
       %li
         = f.label :about, t("about")
-        %small= "#{t('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/", :popup => true}"
+        %small=raw "#{t('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/", :popup => true}"
         = f.text_area :about
     = f.submit t('Confirm')

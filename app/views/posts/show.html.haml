@@ -4,7 +4,7 @@
   = @post.user.login.capitalize if @post.user
   = @post.created_at.strftime("%d.%m.%y %H:%M")
 %div.post
-  = textilize_without_paragraph( @post.content )
+  =raw textilize_without_paragraph( @post.content )
 %br
 %div#comments
   - unless @post.comments.blank?
@@ -20,7 +20,7 @@
     = f.text_field :name
   %p
     = f.label :content, t("Content")+':'
-    %small= "#{t ('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/", :popup => true}"
+    %small=raw "#{t ('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/", :popup => true}"
     %br
     = f.text_area :content, :rows => 8
   %p

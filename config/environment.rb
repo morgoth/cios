@@ -8,13 +8,6 @@ require File.join(File.dirname(__FILE__), 'boot')
 require 'lib/google_analytics'
 
 Rails::Initializer.run do |config|
-  config.gem 'haml'
-  config.gem "will_paginate"
-  config.gem "authlogic"
-  config.gem 'picasa'
-  config.gem 'xml-simple', :lib => 'xmlsimple'
-  config.gem 'acts-as-list', :lib => 'acts_as_list'
-  config.gem "RedCloth", :lib => "redcloth"
 
   config.time_zone = 'Warsaw'
 
