@@ -1,1 +1,3 @@
-Picasa::WebAlbums.google_user = "cios.gilowice"
+Picasa.config do |c|
+  c.google_user = "cios.gilowice"
+end
