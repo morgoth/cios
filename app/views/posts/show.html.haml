@@ -4,7 +4,7 @@
   = @post.user.login.capitalize if @post.user
   = @post.created_at.strftime("%d.%m.%y %H:%M")
 %div.post
-  =raw textilize_without_paragraph( @post.content )
+  = markup(@post.content)
 %br
 %div#comments
   - unless @post.comments.blank?

@@ -13,7 +13,7 @@
       = " | "
       = link_to t('Delete'), post, :confirm => t('Are you sure?'), :method => :delete
   %div.post
-    =raw textilize_without_paragraph( post.content )
+    = markup(post.content)
     %div.meta
       = link_to t("Read more"), post_path( post )
       = t('Comments')+': '

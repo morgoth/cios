@@ -1,6 +1,6 @@
 %hr
 %div.post
-  =raw textilize_without_paragraph(comment.content)
+  = markup(comment.content)
 %br
 %div.byline
   = t('Author')

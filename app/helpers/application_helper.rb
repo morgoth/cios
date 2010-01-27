@@ -26,4 +26,8 @@ module ApplicationHelper
   def current(lang)
     {:controller=>controller.controller_name, :action => controller.action_name, :locale =>lang, :id=>params[:id]}
   end
+
+  def markup(text)
+    textilize_without_paragraph(sanitize(text, :tags => [], :attributes => [])).html_safe!
+  end
 end

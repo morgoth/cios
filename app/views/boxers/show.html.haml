@@ -12,4 +12,4 @@
     %div
       = image_tag @boxer.photo_url, :alt => t("photo")
 %div.post
-  =raw textilize_without_paragraph( @boxer.about )
+  = markup(@boxer.about)
