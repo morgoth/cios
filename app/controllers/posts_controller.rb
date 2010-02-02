@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = @current_user.posts.build
   end
 
   def edit
@@ -22,33 +22,22 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params[:post])
-    @post.user_id = current_user.id
-
-    respond_to do |format|
-      if @post.save
-        flash[:notice] = t("post_created")
-        format.html { redirect_to(@post) }
-        format.xml  { render :xml => @post, :status => :created, :location => @post }
-      else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
-      end
+    @post = @current_user.posts.build(params[:post])
+    if @post.save
+      flash[:notice] = t("post_created")
+      redirect_to @post
+    else
+      render :new
     end
   end
 
   def update
     @post = Post.find(params[:id])
-
-    respond_to do |format|
-      if @post.update_attributes(params[:post])
-        flash[:notice] = t("post_updated")
-        format.html { redirect_to(@post) }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
-      end
+    if @post.update_attributes(params[:post])
+      flash[:notice] = t("post_updated")
+      redirect_to @post
+    else
+      render :edit
     end
   end
 

@@ -9,7 +9,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = t("login_successful")
       redirect_back_or_default posts_path
     else
-      render :action => :new
+      render :new
     end
   end
 

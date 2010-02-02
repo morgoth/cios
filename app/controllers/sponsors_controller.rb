@@ -13,37 +13,28 @@ class SponsorsController < ApplicationController
 
   def create
     @sponsor = Sponsor.new(params[:sponsor])
-
-    respond_to do |format|
-      if @sponsor.save
-        flash[:notice] = 'Sponsor was successfully created.'
-        format.html { redirect_to(sponsors_path) }
-      else
-        format.html { render :action => "index" }
-      end
+    if @sponsor.save
+      flash[:notice] = 'Sponsor was successfully created.'
+      redirect_to sponsors_path
+    else
+      render :index
     end
   end
 
   def update
     @sponsor = Sponsor.find(params[:id])
-
-    respond_to do |format|
-      if @sponsor.update_attributes(params[:sponsor])
-        flash[:notice] = 'Sponsor was successfully updated.'
-        format.html { redirect_to(sponsors_path) }
-      else
-        format.html { render :action => "edit" }
-      end
+    if @sponsor.update_attributes(params[:sponsor])
+      flash[:notice] = 'Sponsor was successfully updated.'
+      redirect_to sponsors_path
+    else
+      render :edit
     end
   end
 
   def destroy
     @sponsor = Sponsor.find(params[:id])
     @sponsor.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(sponsors_url) }
-    end
+    redirect_to sponsors_path
   end
 
   def sort

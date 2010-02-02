@@ -14,8 +14,5 @@ ActionController::Routing::Routes.draw do |map|
   map.contact 'contact', :controller => 'static', :action => 'contact'
   map.trainings 'trainings', :controller => 'static', :action => 'trainings'
   map.bank_account 'bank_account', :controller => 'static', :action => 'bank_account'
-  map.root :controller => 'Posts'
-
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  map.root :controller => 'posts'
 end

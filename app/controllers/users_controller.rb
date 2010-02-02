@@ -1,9 +1,11 @@
+# encoding: UTF-8
+
 class UsersController < ApplicationController
   before_filter :login_required
   before_filter :account_owner, :only => [:edit, :update]
 
   def index
-    @users=User.all( :order => "login")
+    @users = User.all(:order => "login")
   end
   def new
     @user = User.new
@@ -15,7 +17,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Account registered!"
       redirect_back_or_default account_url
     else
-      render :action => :new
+      render :new
     end
   end
 
@@ -33,13 +35,12 @@ class UsersController < ApplicationController
       flash[:notice] = "Account updated!"
       redirect_to account_url
     else
-      render :action => :edit
+      render :edit
     end
   end
 
   def destroy
-    id = params[:id]
-    if id && user = User.find(id)
+   if user = User.find(params[:id])
       begin
         user.safe_delete
         flash[:notice] = "User #{user.login} usunięty"
@@ -47,18 +48,15 @@ class UsersController < ApplicationController
         flash[:notice] = e.message
       end
     end
-    respond_to do |format|
-      format.html { redirect_to(users_path) }
-    end
+    redirect_to users_path
   end
 
   private
 
   def account_owner
     unless @current_user == User.find(params[:id])
-      redirect_to users_path
       flash[:notice] = "You can't edit others profile"
+      redirect_to users_path
     end
   end
-
 end
