@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100131231131) do
+ActiveRecord::Schema.define(:version => 20100202200024) do
 
   create_table "boxers", :force => true do |t|
     t.string   "first_name"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20100131231131) do
     t.string   "signature"
     t.boolean  "allow"
     t.boolean  "profanity_match"
-    t.float    "spaminnes"
+    t.float    "spaminess"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

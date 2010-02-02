@@ -7,9 +7,9 @@
   = markup(@post.content)
 %br
 %div#comments
-  - unless @post.comments.blank?
+  - unless @post.comments.approved.blank?
     %h2= t("Comments")+':'
-    = render :partial => @post.comments
+    = render :partial => @post.comments.approved
 %h2= t('Add')+' '+t('comment')+':'
 - form_for Comment.new(:post => @post) do |f|
   = f.error_messages

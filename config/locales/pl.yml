@@ -69,3 +69,4 @@ pl:
   boxer_updated: "Bokser został zaktualizowany"
   boxer_destroyed: "Bokser został usunięty"
   login_required: "Musisz być zalogowany aby obejrzeć tę stronę"
+  spam_comment: "Twój komentarz został zaklasyfikowany jako spam"

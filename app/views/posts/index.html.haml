@@ -1,7 +1,7 @@
 %h1= t("News")
 - if current_user
   = link_to t('New post'), new_post_path
-- for post in @posts
+- @posts.each do |post|
   %hr
   %h1.title= post.title
   %div.byline
@@ -17,5 +17,5 @@
     %div.meta
       = link_to t("Read more"), post_path( post )
       = t('Comments')+': '
-      = post.comments.count
+      = post.comments.approved.count
 = will_paginate @posts, :previous_label => t("pagination_previous"), :next_label => t("pagination_next")

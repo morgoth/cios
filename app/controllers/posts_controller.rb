@@ -5,27 +5,16 @@ class PostsController < ApplicationController
     @posts = Post.paginate :page => params[:page], :per_page => 5
     respond_to do |format|
       format.html
-      format.xml  { render :xml => @posts }
       format.rss
     end
   end
 
   def show
     @post = Post.find(params[:id])
-
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @post }
-    end
   end
 
   def new
     @post = Post.new
-
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @post }
-    end
   end
 
   def edit
@@ -67,10 +56,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     flash[:notice] = t("post_destroyed")
-
-    respond_to do |format|
-      format.html { redirect_to(posts_url) }
-      format.xml  { head :ok }
-    end
+    redirect_to posts_path
   end
 end

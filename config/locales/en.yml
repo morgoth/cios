@@ -69,3 +69,4 @@ en:
   boxer_updated: Boxer updated
   boxer_destroyed: Boxer destroyed
   login_required: "You must be logged in to access this page"
+  spam_comment: "Your comment looks like a spam"

@@ -4,9 +4,10 @@ class DefensioReport < ActiveRecord::Base
 
   def post(defensio_attributes)
     status, attr = DefensioReport.client.post_document(defensio_attributes)
+    build_log attr
     if status == 200
       self.signature = attr['signature']
-      self.spaminnes = attr['spaminnes']
+      self.spaminess = attr['spaminess']
       self.profanity_match = attr['profanity-match']
       self.allow = attr['allow']
     end
@@ -17,10 +18,14 @@ class DefensioReport < ActiveRecord::Base
   end
 
   def self.client
-    @@defensio ||= Defensio.new("")
+    @@defensio ||= Defensio.new(ENV['DEFENSIO_API_KEY'] || "notexistingkey")
   end
 
   def approved?
     allow? and !profanity_match?
+  end
+
+  def build_log(msg)
+    logger.info "Defensio report\n " << msg.to_s << "\n"
   end
 end

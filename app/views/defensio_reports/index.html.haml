@@ -1,0 +1,17 @@
+%h1= "Spam report"
+%table
+  %tr
+    %th
+      Name
+    %th
+      Content
+  - @comments.each do |comment|
+    %tr
+      %td
+        = comment.name
+      %td
+        = comment.content
+      %td
+        - form_for comment.defensio_report do |f|
+          = f.hidden_field :allow, :value => true
+          = f.submit "Not spam"

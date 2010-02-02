@@ -12,7 +12,7 @@ module ApplicationHelper
     flash.each do |key, msg|
       messages <<  content_tag( :div, msg, :id => key)
     end
-    messages
+    messages.html_safe!
   end
 
   def generate_error_messages( object )

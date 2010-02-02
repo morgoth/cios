@@ -6,7 +6,10 @@ class Comment < ActiveRecord::Base
 
   before_create :check_for_spam
 
-  attr_protected :approved, :post_id
+  attr_protected :approved
+
+  named_scope :approved, :conditions => { :approved => true }
+  named_scope :not_approved, :conditions => { :approved => false }
 
   def approve!
     update_state(true)
@@ -22,6 +25,7 @@ class Comment < ActiveRecord::Base
     defensio = build_defensio_report
     defensio.post(defensio_attributes)
     self.approved = defensio.approved?
+    true
   end
 
   def update_state(state)

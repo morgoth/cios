@@ -5,7 +5,7 @@ class CreateDefensioReports < ActiveRecord::Migration
       t.string :signature
       t.boolean :allow
       t.boolean :profanity_match
-      t.float :spaminnes
+      t.float :spaminess
 
       t.timestamps
     end

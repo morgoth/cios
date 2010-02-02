@@ -9,15 +9,18 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     respond_to do |format|
       if @comment.save
-        @saved = true
-        flash[:notice] = t("comment_created")
+        if @comment.approved?
+          @status = 'saved'
+          flash[:notice] = t("comment_created")
+        else
+          @status = 'spam'
+          flash[:error] = t("spam_comment")
+        end
         format.html { redirect_to @comment.post }
         format.js
-        format.xml  { render :xml => @comment, :status => :created, :location => @comment }
       else
-        @saved = false
+        @status = 'not_saved'
         format.html {  redirect_to @comment.post }
-        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
         format.js
       end
     end
@@ -25,16 +28,11 @@ class CommentsController < ApplicationController
 
   def update
     @comment = Comment.find(params[:id])
-
-    respond_to do |format|
-      if @comment.update_attributes(params[:comment])
-        flash[:notice] = t("comment_updated")
-        format.html { redirect_to @comment.post }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @comment.errors, :status => :unprocessable_entity }
-      end
+    if @comment.update_attributes(params[:comment])
+      flash[:notice] = t("comment_updated")
+      redirect_to @comment.post
+    else
+      render :edit
     end
   end
 
@@ -42,10 +40,6 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @comment.destroy
     flash[:notice] = t("comment_destroyed")
-
-    respond_to do |format|
-      format.html { redirect_to @comment.post }
-      format.xml  { head :ok }
-    end
+    redirect_to @comment.post
   end
 end

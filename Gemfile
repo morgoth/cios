@@ -10,6 +10,7 @@ gem 'picasa', ">=0.1.9"
 gem 'xml-simple', :require_as => 'xmlsimple'
 gem 'acts-as-list', :require_as => 'acts_as_list'
 gem 'RedCloth', :require_as => 'redcloth'
+gem 'defensio'
 
 only :test do
   gem "shoulda"
