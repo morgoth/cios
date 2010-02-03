@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   belongs_to :post
-  has_one :defensio_report
+  has_one :defensio_report, :dependent => :destroy
 
   validates_presence_of :content, :name, :post
 

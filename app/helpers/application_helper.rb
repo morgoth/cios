@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def flash_messages
-    messages = ''
+    messages = ""
     flash.each do |key, msg|
       messages <<  content_tag( :div, msg, :id => key)
     end
@@ -16,11 +16,9 @@ module ApplicationHelper
   end
 
   def generate_error_messages( object )
-    txt = ""
-    object.errors.each_full do |error|
-      txt << error+"<br/>"
+    object.errors.full_messages.inject("") do |msg, error|
+      msg << error << "<br/>"
     end
-    txt
   end
 
   def current(lang)

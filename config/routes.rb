@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users
   map.resource :account, :controller => "users"
   map.resources :boxers
-  map.resources :defensio_reports
+  map.resources :defensio_reports, :collection => { :destroy_multiple => :post }
 
   map.login '/login', :controller => 'user_sessions', :action =>'new'
   map.contact 'contact', :controller => 'static', :action => 'contact'

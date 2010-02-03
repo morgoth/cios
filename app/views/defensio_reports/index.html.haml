@@ -1,17 +1,28 @@
 %h1= "Spam report"
-%table
-  %tr
-    %th
-      Name
-    %th
-      Content
-  - @comments.each do |comment|
+Total:
+= @comments.size
+- form_tag destroy_multiple_defensio_reports_path do
+  %table
     %tr
-      %td
-        = comment.name
-      %td
-        = comment.content
-      %td
-        - form_for comment.defensio_report do |f|
-          = f.hidden_field :allow, :value => true
-          = f.submit "Not spam"
+      %th
+        Destroy?
+      %th
+        Name
+      %th
+        Content
+      %th
+        Spam?
+    - @comments.each do |comment|
+      %tr
+        %td
+          = check_box_tag "comment_ids[]", comment.id
+        %td
+          = comment.name
+        %td
+          = comment.content
+        %td
+          - if comment.defensio_report
+            - form_for comment.defensio_report do |f|
+              = f.hidden_field :allow, :value => true
+              = f.submit "Not spam"
+  = submit_tag "Destroy Checked"
