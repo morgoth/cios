@@ -16,11 +16,16 @@ class DefensioReportsController < ApplicationController
     redirect_to defensio_reports_path
   end
 
-  def destroy_multiple
+  def update_multiple
     params[:comment_ids] ||= []
     @comments = Comment.find(params[:comment_ids])
-    @comments.each { |c| c.destroy }
-    flash[:notice] = "Comments destroyed"
+    if params[:approve_comments]
+      @comments.each { |c| c.approve! }
+      flash[:notice] = "Comments approved"
+    elsif params[:destroy_comments]
+      @comments.each { |c| c.destroy }
+      flash[:notice] = "Comments destroyed"
+    end
     redirect_to defensio_reports_path
   end
 end
