@@ -1,9 +1,6 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  filter_parameter_logging :password, :password_confirmation
+  protect_from_forgery
+  filter_parameter_logging :password
   helper_method :current_user_session, :current_user
   before_filter :ensure_domain
   before_filter :sponsors_index, :set_locale

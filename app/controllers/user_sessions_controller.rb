@@ -18,5 +18,4 @@ class UserSessionsController < ApplicationController
     flash[:notice] = t("logout_successful")
     redirect_back_or_default posts_path
   end
-
 end

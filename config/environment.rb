@@ -11,8 +11,8 @@ Rails::Initializer.run do |config|
 
   config.time_zone = 'Warsaw'
 
-  config.i18n.load_path += Dir[File.join(RAILS_ROOT, 'config', 'locales', 'defaults', '*.{rb,yml}')]
+  config.i18n.load_path += Dir[Rails.root.join('config', 'locales', 'defaults', '*.{rb,yml}').to_s]
   config.i18n.default_locale = :pl
 
-  config.middleware.use Rack::GoogleAnalytics, ENV['GOOGLE_ANALYTICS_ID'] || 'xxxx-x'
+  config.middleware.use Rack::GoogleAnalytics, "UA-7563082-3"
 end
