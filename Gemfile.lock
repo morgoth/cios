@@ -1,0 +1,120 @@
+--- 
+hash: eeb9705daa1bc4b59b9df459ec6d1920a7a4ea4d
+sources: 
+- Rubygems: 
+    uri: http://rubygems.org
+specs: 
+- rake: 
+    version: 0.8.7
+- RedCloth: 
+    version: 4.2.3
+- abstract: 
+    version: 1.0.0
+- activesupport: 
+    version: 2.3.5
+- rack: 
+    version: 1.0.1
+- actionpack: 
+    version: 2.3.5
+- actionmailer: 
+    version: 2.3.5
+- activerecord: 
+    version: 2.3.5
+- activeresource: 
+    version: 2.3.5
+- acts-as-list: 
+    version: 0.1.2
+- authlogic: 
+    version: 2.1.3
+- crack: 
+    version: 0.1.6
+- httparty: 
+    version: 0.5.2
+- defensio: 
+    version: 0.9.1
+- erubis: 
+    version: 2.6.5
+- factory_girl: 
+    version: 1.2.4
+- haml: 
+    version: 2.2.23
+- pg: 
+    version: 0.9.0
+- xml-simple: 
+    version: 1.0.12
+- picasa: 
+    version: 0.2.1
+- rails: 
+    version: 2.3.5
+- shoulda: 
+    version: 2.10.3
+- sqlite3-ruby: 
+    version: 1.2.5
+- will_paginate: 
+    version: 2.3.12
+dependencies: 
+  rails: 
+    version: = 2.3.5
+    group: 
+    - :default
+  sqlite3-ruby: 
+    version: ">= 0"
+    group: 
+    - :development
+    - :test
+    require: 
+    - :sqlite3
+  haml: 
+    version: = 2.2.23
+    group: 
+    - :default
+  erubis: 
+    version: ">= 0"
+    group: 
+    - :default
+  will_paginate: 
+    version: ">= 0"
+    group: 
+    - :default
+  authlogic: 
+    version: = 2.1.3
+    group: 
+    - :default
+  picasa: 
+    version: ">= 0.1.9"
+    group: 
+    - :default
+  xml-simple: 
+    version: ">= 0"
+    group: 
+    - :default
+    require: 
+    - xmlsimple
+  acts-as-list: 
+    version: ">= 0"
+    group: 
+    - :default
+    require: 
+    - acts_as_list
+  RedCloth: 
+    version: ">= 0"
+    group: 
+    - :default
+    require: 
+    - redcloth
+  defensio: 
+    version: ">= 0"
+    group: 
+    - :default
+  shoulda: 
+    version: ">= 0"
+    group: 
+    - :test
+  factory_girl: 
+    version: ">= 0"
+    group: 
+    - :test
+  pg: 
+    version: ">= 0"
+    group: 
+    - :production
