@@ -1,12 +1,12 @@
 source "http://rubygems.org"
 
-gem "rails", "2.3.5"
+gem "rails", "2.3.8"
 gem "sqlite3-ruby", :require => :sqlite3, :group => [:development, :test]
 
-gem 'haml', "2.2.23"
+gem 'haml', ">=3.0.6"
 gem 'erubis'
 gem 'will_paginate'
-gem 'authlogic', "2.1.3"
+gem 'authlogic', "2.1.4"
 gem 'picasa', ">=0.1.9"
 gem 'xml-simple', :require => 'xmlsimple'
 gem 'acts-as-list', :require => 'acts_as_list'
