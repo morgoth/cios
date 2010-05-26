@@ -5,8 +5,8 @@ gem "sqlite3-ruby", :require => :sqlite3, :group => [:development, :test]
 
 gem 'haml', ">=3.0.6"
 gem 'erubis'
-gem 'will_paginate'
-gem 'authlogic', "2.1.4"
+gem 'will_paginate', ">= 2.3.14"
+gem 'authlogic', ">= 2.1.5"
 gem 'picasa', ">=0.1.9"
 gem 'xml-simple', :require => 'xmlsimple'
 gem 'acts-as-list', :require => 'acts_as_list'

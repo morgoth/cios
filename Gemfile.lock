@@ -1,5 +1,5 @@
 --- 
-hash: abc74df4386e6518422ee8b97e037cd9caa12ffb
+hash: 7f7ddd22367bc7c14287a254888512ba06761c27
 sources: 
 - Rubygems: 
     uri: http://rubygems.org
@@ -25,7 +25,7 @@ specs:
 - acts-as-list: 
     version: 0.1.2
 - authlogic: 
-    version: 2.1.4
+    version: 2.1.5
 - crack: 
     version: 0.1.6
 - httparty: 
@@ -51,7 +51,7 @@ specs:
 - sqlite3-ruby: 
     version: 1.2.5
 - will_paginate: 
-    version: 2.3.12
+    version: 2.3.14
 dependencies: 
   rails: 
     version: = 2.3.8
@@ -73,11 +73,11 @@ dependencies:
     group: 
     - :default
   will_paginate: 
-    version: ">= 0"
+    version: ">= 2.3.14"
     group: 
     - :default
   authlogic: 
-    version: = 2.1.4
+    version: ">= 2.1.5"
     group: 
     - :default
   picasa: 
