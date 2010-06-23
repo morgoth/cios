@@ -1,12 +1,6 @@
-- form_for @user_session, :url => user_session_path do |f|
-  = f.error_messages
-  %fieldset
-    %p
-      = f.label :login, "Login"
-      %br
-      = f.text_field :login
-    %p
-      = f.label :password, t('Password')
-      %br
-      = f.password_field :password
-    = f.submit "Login"
+= simple_form_for @user_session, :url => user_session_path do |f|
+  - if f.object.errors[:base].present?
+    %span.error= f.object.errors[:base].to_sentence
+  = f.input :login
+  = f.input :password
+  = f.button :submit, "Login"

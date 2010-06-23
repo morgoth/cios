@@ -1,0 +1,68 @@
+form.simple_form {
+  width: 500px;
+}
+
+form.simple_form div {
+  margin: 0.5em 0;
+  clear: both;
+}
+
+form.simple_form div label {
+  float: left;
+  width: 25%;
+}
+
+form.simple_form div input {
+  width: 70%;
+}
+
+form.simple_form div textarea {
+  width: 70%;
+}
+
+form.simple_form div input[type=checkbox] {
+  width: auto;
+}
+
+form.simple_form div select {
+  display: block;
+}
+
+form.simple_form input[type=submit] {
+  margin-left: 25%;
+  width: auto;
+}
+
+form.simple_form .formError, form.simple_form .error {
+  color: red;
+  margin-left: 25%;
+}
+
+form.simple_form .hint {
+  margin-left: 25%;
+  display: block;
+}
+
+form.simple_form div .error {
+  color: red;
+  margin-left: 25%;
+}
+
+form.simple_form label.check_boxes {
+  display: block;
+  float: none;
+}
+
+form.simple_form input.check_boxes {
+  margin-left: 25%;
+}
+
+form.simple_form label.collection_check_boxes {
+  float: right;
+  width: 72%;
+}
+
+form.simple_form select.date, form.simple_form select.time {
+  display: inline;
+  float: left;
+}

@@ -11,17 +11,8 @@
     %h2= t("Comments")+':'
     = render :partial => @post.comments.approved
 %h2= t('Add')+' '+t('comment')+':'
-- form_for Comment.new(:post => @post) do |f|
-  = f.error_messages
-  = f.hidden_field :post_id
-  %p
-    = f.label :name, t("Name")+':'
-    %br
-    = f.text_field :name
-  %p
-    = f.label :content, t("Content")+':'
-    %small=raw "#{t ('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/", :popup => true}"
-    %br
-    = f.text_area :content, :rows => 8
-  %p
-    = f.submit t("Add")
+= simple_form_for Comment.new(:post => @post) do |f|
+  = f.input :post_id, :as => :hidden
+  = f.input :name
+  = f.input :content, :hint => "#{t ('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/"}".html_safe
+  = f.button :submit, t("Add")

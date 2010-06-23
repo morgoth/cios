@@ -18,7 +18,7 @@ sources:
 - Git: 
     git: http://github.com/rails/rails.git
     uri: http://github.com/rails/rails.git
-    ref: 49f52c3d910c8f183afc3a54ea2ae9667f23085e
+    ref: 4a0a640d33e1c729d38c6091bb1394fbda059b5c
 - Rubygems: 
     uri: http://rubygems.org
 specs: 
@@ -96,7 +96,7 @@ specs:
 - factory_girl_rails: 
     version: "1.0"
 - haml: 
-    version: 3.0.12
+    version: 3.0.13
 - pg: 
     version: 0.9.0
 - xml-simple: 

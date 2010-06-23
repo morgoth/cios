@@ -1,13 +1,2 @@
 %h1= t('Editing')
-- form_for(@sponsor) do |f|
-  = f.error_messages
-  %p
-    = f.label :name, t('Name')
-    %br
-    = f.text_field :name
-  %p
-    = f.label :link
-    %br
-    = f.text_field :link, :size => 50
-  %p
-    = f.submit t("Update"), :class => "button"
+= render "form"
