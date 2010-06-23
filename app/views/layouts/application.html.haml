@@ -6,7 +6,7 @@
     %title KS „Cios Adamek”
     %link{:rel=>"shortcut icon", :href=>"/images/favicon.ico"}
     = stylesheet_link_tag "cios"
-    = javascript_include_tag 'jquery', 'jquery-ui','application'
+    = javascript_include_tag 'jquery', 'jquery-ui', 'rails', 'application'
     = auto_discovery_link_tag(:rss, posts_path(:rss))
   %body
     %div#header
@@ -47,17 +47,17 @@
                   %ul
                     - @sponsors.each do |sponsor|
                       %li
-                        = link_to_if sponsor.link?, "#{sponsor.name}", sponsor.link, :popup => true
+                        = link_to_if sponsor.link?, "#{sponsor.name}", sponsor.link
                 %li
                   %h2= t("Assistance")
                   %ul
-                    %li= link_to "Tomasz Adamek", "http://www.tomaszadamek.com.pl", :popup => true
-                    %li= link_to "Beskidek Gilowice", "http://www.beskidek-gilowice.pl/", :popup => true
-                    %li= link_to "Gmina Gilowice", "http://www.zywiecczyzna.pl/gilowice", :popup => true
-                    %li= link_to "Gimnazjum Gilowice", "http://www.gilowicegim.hostdmk.net/", :popup => true
+                    %li= link_to "Tomasz Adamek", "http://www.tomaszadamek.com.pl"
+                    %li= link_to "Beskidek Gilowice", "http://www.beskidek-gilowice.pl/"
+                    %li= link_to "Gmina Gilowice", "http://www.zywiecczyzna.pl/gilowice"
+                    %li= link_to "Gimnazjum Gilowice", "http://www.gilowicegim.hostdmk.net/"
             %div.clearb
     %div#footer
       %p
         &copy; 2010, KS „Cios Adamek”
         = "Design by"
-        = link_to "Free CSS Templates", "http://www.freecsstemplates.org", :popup => true
+        = link_to "Free CSS Templates", "http://www.freecsstemplates.org"
