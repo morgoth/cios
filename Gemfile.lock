@@ -1,6 +1,20 @@
 --- 
-hash: 7f7ddd22367bc7c14287a254888512ba06761c27
+hash: 01895fd750b5f97b6dda89c07ba248585d7148b0
 sources: 
+- Git: 
+    git: http://github.com/odorcicd/authlogic.git
+    branch: rails3
+    uri: http://github.com/odorcicd/authlogic.git
+    ref: a087ad0cba3c165ba22fcf176c28b6f7517931e8
+- Git: 
+    git: http://github.com/mislav/will_paginate.git
+    branch: rails3
+    uri: http://github.com/mislav/will_paginate.git
+    ref: 60aa1c7b2ef03ee7c7a5ed657efb479a69f7d128
+- Git: 
+    git: http://github.com/rails/rails.git
+    uri: http://github.com/rails/rails.git
+    ref: 49f52c3d910c8f183afc3a54ea2ae9667f23085e
 - Rubygems: 
     uri: http://rubygems.org
 specs: 
@@ -11,50 +25,90 @@ specs:
 - abstract: 
     version: 1.0.0
 - activesupport: 
-    version: 2.3.8
-- rack: 
-    version: 1.1.0
-- actionpack: 
-    version: 2.3.8
-- actionmailer: 
-    version: 2.3.8
-- activerecord: 
-    version: 2.3.8
-- activeresource: 
-    version: 2.3.8
-- acts-as-list: 
-    version: 0.1.2
-- authlogic: 
-    version: 2.1.5
-- crack: 
-    version: 0.1.6
-- httparty: 
-    version: 0.5.2
-- defensio: 
-    version: 0.9.1
+    version: 3.0.0.beta4
+    source: 2
+- builder: 
+    version: 2.1.2
+- i18n: 
+    version: 0.4.1
+- activemodel: 
+    version: 3.0.0.beta4
+    source: 2
 - erubis: 
     version: 2.6.5
+- rack: 
+    version: 1.1.0
+- rack-mount: 
+    version: 0.6.6
+- rack-test: 
+    version: 0.5.4
+- tzinfo: 
+    version: 0.3.22
+- actionpack: 
+    version: 3.0.0.beta4
+    source: 2
+- mime-types: 
+    version: "1.16"
+- polyglot: 
+    version: 0.3.1
+- treetop: 
+    version: 1.4.8
+- mail: 
+    version: 2.2.5
+- actionmailer: 
+    version: 3.0.0.beta4
+    source: 2
+- arel: 
+    version: 0.4.0
+- activerecord: 
+    version: 3.0.0.beta4
+    source: 2
+- activeresource: 
+    version: 3.0.0.beta4
+    source: 2
+- acts_as_list: 
+    version: 0.1.2
+- authlogic: 
+    version: 2.1.3
+    source: 0
+- bundler: 
+    version: 0.9.26
+- crack: 
+    version: 0.1.7
+- httparty: 
+    version: 0.6.0
+- defensio: 
+    version: 0.9.1
 - factory_girl: 
-    version: 1.2.4
+    version: 1.3.1
+- thor: 
+    version: 0.13.6
+- railties: 
+    version: 3.0.0.beta4
+    source: 2
+- rails: 
+    version: 3.0.0.beta4
+    source: 2
+- factory_girl_rails: 
+    version: "1.0"
 - haml: 
-    version: 3.0.6
+    version: 3.0.12
 - pg: 
     version: 0.9.0
 - xml-simple: 
     version: 1.0.12
 - picasa: 
     version: 0.2.1
-- rails: 
-    version: 2.3.8
-- shoulda: 
-    version: 2.10.3
 - sqlite3-ruby: 
-    version: 1.2.5
+    version: 1.3.0
+- test-unit: 
+    version: 2.0.9
 - will_paginate: 
-    version: 2.3.14
+    version: 3.0.pre
+    source: 1
 dependencies: 
   rails: 
-    version: = 2.3.8
+    version: ">= 0"
     group: 
     - :default
   sqlite3-ruby: 
@@ -63,21 +117,17 @@ dependencies:
     - :development
     - :test
     require: 
-    - :sqlite3
+    - sqlite3
   haml: 
     version: ">= 3.0.6"
     group: 
     - :default
-  erubis: 
+  will_paginate: 
     version: ">= 0"
     group: 
     - :default
-  will_paginate: 
-    version: ">= 2.3.14"
-    group: 
-    - :default
   authlogic: 
-    version: ">= 2.1.5"
+    version: ">= 0"
     group: 
     - :default
   picasa: 
@@ -90,12 +140,10 @@ dependencies:
     - :default
     require: 
     - xmlsimple
-  acts-as-list: 
+  acts_as_list: 
     version: ">= 0"
     group: 
     - :default
-    require: 
-    - acts_as_list
   RedCloth: 
     version: ">= 0"
     group: 
@@ -106,11 +154,13 @@ dependencies:
     version: ">= 0"
     group: 
     - :default
-  shoulda: 
-    version: ">= 0"
+  test-unit: 
+    version: ">= 2.0"
     group: 
     - :test
-  factory_girl: 
+    require: 
+    - test/unit
+  factory_girl_rails: 
     version: ">= 0"
     group: 
     - :test

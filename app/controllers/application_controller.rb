@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  filter_parameter_logging :password
   helper_method :current_user_session, :current_user
   before_filter :ensure_domain
   before_filter :sponsors_index, :set_locale

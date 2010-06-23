@@ -26,6 +26,6 @@ module ApplicationHelper
   end
 
   def markup(text)
-    textilize_without_paragraph(sanitize(text, :tags => [], :attributes => [])).html_safe
+    RedCloth.new(text, [:filter_html]).to_html.html_safe
   end
 end
