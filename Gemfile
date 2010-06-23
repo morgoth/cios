@@ -6,6 +6,7 @@ gem "sqlite3-ruby", :require => 'sqlite3', :group => [:development, :test]
 gem 'haml', ">=3.0.6"
 gem 'will_paginate', :git => "http://github.com/mislav/will_paginate.git", :branch => "rails3"
 gem "authlogic", :git => "http://github.com/odorcicd/authlogic.git", :branch => "rails3"
+gem "simple_form", ">= 1.2.0", :git => "http://github.com/plataformatec/simple_form.git"
 gem 'picasa', ">=0.1.9"
 gem 'xml-simple', :require => 'xmlsimple'
 gem 'acts_as_list'

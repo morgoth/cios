@@ -1,8 +1,5 @@
 require 'test_helper'
 
-class SponsoreTest < Test::Unit::TestCase
+class SponsoreTest < ActiveSupport::TestCase
 
-	should "be valid" do
-		
-	end
 end

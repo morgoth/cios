@@ -2,7 +2,7 @@ class Sponsor < ActiveRecord::Base
   acts_as_list
 
   validates_presence_of :name
-  default_scope :order => 'position'
+  default_scope order('position')
 
   before_validation :check_link
 

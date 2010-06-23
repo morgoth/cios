@@ -1,6 +1,10 @@
 --- 
-hash: 01895fd750b5f97b6dda89c07ba248585d7148b0
+hash: 74fb284b6f14a9f424f1da1fe3d19671165c83a7
 sources: 
+- Git: 
+    git: http://github.com/plataformatec/simple_form.git
+    uri: http://github.com/plataformatec/simple_form.git
+    ref: 366656c9aa8310141735d51e2110c7db1b97080a
 - Git: 
     git: http://github.com/odorcicd/authlogic.git
     branch: rails3
@@ -26,14 +30,14 @@ specs:
     version: 1.0.0
 - activesupport: 
     version: 3.0.0.beta4
-    source: 2
+    source: 3
 - builder: 
     version: 2.1.2
 - i18n: 
     version: 0.4.1
 - activemodel: 
     version: 3.0.0.beta4
-    source: 2
+    source: 3
 - erubis: 
     version: 2.6.5
 - rack: 
@@ -46,7 +50,7 @@ specs:
     version: 0.3.22
 - actionpack: 
     version: 3.0.0.beta4
-    source: 2
+    source: 3
 - mime-types: 
     version: "1.16"
 - polyglot: 
@@ -57,20 +61,20 @@ specs:
     version: 2.2.5
 - actionmailer: 
     version: 3.0.0.beta4
-    source: 2
+    source: 3
 - arel: 
     version: 0.4.0
 - activerecord: 
     version: 3.0.0.beta4
-    source: 2
+    source: 3
 - activeresource: 
     version: 3.0.0.beta4
-    source: 2
+    source: 3
 - acts_as_list: 
     version: 0.1.2
 - authlogic: 
     version: 2.1.3
-    source: 0
+    source: 1
 - bundler: 
     version: 0.9.26
 - crack: 
@@ -85,10 +89,10 @@ specs:
     version: 0.13.6
 - railties: 
     version: 3.0.0.beta4
-    source: 2
+    source: 3
 - rails: 
     version: 3.0.0.beta4
-    source: 2
+    source: 3
 - factory_girl_rails: 
     version: "1.0"
 - haml: 
@@ -99,13 +103,16 @@ specs:
     version: 1.0.12
 - picasa: 
     version: 0.2.1
+- simple_form: 
+    version: 1.2.0
+    source: 0
 - sqlite3-ruby: 
     version: 1.3.0
 - test-unit: 
     version: 2.0.9
 - will_paginate: 
     version: 3.0.pre
-    source: 1
+    source: 2
 dependencies: 
   rails: 
     version: ">= 0"
@@ -128,6 +135,10 @@ dependencies:
     - :default
   authlogic: 
     version: ">= 0"
+    group: 
+    - :default
+  simple_form: 
+    version: ">= 1.2.0"
     group: 
     - :default
   picasa: 

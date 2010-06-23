@@ -8,8 +8,8 @@ class Comment < ActiveRecord::Base
 
   attr_protected :approved
 
-  scope :approved, :conditions => { :approved => true }
-  scope :not_approved, :conditions => { :approved => false }
+  scope :approved, where(:approved => true)
+  scope :not_approved, where(:approved => false)
 
   def approve!
     update_state(true)
