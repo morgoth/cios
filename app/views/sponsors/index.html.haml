@@ -1,13 +1,14 @@
 %h1= t('Sponsors')
-%div.tip= t('sponsor_drag_tip')
-%ul.sponsors
+/*%div.tip= t('sponsor_drag_tip')
+/*%ul.sponsors
+%ul
   - @sponsors.each do |sponsor|
-    - content_tag_for :li, sponsor do
-      %span.handle [drag]
+    %li
+      /*%span.handle [drag]
       = sponsor.name
       - if current_user
         = link_to t("Edit"), edit_sponsor_path(sponsor)
         = " | "
-        = link_to t("Delete"), sponsor_path(sponsor), :method => :delete, :confirm => t("Are you sure?")
+        = link_to t("Delete"), sponsor_path(sponsor), :method => :delete
 %h1= t('New sponsor')
 = render "form"

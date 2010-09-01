@@ -12,8 +12,7 @@ class DefensioReportsController < ApplicationController
     else
       @comment.mark_as_spam!
     end
-    flash[:notice] = "Comment updated"
-    redirect_to defensio_reports_path
+    redirect_to defensio_reports_path, :notice => "Comment updated"
   end
 
   def update_multiple

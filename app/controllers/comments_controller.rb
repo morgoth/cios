@@ -29,8 +29,7 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if @comment.update_attributes(params[:comment])
-      flash[:notice] = t("comment_updated")
-      redirect_to @comment.post
+      redirect_to @comment.post, :notice => t("comment_updated")
     else
       render :edit
     end
@@ -39,7 +38,6 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
-    flash[:notice] = t("comment_destroyed")
-    redirect_to @comment.post
+    redirect_to @comment.post, :notice => t("comment_destroyed")
   end
 end

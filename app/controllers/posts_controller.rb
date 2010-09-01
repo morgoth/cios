@@ -24,8 +24,7 @@ class PostsController < ApplicationController
   def create
     @post = @current_user.posts.build(params[:post])
     if @post.save
-      flash[:notice] = t("post_created")
-      redirect_to @post
+      redirect_to @post, :notice => t("post_created")
     else
       render :new
     end
@@ -34,8 +33,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update_attributes(params[:post])
-      flash[:notice] = t("post_updated")
-      redirect_to @post
+      redirect_to @post, :notice => t("post_updated")
     else
       render :edit
     end
@@ -44,7 +42,6 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    flash[:notice] = t("post_destroyed")
-    redirect_to posts_path
+    redirect_to posts_path, :notice => t("post_destroyed")
   end
 end

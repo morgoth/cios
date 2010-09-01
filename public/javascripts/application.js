@@ -15,7 +15,7 @@ $(document).ready(
       });
     $("#new_comment").submitWithAjax();
   }
-  );
+);
 
 jQuery.fn.submitWithAjax = function() {
   this.submit(function() {

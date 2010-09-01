@@ -2,6 +2,6 @@
 
 # Your secret key for verifying the integrity of signed cookies.
 # If you change this key, all old signed cookies will become invalid!
-# Make sure the secret is at least 30 characters and all random, 
+# Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Rails.application.config.secret_token = '6d69b0211f3e8bd50ccea7b3afbe6c14fd07b7e57ad74f5678566750f9bd348dd23f07a35095153c2f9e10e5d96d5472087fb8082df6c56e35984b83d62ae988'
+Cios::Application.config.secret_token = 'fe32ab17f3d2351ddacfcd77172155d8cf1b59d4955189c253ace36e84c4e702cc08d03a5cd0bc4ec49499ea4af5f307ee47ce0156a0b749e044b0b7bc7afd01'

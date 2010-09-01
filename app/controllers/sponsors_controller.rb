@@ -14,8 +14,7 @@ class SponsorsController < ApplicationController
   def create
     @sponsor = Sponsor.new(params[:sponsor])
     if @sponsor.save
-      flash[:notice] = 'Sponsor was successfully created.'
-      redirect_to sponsors_path
+      redirect_to sponsors_path, :notice => 'Sponsor was successfully created.'
     else
       render :index
     end
@@ -24,8 +23,7 @@ class SponsorsController < ApplicationController
   def update
     @sponsor = Sponsor.find(params[:id])
     if @sponsor.update_attributes(params[:sponsor])
-      flash[:notice] = 'Sponsor was successfully updated.'
-      redirect_to sponsors_path
+      redirect_to sponsors_path, :notice => 'Sponsor was successfully updated.'
     else
       render :edit
     end

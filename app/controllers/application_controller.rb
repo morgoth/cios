@@ -1,7 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user_session, :current_user
-  before_filter :ensure_domain
   before_filter :sponsors_index, :set_locale
 
   private
@@ -41,11 +40,5 @@ class ApplicationController < ActionController::Base
   def set_locale
     cookies[:cios_locale] = params[:locale] if params[:locale]
     I18n.locale = params[:locale] || cookies[:cios_locale]
-  end
-
-  def ensure_domain
-    if Rails.env == 'production' and request.env['HTTP_HOST'] != 'kscios.pl'
-      redirect_to "http://kscios.pl"
-    end
   end
 end

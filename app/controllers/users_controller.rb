@@ -30,8 +30,7 @@ class UsersController < ApplicationController
   def update
     @user = @current_user
     if @user.update_attributes(params[:user])
-      flash[:notice] = "Account updated!"
-      redirect_to account_url
+      redirect_to account_url, :notice => "Account updated!"
     else
       render :edit
     end
@@ -42,7 +41,7 @@ class UsersController < ApplicationController
     if @user.destroy
       flash[:notice] = "User deleted"
     else
-      flash[:notice] = "Last user cannot be deleted"
+      flash[:alert] = "Last user cannot be deleted"
     end
     redirect_to users_path
   end
@@ -51,8 +50,7 @@ class UsersController < ApplicationController
 
   def account_owner
     unless @current_user == User.find(params[:id])
-      flash[:notice] = "You can't edit others profile"
-      redirect_to users_path
+      redirect_to users_path, :notice => "You can't edit others profile"
     end
   end
 end

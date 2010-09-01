@@ -10,7 +10,7 @@ module ApplicationHelper
   def flash_messages
     messages = ""
     flash.each do |key, msg|
-      messages <<  content_tag( :div, msg, :id => key)
+      messages <<  content_tag(:div, msg, :id => key)
     end
     messages.html_safe
   end
@@ -22,7 +22,7 @@ module ApplicationHelper
   end
 
   def current(lang)
-    {:controller=>controller.controller_name, :action => controller.action_name, :locale =>lang, :id=>params[:id]}
+    params.merge(:locale => lang)
   end
 
   def markup(text)
