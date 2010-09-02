@@ -7,9 +7,9 @@ $(document).ready(
   function()
   {
     $("input#user_session_login").focus();
-    $(".sponsors").sortable({
-        handle: '.handle',
-        update: function() {
+    $(".sponsors-sort").sortable({
+        handle: ".handle",
+        update: function(event, ui) {
           $.post('sponsors/sort', $(this).sortable('serialize'), null, "script");
         }
       });
