@@ -22,8 +22,7 @@ class ApplicationController < ActionController::Base
   def login_required
     unless current_user
       store_location
-      flash[:notice] = t("login_required")
-      redirect_to new_user_session_url
+      redirect_to new_user_session_url, :notice => t("login_required")
       return false
     end
   end
@@ -39,6 +38,6 @@ class ApplicationController < ActionController::Base
 
   def set_locale
     cookies[:cios_locale] = params[:locale] if params[:locale]
-    I18n.locale = params[:locale] || cookies[:cios_locale]
+    I18n.locale = params[:locale] || cookies[:cios_locale] || I18n.default_locale
   end
 end
