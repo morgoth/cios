@@ -54,8 +54,8 @@ pl:
 
   sponsor_name: "Nazwa"
   sponsor_drag_tip: "Ustal pozycję w jakiej mają być wyświetlani sponsorzy przeciągając ich w odpowiednie miejsce"
-  pagination_next: "Następne >>"
-  pagination_previous: "<< Poprzednie"
+  pagination_next: "Wcześniejsze >>"
+  pagination_previous: "<< Późniejsze"
 
   post_created: "Wiadomość została dodana"
   post_updated: "Wiadomość została zaktualizowana"
