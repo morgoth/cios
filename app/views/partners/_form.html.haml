@@ -1,0 +1,5 @@
+= simple_form_for(@partner || Partner.new) do |f|
+  = f.input :name
+  = f.input :kind, :collection => partner_kinds_collection
+  = f.input :link
+  = f.button :submit, t("Create"), :class => "button"

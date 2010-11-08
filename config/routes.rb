@@ -1,6 +1,7 @@
 Cios::Application.routes.draw do
-  resources :sponsors, :except => [:new] do
-    post :sort, :on => :collection
+  resources :partners, :except => [:new] do
+    put :up, :on => :member
+    put :down, :on => :member
   end
 
   resources :posts

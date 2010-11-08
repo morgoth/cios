@@ -419,3 +419,7 @@ img {
   font-size: 12px;
   list-style: square;
 }
+
+table.partners {
+  width: 100%;
+}

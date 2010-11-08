@@ -5,8 +5,9 @@ pl:
   Gallery: Galeria
   Assistance: Współpraca
   Sponsors: Sponsorzy
+  Partners: Partnerzy
   Bank account: Konto bankowe
-  Administer sponsors: Zarządzaj sponsorami
+  Administer partners: Zarządzaj partnerami
   Show profile: Pokaż profil
   Author: Autor
   Read more: Czytaj dalej
@@ -23,7 +24,7 @@ pl:
   Create: Stwórz
   Title: Tytuł
   New post: Nowa wiadomość
-  New sponsor: Nowy sponsor
+  New partner: Nowy partner
   Editing: Edycja
   Update: Aktualizuj
   Password: Hasło
@@ -52,8 +53,13 @@ pl:
   photo: "Zdjęcie"
   weight: "Kategoria wagowa"
 
-  sponsor_name: "Nazwa"
-  sponsor_drag_tip: "Ustal pozycję w jakiej mają być wyświetlani sponsorzy przeciągając ich w odpowiednie miejsce"
+  partner_name: "Nazwa"
+  partner_drag_tip: "Ustal pozycję w jakiej mają być wyświetlani partnerzy przeciągając ich w odpowiednie miejsce"
+  partner:
+    sponsor: "Sponsor"
+    assistance: "Współpraca"
+  partner_move_up: "W górę"
+  partner_move_down: "W dół"
   pagination_next: "Wcześniejsze >>"
   pagination_previous: "<< Późniejsze"
 

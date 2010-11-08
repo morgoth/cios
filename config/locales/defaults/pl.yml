@@ -158,6 +158,10 @@ pl:
         photo_url: "URL zdjęcia"
         active: "Aktywny?"
         about: "Informacje"
+      partner:
+        kind: "Rodzaj"
+        name: "Nazwa"
+        url: "URL"
 
   support:
     array:

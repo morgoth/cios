@@ -36,27 +36,25 @@
                     %li= link_to t('Gallery'), galleries_path
                     %li= link_to t('Contact'), contact_path
                     %li.last= link_to t('Bank account'), bank_account_path
-                    -if current_user
+                    - if current_user
                       %li= link_to "Logout #{current_user.login}", user_session_path, :method => :delete
                       %li= link_to t("Show profile"), user_path(current_user)
-                    -else
+                    - else
                       %li= link_to "Login", login_path
                 %li
                   %h2= t("Sponsors")
                   - if current_user
-                    = link_to t("Administer sponsors"), sponsors_path
+                    = link_to t("Administer partners"), partners_path
                   %ul
-                    - @sponsors.each do |sponsor|
+                    - @sponsor_partners.each do |partner|
                       %li
-                        = link_to_if sponsor.link?, "#{sponsor.name}", sponsor.link
+                        = link_to_if partner.link?, "#{partner.name}", partner.link
                 %li
                   %h2= t("Assistance")
                   %ul
-                    %li= link_to "Tomasz Adamek", "http://www.tomaszadamek.com.pl"
-                    %li= link_to "Żywiec Forum", "http://zywiecforum.pl/"
-                    %li= link_to "Beskidek Gilowice", "http://www.beskidek-gilowice.pl/"
-                    %li= link_to "Gmina Gilowice", "http://www.zywiecczyzna.pl/gilowice"
-                    %li= link_to "Gimnazjum Gilowice", "http://www.gilowicegim.hostdmk.net/"
+                    - @assistance_partners.each do |partner|
+                      %li
+                        = link_to_if partner.link?, "#{partner.name}", partner.link
             %div.clearb
     %div#footer
       %p

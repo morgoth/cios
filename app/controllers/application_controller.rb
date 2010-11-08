@@ -1,12 +1,13 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user_session, :current_user
-  before_filter :sponsors_index, :set_locale
+  before_filter :partners_index, :set_locale
 
   private
 
-  def sponsors_index
-    @sponsors = Sponsor.all
+  def partners_index
+    @sponsor_partners = Partner.sponsor.ordered
+    @assistance_partners = Partner.assistance.ordered
   end
 
   def current_user_session

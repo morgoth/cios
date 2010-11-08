@@ -12,6 +12,7 @@ en:
   New post: New post
   Content: Content
   Assistance: Assistance
+  Partners: Partners
   Author: Author
   You can use: You can use
   Title: Title
@@ -19,13 +20,14 @@ en:
   Account: Account
   Create account: Create account
   Login count: Login count
+  Partners: Partners
   Sponsors: Sponsors
   Edit account: Edit account
-  Administer sponsors: Administer sponsors
+  Administer partners: Administer partners
   Show profile: Show profile
   Delete: Delete
   Destroy: Destroy
-  New sponsor: New sponsor
+  New partner: New partner
   Password: Password
   Confirm password: Confirm password
   Create: Create
@@ -52,8 +54,13 @@ en:
   photo: Photo
   weight: Weight category
 
-  sponsor_name: Name
-  sponsor_drag_tip: Drag sponsors to correct place in the list
+  partner_name: Name
+  partner_drag_tip: Drag partners to correct place in the list
+  partner:
+    sponsor: "Sponsorship"
+    assistance: "Partnership"
+  partner_move_up: "Move up"
+  partner_move_down: "Move down"
   pagination_next: "Next >>"
   pagination_previous: "<< Previous"
 
