@@ -10,3 +10,5 @@
     = link_to t('Edit'), edit_comment_path(comment)
     = " | "
     = link_to t('Destroy'), comment, :confirm => t('Are you sure?'), :method => :delete
+    = " | "
+    = link_to t("mark_as_spam"), mark_as_spam_comment_path(comment), :method => :put

@@ -54,6 +54,8 @@ en:
   photo: Photo
   weight: Weight category
 
+  mark_as_spam: "Mark as spam"
+
   partner_name: Name
   partner_drag_tip: Drag partners to correct place in the list
   partner:
@@ -70,6 +72,7 @@ en:
   comment_created: "Comment created"
   comment_updated: "Comment updated"
   comment_destroyed: "Comment destroyed"
+  comment_marked_as_spam: "Comment marked as spam"
   login_successful: "Login successful"
   logout_successful: "Logout successful"
   boxer_created: Boxer created

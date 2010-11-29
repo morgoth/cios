@@ -1,12 +1,16 @@
 Cios::Application.routes.draw do
   resources :partners, :except => [:new] do
-    put :up, :on => :member
-    put :down, :on => :member
+    member do
+      put :up
+      put :down
+    end
   end
 
   resources :posts
   resources :galleries, :only => [:index, :show]
-  resources :comments, :except => [:show, :index, :new]
+  resources :comments, :except => [:show, :index, :new] do
+    put :mark_as_spam, :on => :member
+  end
   resource :user_session, :only => [:new, :create, :destroy]
   resources :users
   resource :account, :controller => "users"

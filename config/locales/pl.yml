@@ -53,6 +53,8 @@ pl:
   photo: "Zdjęcie"
   weight: "Kategoria wagowa"
 
+  mark_as_spam: "Oznacz jako spam"
+
   partner_name: "Nazwa"
   partner_drag_tip: "Ustal pozycję w jakiej mają być wyświetlani partnerzy przeciągając ich w odpowiednie miejsce"
   partner:
@@ -69,6 +71,7 @@ pl:
   comment_created: "Komentarz został dodany"
   comment_updated: "Komentarz został zaktualizowany"
   comment_destroyed: "Komentarz został usunięty"
+  comment_marked_as_spam: "Komentarz został oznaczony jako spam"
   login_successful: "Logowanie pomyślne"
   logout_successful: "Wylogowanie pomyślne"
   boxer_created: "Bokser został utworzony"

@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
-  before_filter :login_required, :only => [:destroy, :edit, :update]
+  before_filter :login_required, :only => [:destroy, :edit, :update, :mark_as_spam]
 
   def edit
-    @comment = Comment.find(params[:id])
+    comment
   end
 
   def create
@@ -27,17 +27,26 @@ class CommentsController < ApplicationController
   end
 
   def update
-    @comment = Comment.find(params[:id])
-    if @comment.update_attributes(params[:comment])
-      redirect_to @comment.post, :notice => t("comment_updated")
+    if comment.update_attributes(params[:comment])
+      redirect_to comment.post, :notice => t("comment_updated")
     else
       render :edit
     end
   end
 
+  def mark_as_spam
+    comment.mark_as_spam!
+    redirect_to comment.post, :notice => t("comment_marked_as_spam")
+  end
+
   def destroy
-    @comment = Comment.find(params[:id])
-    @comment.destroy
+    comment.destroy
     redirect_to @comment.post, :notice => t("comment_destroyed")
+  end
+
+  private
+
+  def comment
+    @comment ||= Comment.find(params[:id])
   end
 end
