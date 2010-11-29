@@ -6,11 +6,13 @@ Cios::Application.routes.draw do
     end
   end
 
-  resources :posts
-  resources :galleries, :only => [:index, :show]
-  resources :comments, :except => [:show, :index, :new] do
-    put :mark_as_spam, :on => :member
+  resources :posts do
+    resources :comments, :except => [:show, :index, :new] do
+      put :mark_as_spam, :on => :member
+    end
   end
+
+  resources :galleries, :only => [:index, :show]
   resource :user_session, :only => [:new, :create, :destroy]
   resources :users
   resource :account, :controller => "users"

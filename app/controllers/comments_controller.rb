@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = Comment.new(params[:comment])
+    @comment = post.comments.build(params[:comment])
     respond_to do |format|
       if @comment.save
         if @comment.approved?
@@ -16,11 +16,11 @@ class CommentsController < ApplicationController
           @status = 'spam'
           flash[:error] = t("spam_comment")
         end
-        format.html { redirect_to @comment.post }
+        format.html { redirect_to post }
         format.js
       else
         @status = 'not_saved'
-        format.html {  redirect_to @comment.post }
+        format.html { redirect_to post }
         format.js
       end
     end
@@ -28,7 +28,7 @@ class CommentsController < ApplicationController
 
   def update
     if comment.update_attributes(params[:comment])
-      redirect_to comment.post, :notice => t("comment_updated")
+      redirect_to post, :notice => t("comment_updated")
     else
       render :edit
     end
@@ -36,17 +36,21 @@ class CommentsController < ApplicationController
 
   def mark_as_spam
     comment.mark_as_spam!
-    redirect_to comment.post, :notice => t("comment_marked_as_spam")
+    redirect_to post, :notice => t("comment_marked_as_spam")
   end
 
   def destroy
     comment.destroy
-    redirect_to @comment.post, :notice => t("comment_destroyed")
+    redirect_to post, :notice => t("comment_destroyed")
   end
 
   private
 
+  def post
+    @post ||= Post.find(params[:post_id])
+  end
+
   def comment
-    @comment ||= Comment.find(params[:id])
+    @comment ||= post.comments.find(params[:id])
   end
 end

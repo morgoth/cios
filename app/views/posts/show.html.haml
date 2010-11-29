@@ -7,12 +7,11 @@
   = markup(@post.content)
 %br
 %div#comments
-  - unless @post.comments.approved.blank?
+  - if @post.comments.approved.present?
     %h2= t("Comments")+':'
     = render :partial => @post.comments.approved
 %h2= t('Add')+' '+t('comment')+':'
-= simple_form_for Comment.new(:post => @post) do |f|
-  = f.input :post_id, :as => :hidden
+= simple_form_for [@post, Comment.new] do |f|
   = f.input :name
   = f.input :content, :hint => "#{t ('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/"}".html_safe
   = f.button :submit, t("Add")

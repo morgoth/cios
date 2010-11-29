@@ -7,8 +7,8 @@
   = comment.name
   = comment.created_at.strftime("%d.%m.%y %H:%M")
   - if current_user
-    = link_to t('Edit'), edit_comment_path(comment)
+    = link_to t('Edit'), edit_post_comment_path(@post, comment)
     = " | "
-    = link_to t('Destroy'), comment, :confirm => t('Are you sure?'), :method => :delete
+    = link_to t('Destroy'), [@post, comment], :confirm => t('Are you sure?'), :method => :delete
     = " | "
-    = link_to t("mark_as_spam"), mark_as_spam_comment_path(comment), :method => :put
+    = link_to t("mark_as_spam"), mark_as_spam_post_comment_path(@post, comment), :method => :put
