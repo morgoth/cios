@@ -3,7 +3,7 @@
   = link_to t('New post'), new_post_path
 - @posts.each do |post|
   %hr
-  %h1.title= post.title
+  %h1.title= link_to post.title, post
   %div.byline
     = t('Author')+': '
     = post.user.login.capitalize if post.user
@@ -15,7 +15,7 @@
   %div.post
     = markup(post.content)
     %div.meta
-      = link_to t("Read more"), post_path( post )
+      = link_to t("Read more"), post
       = t('Comments')+': '
       = post.comments.approved.count
 = will_paginate @posts, :previous_label => t("pagination_previous"), :next_label => t("pagination_next")
