@@ -41,7 +41,10 @@ en:
   Photos: Photos
   Boxer: Boxer
   Boxers: Boxers
+  Coaches: Coaches
+  People: People
   New boxer: New boxer
+  New coach: New coach
   Confirm: Confirm
 
   first_name: First name
@@ -53,6 +56,9 @@ en:
   about: About
   photo: Photo
   weight: Weight category
+  contact: Contact
+
+  boxer_weight: "%{weight} kg"
 
   mark_as_spam: "Mark as spam"
 
@@ -78,5 +84,8 @@ en:
   boxer_created: Boxer created
   boxer_updated: Boxer updated
   boxer_destroyed: Boxer destroyed
+  coach_created: Coach created
+  coach_updated: Coach updated
+  coach_destroyed: Coach destroyed
   login_required: "You must be logged in to access this page"
   spam_comment: "Your comment looks like a spam"

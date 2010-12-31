@@ -1,15 +1,15 @@
-%h1.title=h @boxer.full_name
-%div.byline
-  - if @boxer.birth_date.present?
-    = t("birth_date") + ":"
-    = year_month_day(@boxer.birth_date)
-  - if @boxer.weight.present?
-    %br
-    = t("weight") + ":"
-    = @boxer.weight
-    = "kg"
-  - if @boxer.photo_url.present?
-    %div
-      = image_tag @boxer.photo_url, :alt => t("photo")
-%div.post
-  = markup(@boxer.about)
+.person
+  .photo
+    - if @boxer.photo_url.present?
+      = image_tag(@boxer.photo_url)
+  .info
+    %h2= @boxer.full_name
+    %dl
+      - if @boxer.birth_date
+        %dt= t("birth_date")
+        %dd= year_month_day(@boxer.birth_date)
+      - if @boxer.weight
+        %dt= t("weight")
+        %dd= t("boxer_weight", :weight => @boxer.weight)
+  .about
+    = markup(@boxer.about)

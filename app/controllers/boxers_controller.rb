@@ -16,7 +16,7 @@ class BoxersController < ApplicationController
   def create
     @boxer = Boxer.new(params[:boxer])
     if @boxer.save
-      redirect_to boxers_path, :notice => t("boxer_created")
+      redirect_to people_path, :notice => t("boxer_created")
     else
       render :new
     end
@@ -25,7 +25,7 @@ class BoxersController < ApplicationController
   def update
     @boxer = Boxer.find(params[:id])
     if @boxer.update_attributes(params[:boxer])
-      redirect_to boxers_path, :notice => t("boxer_updated")
+      redirect_to people_path, :notice => t("boxer_updated")
     else
       render :edit
     end
@@ -38,6 +38,6 @@ class BoxersController < ApplicationController
   def destroy
     @boxer = Boxer.find(params[:id])
     @boxer.destroy
-    redirect_to boxers_path, :notice => t("boxer_destroyed")
+    redirect_to people_path, :notice => t("boxer_destroyed")
   end
 end

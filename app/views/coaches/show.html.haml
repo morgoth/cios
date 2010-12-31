@@ -1,0 +1,12 @@
+.person
+  .photo
+    - if @coach.photo_url.present?
+      = image_tag(@coach.photo_url)
+  .info
+    %h2= @coach.full_name
+    %dl
+      - if @coach.contact
+        %dt= t("contact")
+        %dd= @coach.contact
+  .about
+    = markup(@coach.about)

@@ -1,0 +1,7 @@
+= simple_form_for @coach do |f|
+  = f.input :first_name
+  = f.input :last_name
+  = f.input :contact
+  = f.input :photo_url
+  = f.input :about, :hint => "#{t('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/"}".html_safe
+  = f.button :submit

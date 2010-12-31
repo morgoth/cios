@@ -10,19 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101108181944) do
-
-  create_table "boxers", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.boolean  "active"
-    t.text     "about"
-    t.date     "birth_date"
-    t.string   "photo_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "weight"
-  end
+ActiveRecord::Schema.define(:version => 20101231151746) do
 
   create_table "comments", :force => true do |t|
     t.string   "name"
@@ -50,6 +38,20 @@ ActiveRecord::Schema.define(:version => 20101108181944) do
     t.datetime "updated_at"
     t.integer  "position"
     t.string   "kind"
+  end
+
+  create_table "people", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.boolean  "active"
+    t.text     "about"
+    t.date     "birth_date"
+    t.string   "photo_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "weight"
+    t.string   "type"
+    t.string   "contact"
   end
 
   create_table "posts", :force => true do |t|

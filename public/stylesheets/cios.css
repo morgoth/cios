@@ -406,3 +406,35 @@ img {
 table.partners {
   width: 100%;
 }
+
+.person {
+  min-height: 300px;
+  padding: 10px
+}
+
+.person h2 {
+  margin: 0;
+}
+.person .photo {
+  width: 30%;
+  float: left;
+}
+
+.person .photo img {
+  padding: 0
+}
+
+.person .info dt {
+  width: 30%;
+  float: left;
+}
+
+.person .info dt, .person .info dd {
+  padding: 5px 0;
+}
+
+.person .about {
+  clear: both;
+  padding: 10px 0;
+  line-height: 150%;
+}

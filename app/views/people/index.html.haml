@@ -1,0 +1,25 @@
+%h1= t("Coaches")
+- if current_user
+  %p
+    = link_to t('New coach'), new_coach_path
+%ul
+  - @coaches.each do |coach|
+    %li
+      = link_to coach.full_name, coach_path(coach)
+      - if current_user
+        = link_to t('Edit'), edit_coach_path(coach)
+        = " | "
+        = link_to t("Delete"), coach, :confirm => t("Are you sure?"), :method => :delete
+
+%h1= t("Boxers")
+- if current_user
+  %p
+    = link_to t('New boxer'), new_boxer_path
+%ul
+  - @boxers.each do |boxer|
+    %li
+      = link_to boxer.full_name, boxer_path(boxer)
+      - if current_user
+        = link_to t('Edit'), edit_boxer_path(boxer)
+        = " | "
+        = link_to t("Delete"), boxer, :confirm => t("Are you sure?"), :method => :delete

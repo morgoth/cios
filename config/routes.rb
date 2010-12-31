@@ -16,7 +16,9 @@ Cios::Application.routes.draw do
   resource :user_session, :only => [:new, :create, :destroy]
   resources :users
   resource :account, :controller => "users"
+  resources :people, :only => [:index]
   resources :boxers
+  resources :coaches
   resources :defensio_reports do
     post :update_multiple, :on => :collection
   end

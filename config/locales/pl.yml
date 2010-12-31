@@ -40,7 +40,10 @@ pl:
   Photos: Zdjęć
   Boxer: Zawodnik
   Boxers: "Zawodnicy"
+  Coaches: "Trenerzy"
+  People: "Kadra"
   New boxer: "Dodaj boksera"
+  New coach: "Dodaj trenera"
   Confirm: "Potwierdź"
 
   first_name: "Imię"
@@ -52,6 +55,9 @@ pl:
   about: Informacje
   photo: "Zdjęcie"
   weight: "Kategoria wagowa"
+  contact: "Kontakt"
+
+  boxer_weight: "%{weight} kg"
 
   mark_as_spam: "Oznacz jako spam"
 
@@ -77,5 +83,8 @@ pl:
   boxer_created: "Bokser został utworzony"
   boxer_updated: "Bokser został zaktualizowany"
   boxer_destroyed: "Bokser został usunięty"
+  coach_created: "Trener został utworzony"
+  coach_updated: "Trener został zaktualizowany"
+  coach_destroyed: "Trener został usunięty"
   login_required: "Musisz być zalogowany aby obejrzeć tę stronę"
   spam_comment: "Twój komentarz został zaklasyfikowany jako spam"
