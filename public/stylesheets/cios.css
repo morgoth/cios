@@ -420,8 +420,9 @@ table.partners {
   float: left;
 }
 
-.person .photo img {
-  padding: 0
+#content .person .photo img {
+  padding: 0;
+  max-width: 130px;
 }
 
 .person .info dt {
