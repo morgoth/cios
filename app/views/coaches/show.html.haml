@@ -5,6 +5,10 @@
   .info
     %h2= @coach.full_name
     %dl
+      - if @coach.function
+        %dt= t("function")
+        %dd= @coach.function
+    %dl
       - if @coach.contact
         %dt= t("contact")
         %dd= @coach.contact

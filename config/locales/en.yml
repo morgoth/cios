@@ -57,6 +57,7 @@ en:
   photo: Photo
   weight: Weight category
   contact: Contact
+  function: Function
 
   boxer_weight: "%{weight} kg"
 

@@ -1,3 +1,3 @@
 class Coach < Person
-  default_scope order("last_name, first_name")
+  default_scope order("created_at ASC")
 end
