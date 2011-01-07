@@ -5,11 +5,11 @@
   .info
     %h2= @coach.full_name
     %dl
-      - if @coach.function
+      - if @coach.function.present?
         %dt= t("function")
         %dd= @coach.function
     %dl
-      - if @coach.contact
+      - if @coach.contact.present?
         %dt= t("contact")
         %dd= @coach.contact
   .about

@@ -5,10 +5,10 @@
   .info
     %h2= @boxer.full_name
     %dl
-      - if @boxer.birth_date
+      - if @boxer.birth_date.present?
         %dt= t("birth_date")
         %dd= year_month_day(@boxer.birth_date)
-      - if @boxer.weight
+      - if @boxer.weight.present?
         %dt= t("weight")
         %dd= t("boxer_weight", :weight => @boxer.weight)
   .about
