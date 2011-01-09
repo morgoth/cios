@@ -1,0 +1,38 @@
+form.simple_form
+  width: 500px
+  div
+    margin: 0.5em 0
+    clear: both
+    label
+      float: left
+      width: 25%
+    input, textarea
+      width: 70%
+    input[type=checkbox]
+      width: auto
+    select
+      display: block
+  input[type=submit]
+    margin-left: 25%
+    width: auto
+  .formError, .error
+    color: red
+    margin-left: 25%
+  .hint
+    margin-left: 25%
+    display: block
+  div .error
+    color: red
+    margin-left: 25%
+  label.check_boxes
+    display: block
+    float: none
+  input.check_boxes
+    margin-left: 25%
+  label.collection_check_boxes
+    float: right
+    width: 72%
+  select
+    &.date, &.time
+      display: inline
+      float: left
