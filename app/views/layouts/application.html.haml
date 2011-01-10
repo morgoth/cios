@@ -10,15 +10,15 @@
     = csrf_meta_tag
     = auto_discovery_link_tag(:rss, posts_path(:rss))
   %body
-    #header
-      %h1= link_to "KS „Cios Adamek”", root_path
-      #links
-        - if I18n.locale.to_sym == :en
-          = link_to image_tag( "/images/pl.gif"), current(:pl)
-        - else
-          = link_to image_tag( "/images/en.gif"), current(:en)
-    #banner
-    #wrapper
+    #container
+      #header
+        %h1= link_to "KS „Cios Adamek”", root_path
+        #links
+          - if I18n.locale.to_sym == :en
+            = link_to image_tag( "/images/pl.gif"), current(:pl)
+          - else
+            = link_to image_tag( "/images/en.gif"), current(:en)
+      #banner
       #page
         #content
           = flash_messages
@@ -27,12 +27,12 @@
           %ul
             %li
               %h2= 'Menu'
-              %ul
+              %ul#menu
                 %li= link_to t("News"), posts_path
                 %li= link_to t("People"), people_path
                 %li= link_to t("Trainings"), trainings_path
                 %li= link_to t('Gallery'), galleries_path
-                %li.last= link_to t('Contact'), contact_path
+                %li= link_to t('Contact'), contact_path
                 - if current_user
                   %li= link_to "Logout #{current_user.login}", user_session_path, :method => :delete
                   %li= link_to t("Show profile"), user_path(current_user)

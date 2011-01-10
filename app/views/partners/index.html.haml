@@ -10,8 +10,8 @@
       %td= partner.position
       %td= partner.name
       %td= t("partner.#{partner.kind}")
-      %td= link_to t("partner_move_up"), up_partner_path(partner), :method => :put
-      %td= link_to t("partner_move_down"), down_partner_path(partner), :method => :put
+      %td= link_to_unless partner.first?, t("partner_move_up"), up_partner_path(partner), :method => :put
+      %td= link_to_unless partner.last?, t("partner_move_down"), down_partner_path(partner), :method => :put
       %td= link_to t("Edit"), edit_partner_path(partner)
       %td= link_to t("Delete"), partner_path(partner), :method => :delete
 
