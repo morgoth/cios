@@ -3,19 +3,19 @@ jQuery.ajaxSetup({
   'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
 })
 
-$(document).ready(
-  function()
-  {
+jQuery(function($) {
     $("input#user_session_login").focus();
-    $(".sponsors-sort").sortable({
-        handle: ".handle",
-        update: function(event, ui) {
-          $.post('sponsors/sort', $(this).sortable('serialize'), null, "script");
-        }
-      });
+
     $("#new_comment").submitWithAjax();
-  }
-);
+
+    // opening links in separate window
+    $("a[data-popup=true]").each(function(i, element) {
+        $(element).click(function (event) {
+            window.open(element.href);
+            event.preventDefault();
+        });
+    });
+});
 
 jQuery.fn.submitWithAjax = function() {
   this.submit(function() {
