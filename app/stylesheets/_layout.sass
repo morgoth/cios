@@ -12,9 +12,9 @@ h1, h2, h3
   font-family: Georgia, "Times New Roman", Times, serif
   font-weight: normal
   color: #FFB300
+  margin: 0
 
 h1
-  letter-spacing: -1px
   font-size: 3em
 
 h2
@@ -47,8 +47,6 @@ img
 #container
   +container
 
-/* Header
-
 .clearb
   clear: both
 
@@ -59,27 +57,31 @@ img
   margin-bottom: 10px
   padding: 0
   font-family: "Trebuchet MS", "Times New Roman", Arial, Times, serif
-  h1, p
-    margin: 0
-  h1 a
-    float: left
-    color: #FFFFFF
-    font-size: 36px
-  p
-    float: left
-    padding: 17px 0 0 10px
-    font-size: 12px
-    font-weight: bold
+  color: white
   a
     text-decoration: none
-    color: #F79F1A
+
+  h1 a
+    float: left
+    font-size: 36px
+
+    &:hover
+      color: white
+
   #links
+    text-align: right
     float: right
-    font-size: 10px
+    font-size: x-small
     img
       background: none
       border: none
       padding: 5px
+    .session
+      display: block
+      padding-right: 5px
+      .account
+        padding-right: 5px
+        border-right: 1px solid white
 
 #banner
   margin: 0 auto
@@ -91,8 +93,6 @@ img
   background: url('/images/banner.jpg') no-repeat left top
   +border-radius(10px)
 
-/* Page
-
 #page
   width: 792px
   margin: 0 auto
@@ -100,8 +100,6 @@ img
   border: 4px solid white
   +border-radius(10px)
   background: url('/images/wrapper.jpg') repeat-y left top
-
-/* Content
 
 #content
   float: right
@@ -178,8 +176,6 @@ img
   font-family: Georgia, "Times New Roman", Times, serif
   font-size: 14px
 
-/* Sidebar
-
 #sidebar
   float: left
   width: 196px
@@ -201,9 +197,6 @@ img
       background: url('/images/li.gif') no-repeat left 50%
       line-height: 25px
 
-  ul#menu
-    li:last-child
-      margin-top: 15px
   h2
     margin: 0
     height: 35px
@@ -219,8 +212,6 @@ img
 
 #gallery li
   margin-bottom: 10px
-
-/* Footer
 
 #footer
   width: 792px
@@ -251,32 +242,6 @@ img
   background-color: #ff9394
   border: 1px solid #ff0f11
   text-align: center
-
-.fieldWithErrors
-  color: #ff3c00
-
-#errorExplanation
-  width: 400px
-  border: 2px solid #ff3c00
-  padding: 7px
-  padding-bottom: 8px
-  margin-bottom: 20px
-  background-color: #2E2200
-  h2
-    text-align: left
-    font-weight: bold
-    padding: 5px 5px 5px 15px
-    font-size: 12px
-    margin: -7px
-    background-color: #c00
-    color: white
-  p
-    color: white
-    margin-bottom: 0
-    padding: 5px
-  ul li
-    font-size: 12px
-    list-style: square
 
 table.partners
   width: 100%

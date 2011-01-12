@@ -15,9 +15,15 @@
         %h1= link_to "KS „Cios Adamek”", root_path
         #links
           - if I18n.locale.to_sym == :en
-            = link_to image_tag( "/images/pl.gif"), current(:pl)
+            = link_to image_tag("/images/pl.gif"), current(:pl)
           - else
-            = link_to image_tag( "/images/en.gif"), current(:en)
+            = link_to image_tag("/images/en.gif"), current(:en)
+          .session
+            - if current_user
+              = link_to t("Account"), user_path(current_user), :class => "account"
+              = link_to "Logout #{current_user.login}", user_session_path, :method => :delete
+            - else
+              = link_to "Login", login_path
       #banner
       #page
         #content
@@ -33,11 +39,6 @@
                 %li= link_to t("Trainings"), trainings_path
                 %li= link_to t('Gallery'), galleries_path
                 %li= link_to t('Contact'), contact_path
-                - if current_user
-                  %li= link_to "Logout #{current_user.login}", user_session_path, :method => :delete
-                  %li= link_to t("Show profile"), user_path(current_user)
-                - else
-                  %li= link_to "Login", login_path
             %li
               %h2= t("Sponsors")
               - if current_user
