@@ -1,9 +1,7 @@
 Cios::Application.routes.draw do
   resources :partners, :except => [:new] do
-    member do
-      put :up
-      put :down
-    end
+    put :up, :on => :member
+    put :down, :on => :member
   end
 
   resources :posts do
@@ -19,7 +17,7 @@ Cios::Application.routes.draw do
   resources :people, :only => [:index]
   resources :boxers
   resources :coaches
-  resources :defensio_reports do
+  resources :spam_reports do
     post :update_multiple, :on => :collection
   end
 

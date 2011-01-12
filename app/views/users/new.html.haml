@@ -1,3 +1,3 @@
-= form_for @user, :url => account_path do |f|
-  = render :partial => 'form', :locals => { :f => f }
-  = submit_tag t('Create account')
+= simple_form_for @user, :url => account_path do |f|
+  = render "form", :f => f
+  = f.button :submit, t('Create account')

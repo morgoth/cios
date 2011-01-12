@@ -18,8 +18,9 @@
             = link_to image_tag("/images/pl.gif"), current(:pl)
           - else
             = link_to image_tag("/images/en.gif"), current(:en)
-          .session
+          #admin
             - if current_user
+              = link_to "Spam", spam_reports_path
               = link_to t("Account"), user_path(current_user), :class => "account"
               = link_to "Logout #{current_user.login}", user_session_path, :method => :delete
             - else

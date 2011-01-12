@@ -1,4 +1,4 @@
-class DefensioReportsController < ApplicationController
+class SpamReportsController < ApplicationController
   before_filter :login_required
 
   def index
@@ -12,7 +12,7 @@ class DefensioReportsController < ApplicationController
     else
       @comment.mark_as_spam!
     end
-    redirect_to defensio_reports_path, :notice => "Comment updated"
+    redirect_to spam_reports_path, :notice => "Comment updated"
   end
 
   def update_multiple
@@ -25,6 +25,6 @@ class DefensioReportsController < ApplicationController
       @comments.each { |c| c.destroy }
       flash[:notice] = "Comments destroyed"
     end
-    redirect_to defensio_reports_path
+    redirect_to spam_reports_path
   end
 end
