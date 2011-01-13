@@ -69,8 +69,8 @@ pl:
     assistance: "Współpraca"
   partner_move_up: "W górę"
   partner_move_down: "W dół"
-  pagination_next: "Wcześniejsze >>"
-  pagination_previous: "<< Późniejsze"
+  pagination_next: "Wcześniejsze &gt;&gt;"
+  pagination_previous: "&lt;&lt; Późniejsze"
 
   post_created: "Wiadomość została dodana"
   post_updated: "Wiadomość została zaktualizowana"

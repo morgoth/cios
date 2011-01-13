@@ -70,8 +70,8 @@ en:
     assistance: "Partnership"
   partner_move_up: "Move up"
   partner_move_down: "Move down"
-  pagination_next: "Next >>"
-  pagination_previous: "<< Previous"
+  pagination_next: "Next &gt;&gt;"
+  pagination_previous: "&lt;&lt; Previous"
 
   post_created: "Post created"
   post_updated: "Post updated"
