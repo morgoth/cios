@@ -11,7 +11,7 @@ gem "RedCloth", :require => "redcloth"
 gem "defensio"
 gem "compass"
 
-gem "sqlite3-ruby", :require => "sqlite3", :group => [:development, :test]
+gem "sqlite3", :group => [:development, :test]
 
 group :test do
   gem "test-unit", ">=2.0", :require => "test/unit"

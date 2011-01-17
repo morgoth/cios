@@ -3,7 +3,7 @@
   %head
     %meta{:name => "keywords", :content => "cios, tomasz adamek, boks, gilowice, klub sportowy, trening, boxing"}
     %meta{:name => "description", :content => "KS Cios Adamek - Klub bokserski w Gilowicach. Zapraszamy na treningi"}
-    %title KS „Cios Adamek”
+    %title KS „Cios-Adamek” Gilowice
     = stylesheet_link_tag "compiled/screen"
     = javascript_include_tag :defaults
     = csrf_meta_tag
@@ -13,7 +13,7 @@
   %body
     #container
       #header
-        %h1= link_to "KS „Cios Adamek”", root_path
+        %h1= link_to "KS „Cios-Adamek” Gilowice", root_path
         #links
           - if I18n.locale.to_sym == :en
             = link_to image_tag("/images/pl.gif"), current(:pl)
