@@ -20,15 +20,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = @current_user
+    @user = current_user
   end
 
   def edit
-    @user = @current_user
+    @user = current_user
   end
 
   def update
-    @user = @current_user
+    @user = current_user
     if @user.update_attributes(params[:user])
       redirect_to account_url, :notice => "Account updated!"
     else
@@ -49,7 +49,7 @@ class UsersController < ApplicationController
   private
 
   def account_owner
-    unless @current_user == User.find(params[:id])
+    unless current_user == User.find(params[:id])
       redirect_to users_path, :notice => "You can't edit others profile"
     end
   end

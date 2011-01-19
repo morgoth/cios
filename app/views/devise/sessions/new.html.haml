@@ -1,0 +1,6 @@
+= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
+  = f.input :login, :label => "Login/Email"
+  = f.input :password
+  = f.input :remember_me, :as => :boolean
+  = f.button :submit, "Log in"
+= render :partial => "devise/shared/links"

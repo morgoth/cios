@@ -1,7 +1,9 @@
 %dl
   %dt Login
   %dd= user.login
+  %dt Email
+  %dd= user.email
   %dt= t('Login count')
-  %dd= user.login_count
+  %dd= user.sign_in_count
   %dt= t('Last login at')
-  %dd= user.last_login_at.strftime("%d.%m.%y %H:%M") if user.last_login_at
+  %dd= user.last_sign_in_at.strftime("%d.%m.%y %H:%M") if user.last_sign_in_at

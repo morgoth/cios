@@ -10,75 +10,74 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110107161947) do
+ActiveRecord::Schema.define(:version => 20110119164506) do
 
   create_table "comments", :force => true do |t|
-    t.string   "name"
-    t.text     "content"
-    t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.boolean  "approved"
+    t.string    "name"
+    t.text      "content"
+    t.integer   "post_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.boolean   "approved"
   end
 
   create_table "defensio_reports", :force => true do |t|
-    t.integer  "comment_id"
-    t.string   "signature"
-    t.boolean  "allow"
-    t.boolean  "profanity_match"
-    t.float    "spaminnes"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer   "comment_id"
+    t.string    "signature"
+    t.boolean   "allow"
+    t.boolean   "profanity_match"
+    t.float     "spaminess"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "partners", :force => true do |t|
-    t.string   "name"
-    t.string   "link"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "position"
-    t.string   "kind"
+    t.string    "name"
+    t.string    "link"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "position"
+    t.string    "kind"
   end
 
   create_table "people", :force => true do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.boolean  "active"
-    t.text     "about"
-    t.date     "birth_date"
-    t.string   "photo_url"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "weight"
-    t.string   "type"
-    t.string   "contact"
-    t.string   "function"
+    t.string    "first_name"
+    t.string    "last_name"
+    t.boolean   "active"
+    t.text      "about"
+    t.date      "birth_date"
+    t.string    "photo_url"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.integer   "weight"
+    t.string    "type"
+    t.string    "contact"
+    t.string    "function"
   end
 
   create_table "posts", :force => true do |t|
-    t.string   "title"
-    t.text     "content"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.string    "title"
+    t.text      "content"
+    t.integer   "user_id"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
   end
 
   create_table "users", :force => true do |t|
-    t.string   "login",                              :null => false
-    t.string   "crypted_password",                   :null => false
-    t.string   "password_salt",                      :null => false
-    t.string   "persistence_token",                  :null => false
-    t.string   "single_access_token",                :null => false
-    t.string   "perishable_token",                   :null => false
-    t.integer  "login_count",         :default => 0, :null => false
-    t.integer  "failed_login_count",  :default => 0, :null => false
-    t.datetime "last_request_at"
-    t.datetime "current_login_at"
-    t.datetime "last_login_at"
-    t.string   "current_login_ip"
-    t.string   "last_login_ip"
+    t.string   "login",                               :null => false
+    t.string   "encrypted_password",                  :null => false
+    t.string   "password_salt",                       :null => false
+    t.integer  "sign_in_count",        :default => 0, :null => false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "reset_password_token"
+    t.string   "remember_token"
+    t.string   "email"
+    t.datetime "remember_created_at"
   end
 
 end

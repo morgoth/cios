@@ -23,9 +23,9 @@
             - if current_user
               = link_to "Spam", spam_reports_path
               = link_to t("Account"), user_path(current_user), :class => "account"
-              = link_to "Logout #{current_user.login}", user_session_path, :method => :delete
+              = link_to "Logout #{current_user.login}", destroy_user_session_path#, :method => :delete
             - else
-              = link_to "Login", login_path
+              = link_to "Login", new_user_session_path
       #banner
       #page
         #content

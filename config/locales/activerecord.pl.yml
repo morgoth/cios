@@ -54,6 +54,7 @@ pl:
         password: "Hasło"
         password_confirmation: "Potwierdzenie hasła"
         login: "Login"
+        remember_me: "Pamiętaj mnie"
       person:
         full_name: "Imię i nazwisko"
         first_name: "Imię"

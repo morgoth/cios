@@ -1,4 +1,6 @@
 Cios::Application.routes.draw do
+  devise_for :users
+
   resources :partners, :except => [:new] do
     put :up, :on => :member
     put :down, :on => :member
@@ -11,7 +13,6 @@ Cios::Application.routes.draw do
   end
 
   resources :galleries, :only => [:index, :show]
-  resource :user_session, :only => [:new, :create, :destroy]
   resources :users
   resource :account, :controller => "users"
   resources :people, :only => [:index]
@@ -20,9 +21,6 @@ Cios::Application.routes.draw do
   resources :spam_reports do
     post :update_multiple, :on => :collection
   end
-
-  match "login", :to => "user_sessions#new"
-  match "logout", :to => "user_sessions#destroy"
 
   match "contact", :to => "static#contact"
   match "trainings", :to => "static#trainings"
