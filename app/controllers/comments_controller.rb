@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_filter :login_required, :only => [:destroy, :edit, :update, :mark_as_spam]
+  before_filter :authenticate_user!, :only => [:destroy, :edit, :update, :mark_as_spam]
 
   def edit
     comment

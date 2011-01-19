@@ -1,5 +1,5 @@
 class CoachesController < ApplicationController
-  before_filter :login_required, :except => [:show]
+  before_filter :authenticate_user!, :except => [:show]
 
   def new
     @coach = Coach.new

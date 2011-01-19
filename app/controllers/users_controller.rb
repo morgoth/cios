@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_filter :login_required
+  before_filter :authenticate_user!
   before_filter :account_owner, :only => [:edit, :update]
 
   def index

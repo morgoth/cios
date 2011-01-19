@@ -9,8 +9,6 @@ class ApplicationController < ActionController::Base
     @assistance_partners = Partner.assistance.ordered
   end
 
-  alias_method :login_required, :authenticate_user!
-
   def set_locale
     cookies[:cios_locale] = params[:locale] if params[:locale]
     I18n.locale = params[:locale] || cookies[:cios_locale] || I18n.default_locale

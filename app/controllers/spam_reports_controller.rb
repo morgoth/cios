@@ -1,5 +1,5 @@
 class SpamReportsController < ApplicationController
-  before_filter :login_required
+  before_filter :authenticate_user!
 
   def index
     @comments = Comment.not_approved.all(:include => :defensio_report)
