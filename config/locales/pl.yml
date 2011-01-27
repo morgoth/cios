@@ -58,6 +58,10 @@ pl:
   contact: "Kontakt"
   function: "Funkcja"
 
+  forgot_password: "Zapomniałeś hasła?"
+  send_reset_password_instructions: "Wyślij instrukcje do resetowania hasła"
+  change_password: "Zmień hasło"
+
   boxer_weight: "%{weight} kg"
 
   mark_as_spam: "Oznacz jako spam"

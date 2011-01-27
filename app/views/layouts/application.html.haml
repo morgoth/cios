@@ -48,13 +48,13 @@
               %ul
                 - @sponsor_partners.each do |partner|
                   %li
-                    = link_to_if partner.link?, partner.name, partner.link
+                    = link_to_if partner.link?, partner.name, partner.link, :"data-popup" => true
             %li
               %h2= t("Assistance")
               %ul
                 - @assistance_partners.each do |partner|
                   %li
-                    = link_to_if partner.link?, partner.name, partner.link
+                    = link_to_if partner.link?, partner.name, partner.link, :"data-popup" => true
         .clearb
     #footer
       %p

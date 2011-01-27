@@ -22,9 +22,9 @@ Cios::Application.routes.draw do
     post :update_multiple, :on => :collection
   end
 
-  match "contact", :to => "static#contact"
-  match "trainings", :to => "static#trainings"
-  match "bank_account", :to => "static#bank_account"
+  get "contact", :to => "static#contact"
+  get "trainings", :to => "static#trainings"
+  get "bank_account", :to => "static#bank_account"
 
   root :to => "posts#index"
 end
