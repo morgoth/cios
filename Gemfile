@@ -1,6 +1,6 @@
 source :rubygems
 
-gem "rails", ">=3.0.4.rc1"
+gem "rails"
 gem "haml", ">=3.0.6"
 gem "will_paginate", ">= 3.0.pre2"
 gem "devise"
