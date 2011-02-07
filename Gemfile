@@ -1,8 +1,8 @@
 source :rubygems
 
-gem "rails", ">=3.0.0"
+gem "rails", ">=3.0.4.rc1"
 gem "haml", ">=3.0.6"
-gem "will_paginate", :git => "http://github.com/mislav/will_paginate.git", :branch => "rails3"
+gem "will_paginate", ">= 3.0.pre2"
 gem "devise"
 gem "simple_form", ">= 1.2.0"
 gem "picasa", ">=0.1.9"
