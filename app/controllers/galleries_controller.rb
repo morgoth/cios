@@ -1,10 +1,11 @@
 class GalleriesController < ApplicationController
+  respond_to :html
 
   def index
-    @albums = Picasa.albums
+    respond_with @albums = Picasa.albums
   end
 
   def show
-    @album = Picasa.photos(:album_id => params[:id])
+    respond_with @album = Picasa.photos(:album_id => params[:id])
   end
 end

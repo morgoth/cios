@@ -1,6 +1,5 @@
 class PartnersController < ApplicationController
   before_filter :authenticate_user!
-  protect_from_forgery :except => :sort
 
   def index
     @partners = Partner.ordered
@@ -41,12 +40,12 @@ class PartnersController < ApplicationController
   def up
     @partner = Partner.find(params[:id])
     @partner.move_higher
-    redirect_to partners_path, :notice => "Moved up"
+    redirect_to partners_path, :notice => "#{@partner.name} moved up"
   end
 
   def down
     @partner = Partner.find(params[:id])
     @partner.move_lower
-    redirect_to partners_path, :notice => "Moved down"
+    redirect_to partners_path, :notice => "#{@partner.name} moved down"
   end
 end

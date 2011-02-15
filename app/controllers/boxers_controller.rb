@@ -1,43 +1,38 @@
 class BoxersController < ApplicationController
+  respond_to :html
   before_filter :authenticate_user!, :except => [:index, :show]
 
   def index
-    @boxers = Boxer.all
+    respond_with @boxers = Boxer.all
+  end
+
+  def show
+    respond_with @boxer = Boxer.find(params[:id])
   end
 
   def new
-    @boxer = Boxer.new
-  end
-
-  def edit
-    @boxer = Boxer.find(params[:id])
+    respond_with @boxer = Boxer.new
   end
 
   def create
     @boxer = Boxer.new(params[:boxer])
-    if @boxer.save
-      redirect_to people_path, :notice => t("boxer_created")
-    else
-      render :new
-    end
+    flash[:notice] = t("boxer_created") if @boxer.save
+    respond_with @boxer, :location => people_path
+  end
+
+  def edit
+    respond_with @boxer = Boxer.find(params[:id])
   end
 
   def update
     @boxer = Boxer.find(params[:id])
-    if @boxer.update_attributes(params[:boxer])
-      redirect_to people_path, :notice => t("boxer_updated")
-    else
-      render :edit
-    end
-  end
-
-  def show
-    @boxer = Boxer.find(params[:id])
+    flash[:notice] = t("boxer_updated") if @boxer.update_attributes(params[:boxer])
+    respond_with @boxer
   end
 
   def destroy
     @boxer = Boxer.find(params[:id])
-    @boxer.destroy
-    redirect_to people_path, :notice => t("boxer_destroyed")
+    flash[:notice] = t("boxer_destroyed") if @boxer.destroy
+    respond_with @boxer, :location => people_path
   end
 end
