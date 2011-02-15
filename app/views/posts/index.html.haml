@@ -4,7 +4,7 @@
 - @posts.each do |post|
   %hr
   %h1.title= link_to post.title, post
-  %div.byline
+  .byline
     = t('Author')+': '
     = post.user.login.capitalize if post.user
     = post.created_at.strftime("%d.%m.%y %H:%M")
@@ -12,10 +12,11 @@
       = link_to t('Edit'), edit_post_path(post)
       = " | "
       = link_to t('Delete'), post, :confirm => t('Are you sure?'), :method => :delete
-  %div.post
+  .post
     = markup(post.content)
-    %div.meta
-      = link_to t("Read more"), post
+    .meta
+      = link_to t("Read more"), post_path(post, :anchor => "comments")
       = t('Comments')+': '
       = post.comments.approved.count
+
 = will_paginate @posts, :previous_label => t("pagination_previous"), :next_label => t("pagination_next")
