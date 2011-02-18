@@ -4,4 +4,8 @@ class Post < ActiveRecord::Base
   default_scope order('created_at DESC')
 
   validates_presence_of :content, :title
+
+  def to_param
+    "#{id}-#{title.parameterize}"
+  end
 end

@@ -14,9 +14,7 @@
       = link_to t('Delete'), post, :confirm => t('Are you sure?'), :method => :delete
   .post
     = markup(post.content)
-    .meta
-      = link_to t("Read more"), post_path(post, :anchor => "comments")
-      = t('Comments')+': '
-      = post.comments.approved.count
+    .comment_count
+      = link_to t('comments_count', :count => post.comments.approved.count), post_path(post, :anchor => "comments")
 
 = will_paginate @posts, :previous_label => t("pagination_previous"), :next_label => t("pagination_next")

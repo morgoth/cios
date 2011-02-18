@@ -15,7 +15,7 @@ pl:
   Delete: Usuń
   Destroy: Usuń
   Are you sure?: Jesteś pewny?
-  Comments: Komentarze
+  Comments: "Komentarze"
   Add: Dodaj
   comment: komentarz
   Name: Imię
@@ -46,6 +46,7 @@ pl:
   New coach: "Dodaj trenera"
   Confirm: "Potwierdź"
   Informations: Informacje
+  comments_count: "Komentarze: %{count}"
 
   first_name: "Imię"
   last_name: "Nazwisko"

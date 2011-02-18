@@ -47,6 +47,7 @@ en:
   New coach: New coach
   Confirm: Confirm
   Informations: Informations
+  comments_count: "Comments: %{count}"
 
   first_name: First name
   last_name: Last name
