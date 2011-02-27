@@ -12,11 +12,11 @@ class Comment < ActiveRecord::Base
   scope :not_approved, where(:approved => false)
 
   def approve!
-    update_state(true)
+    update_state!(true)
   end
 
   def mark_as_spam!
-    update_state(false)
+    update_state!(false)
   end
 
   private
@@ -28,7 +28,7 @@ class Comment < ActiveRecord::Base
     true
   end
 
-  def update_state(state)
+  def update_state!(state)
     self.approved = state
     if defensio_report
       defensio_report.put(:allow => state)

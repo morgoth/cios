@@ -2,6 +2,10 @@ class DefensioReport < ActiveRecord::Base
   belongs_to :comment
   validates_presence_of :signature, :comment
 
+  def self.client
+    @@defensio ||= Defensio.new(ENV['DEFENSIO_API_KEY'] || "notexistingkey")
+  end
+
   def post(defensio_attributes)
     status, attr = DefensioReport.client.post_document(defensio_attributes)
     build_log attr
@@ -15,10 +19,6 @@ class DefensioReport < ActiveRecord::Base
 
   def put(allow)
     DefensioReport.client.put_document(signature, {:allow => allow})
-  end
-
-  def self.client
-    @@defensio ||= Defensio.new(ENV['DEFENSIO_API_KEY'] || "notexistingkey")
   end
 
   def approved?

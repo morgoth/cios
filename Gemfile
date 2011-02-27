@@ -17,6 +17,8 @@ gem "sqlite3", :group => [:development, :test]
 group :test do
   gem "test-unit", ">=2.0", :require => "test/unit"
   gem "factory_girl_rails"
+  gem "capybara"
+  gem "launchy"
 end
 
 group :development do
