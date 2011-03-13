@@ -10,16 +10,13 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         if @comment.approved?
-          @status = 'saved'
           flash[:notice] = t("comment_created")
         else
-          @status = 'spam'
           flash[:error] = t("spam_comment")
         end
         format.html { redirect_to post }
         format.js
       else
-        @status = 'not_saved'
         format.html { redirect_to post }
         format.js
       end

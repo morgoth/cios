@@ -85,7 +85,7 @@ en:
   comment_created: "Comment created"
   comment_updated: "Comment updated"
   comment_destroyed: "Comment destroyed"
-  comment_marked_as_spam: "Comment marked as spam"
+  comment_marked_as_spam: "Comment marked as spam. Contact us via email pomoc@kscios.pl"
   login_successful: "Login successful"
   logout_successful: "Logout successful"
   boxer_created: Boxer created

@@ -84,7 +84,7 @@ pl:
   comment_created: "Komentarz został dodany"
   comment_updated: "Komentarz został zaktualizowany"
   comment_destroyed: "Komentarz został usunięty"
-  comment_marked_as_spam: "Komentarz został oznaczony jako spam"
+  comment_marked_as_spam: "Komentarz został oznaczony jako spam. Skontaktuj się z nami poprzez maila: pomoc@kscios.pl"
   login_successful: "Logowanie pomyślne"
   logout_successful: "Wylogowanie pomyślne"
   boxer_created: "Bokser został utworzony"
