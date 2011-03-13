@@ -9,13 +9,13 @@ class Partner < ActiveRecord::Base
   scope :sponsor, where(:kind => "sponsor")
   scope :assistance, where(:kind => "assistance")
 
-  before_validation :check_link
+  before_validation :check_link_format
 
   private
 
-  def check_link
+  def check_link_format
     unless link.blank?
-      self.link = "http://" + link unless link =~ /^http:\/\//
+      self.link = "http://" + link unless link =~ /^https?:\/\//
     end
   end
 end

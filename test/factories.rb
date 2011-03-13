@@ -16,3 +16,9 @@ Factory.define(:comment) do |f|
   f.name "John Doe"
   f.content "Body of comment"
 end
+
+Factory.define(:partner) do |f|
+  f.kind "sponsor"
+  f.name "Company"
+  f.link "http://company.com"
+end
