@@ -1,3 +1,6 @@
+$("#comments").next("#notice").remove();
+$("#comments").next("#error").remove();
+
 <% if @comment.persisted? and @comment.approved? %>
   $("#comments").after('<div id="notice"><%= escape_javascript(flash.delete(:notice)).html_safe %></div>');
   $("#comments").append("<%= escape_javascript(render(:partial => @comment)).html_safe %>");
