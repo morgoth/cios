@@ -11,7 +11,6 @@ gem "RedCloth", :require => "redcloth"
 gem "defensio"
 gem "httparty", "~> 0.6.1"
 gem "compass"
-
 gem "sqlite3", :group => [:development, :test]
 
 group :test do
@@ -28,4 +27,5 @@ end
 
 group :production do
   gem "pg"
+  gem "rack-rewrite"
 end

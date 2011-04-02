@@ -56,4 +56,10 @@ Cios::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  config.middleware.insert_before(::Rack::Lock, ::Rack::Rewrite) do
+    r301 %r{.*}, 'http://kscios.pl$&', :if => Proc.new { |rack_env|
+      "cios.heroku.com" == rack_env['SERVER_NAME']
+    }
+  end
 end
