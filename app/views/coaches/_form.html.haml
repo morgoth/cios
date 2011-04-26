@@ -4,5 +4,5 @@
   = f.input :function
   = f.input :contact
   = f.input :photo_url
-  = f.input :about, :hint => "#{t('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/"}".html_safe
+  = f.input :about, :hint => t("textile_hint_html", :url => link_to("textile", "http://www.textism.com/tools/textile/"))
   = f.button :submit

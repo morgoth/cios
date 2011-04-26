@@ -1,7 +1,9 @@
 source :rubygems
 
 gem "rails"
-gem "haml", ">=3.0.6"
+gem "haml"
+gem "sass"
+gem "compass"
 gem "will_paginate", ">= 3.0.pre2"
 gem "devise"
 gem "simple_form", ">= 1.2.0"
@@ -10,7 +12,6 @@ gem "acts_as_list"
 gem "RedCloth", :require => "redcloth"
 gem "defensio"
 gem "httparty", "~> 0.6.1"
-gem "compass"
 gem "sqlite3", :group => [:development, :test]
 
 group :test do

@@ -14,7 +14,6 @@ en:
   Assistance: Assistance
   Partners: Partners
   Author: Author
-  You can use: You can use
   Title: Title
   Editing: Editing
   Account: Account
@@ -96,3 +95,4 @@ en:
   coach_destroyed: Coach destroyed
   login_required: "You must be logged in to access this page"
   spam_comment: "Your comment looks like a spam"
+  textile_hint_html: "You can use %{url}"

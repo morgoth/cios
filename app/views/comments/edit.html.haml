@@ -1,5 +1,5 @@
 %h1= t('Editing')
 = simple_form_for([@post, @comment]) do |f|
   = f.input :name
-  = f.input :content, :hint => "#{t ('You can use')} #{link_to "textile", "http://www.textism.com/tools/textile/"}".html_safe
+  = f.input :content, :hint => t("textile_hint_html", :url => link_to("textile", "http://www.textism.com/tools/textile/"))
   = f.button :submit, t("Update")

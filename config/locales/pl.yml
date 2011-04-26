@@ -20,7 +20,6 @@ pl:
   comment: komentarz
   Name: Imię
   Content: Treść
-  You can use: Możesz użyć
   Create: Stwórz
   Title: Tytuł
   New post: Nowa wiadomość
@@ -95,3 +94,4 @@ pl:
   coach_destroyed: "Trener został usunięty"
   login_required: "Musisz być zalogowany aby obejrzeć tę stronę"
   spam_comment: "Twój komentarz został zaklasyfikowany jako spam"
+  textile_hint_html: "Możesz użyć %{url}"
