@@ -3,7 +3,7 @@ class DefensioReport < ActiveRecord::Base
   validates_presence_of :signature, :comment
 
   def self.client
-    @@defensio ||= Defensio.new(ENV['DEFENSIO_API_KEY'] || "notexistingkey")
+    @@defensio ||= Defensio.new(ENV['DEFENSIO_API_KEY'] || "nonexisting")
   end
 
   def post(defensio_attributes)

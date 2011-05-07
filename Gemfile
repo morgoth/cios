@@ -11,8 +11,9 @@ gem "picasa", ">=0.1.9"
 gem "acts_as_list"
 gem "RedCloth", :require => "redcloth"
 gem "defensio"
-gem "httparty", "~> 0.6.1"
+gem "httparty"
 gem "sqlite3", :group => [:development, :test]
+gem "jquery-rails"
 
 group :test do
   gem "test-unit", ">=2.0", :require => "test/unit"
