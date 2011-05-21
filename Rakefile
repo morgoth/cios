@@ -4,4 +4,11 @@
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
 
+# fix for rake 0.9.0
+module ::Cios
+  class Application
+    include Rake::DSL
+  end
+end
+
 Cios::Application.load_tasks
