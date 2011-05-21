@@ -5,7 +5,7 @@
     %meta{:name => "description", :content => "KS Cios-Adamek Gilowice - klub bokserski w Gilowicach. Zapraszamy na treningi"}
     %title KS „Cios-Adamek” Gilowice
     = stylesheet_link_tag "screen"
-    = javascript_include_tag :defaults
+    = javascript_include_tag :defaults, "jquery.pjax"
     = csrf_meta_tag
     = auto_discovery_link_tag(:rss, posts_path(:rss))
     %link{:rel => "shortcut icon", :href => "/images/favicon.ico"}

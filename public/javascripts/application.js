@@ -24,4 +24,6 @@ jQuery(function($) {
             .replace(/(^|\W)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>')
             .replace(/(^|\W)#(\w+)/g, '$1#<a href="http://search.twitter.com/search?q=%23$2">$2</a>')
     }
+
+    $('#menu a').pjax("#content");
 });
