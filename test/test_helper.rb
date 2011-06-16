@@ -7,7 +7,7 @@ class ActiveSupport::TestCase
 end
 
 class ActionController::IntegrationTest
-  include Capybara
+  include Capybara::DSL
 
   def sign_in(user)
     visit destroy_user_session_path
