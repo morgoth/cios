@@ -8,10 +8,6 @@ Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Cios
   class Application < Rails::Application
-    require Rails.root.join('lib/google_analytics')
-
-    config.middleware.use Rack::GoogleAnalytics, "UA-7563082-3"
-
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

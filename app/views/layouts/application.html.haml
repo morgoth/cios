@@ -23,7 +23,7 @@
             - if current_user
               = link_to "Spam", spam_reports_path
               = link_to t("Account"), user_path(current_user), :class => "account"
-              = link_to "Logout #{current_user.login}", destroy_user_session_path#, :method => :delete
+              = link_to "Logout #{current_user.login}", destroy_user_session_path
             - else
               = link_to "Login", new_user_session_path
       #banner
@@ -54,8 +54,9 @@
           %h2= t("Informations")
           %ul#tweets
         .clearb
-    #footer
+    %footer
       %p
         &copy; 2011, KS „Cios Adamek”
         = "Design by"
         = link_to "Free CSS Templates", "http://www.freecsstemplates.org"
+    = render "layouts/google_analytics"
