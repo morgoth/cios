@@ -8,13 +8,13 @@ jQuery(function($) {
     });
 
     // twitter
-    $.getJSON("http://twitter.com/statuses/user_timeline/kscios.json?callback=?", function(tweets) {
-        $.each(tweets, function(i, tweet){
-            if (i < 3) {
-                $("ul#tweets").append("<li> <strong>" + linkify("@" + tweet.user.screen_name) + "</strong>: " + linkify(tweet.text) + "</li>");
-            }
-        });
-    });
+    // $.getJSON("http://twitter.com/statuses/user_timeline/kscios.json?callback=?", function(tweets) {
+        // $.each(tweets, function(i, tweet){
+            // if (i < 3) {
+                // $("ul#tweets").append("<li> <strong>" + linkify("@" + tweet.user.screen_name) + "</strong>: " + linkify(tweet.text) + "</li>");
+            // }
+        // });
+    // });
 
     // modified from TwitterGitter by David Walsh (davidwalsh.name)
     // courtesy of Jeremy Parrish (rrish.org)

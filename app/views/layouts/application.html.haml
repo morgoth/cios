@@ -51,8 +51,8 @@
             - @assistance_partners.each do |partner|
               %li
                 = link_to_if partner.link?, partner.name, partner.link, :"data-popup" => true
-          %h2= t("Informations")
-          %ul#tweets
+          ~# %h2= t("Informations")
+          ~# %ul#tweets
         .clearb
     %footer
       %p
