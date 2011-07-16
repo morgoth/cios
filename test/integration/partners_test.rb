@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class PartnersTest < ActionController::IntegrationTest
-  setup { sign_in(Factory(:user)) }
+  setup { sign_in(FactoryGirl.create(:user)) }
 
   test "creating partner" do
     visit partners_path
@@ -14,8 +14,8 @@ class PartnersTest < ActionController::IntegrationTest
   end
 
   test "changing partners order" do
-    first = Factory(:partner, :kind => "sponsor", :name => "First")
-    second = Factory(:partner, :kind => "sponsor", :name => "Second")
+    first = FactoryGirl.create(:partner, :kind => "sponsor", :name => "First")
+    second = FactoryGirl.create(:partner, :kind => "sponsor", :name => "Second")
     visit partners_path
     click_link "Move down"
 

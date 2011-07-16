@@ -1,10 +1,10 @@
 require 'test_helper'
 
 class PostsTest < ActionController::IntegrationTest
-  setup { @user = Factory(:user) }
+  setup { @user = FactoryGirl.create(:user) }
 
   test "listing posts" do
-    Factory(:post, :title => "simple post", :user => @user)
+    FactoryGirl.create(:post, :title => "simple post", :user => @user)
     sign_in(@user)
     visit posts_path
     assert page.has_content?("simple post")

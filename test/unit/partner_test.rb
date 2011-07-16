@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class PartnerTest < ActiveSupport::TestCase
-  setup { @partner = Factory.build(:partner) }
+  setup { @partner = FactoryGirl.build(:partner) }
 
   test "adds protocol to link if missing" do
     @partner.link = "example.com"

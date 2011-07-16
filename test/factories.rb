@@ -1,24 +1,26 @@
-Factory.define(:user) do |f|
-  f.sequence(:login) { |n| "login#{n}" }
-  f.email { |u| "#{u.login}@example.com" }
-  f.password "secret"
-  f.password_confirmation { |u| u.password }
-end
+FactoryGirl.define do
+  factory :user do
+    sequence(:login) { |n| "login#{n}" }
+    email { "#{login}@example.com" }
+    password "secret"
+    password_confirmation { password }
+  end
 
-Factory.define(:post) do |f|
-  f.user { |a| a.association(:user) }
-  f.title "Post title"
-  f.content "Body of post"
-end
+  factory :post do
+    user
+    title "Post title"
+    content "Body of post"
+  end
 
-Factory.define(:comment) do |f|
-  f.post { |a| a.association(:post) }
-  f.name "John Doe"
-  f.content "Body of comment"
-end
+  factory :comment do
+    post
+    name "John Doe"
+    content "Body of comment"
+  end
 
-Factory.define(:partner) do |f|
-  f.kind "sponsor"
-  f.name "Company"
-  f.link "http://company.com"
+  factory :partner do
+    kind "sponsor"
+    name "Company"
+    link "http://company.com"
+  end
 end

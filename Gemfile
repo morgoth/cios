@@ -17,9 +17,10 @@ gem "jquery-rails"
 
 group :test do
   gem "test-unit", ">=2.0", :require => "test/unit"
-  gem "factory_girl_rails"
+  gem "factory_girl_rails", "~> 1.1.rc1"
   gem "capybara"
   gem "launchy"
+  gem "ruby-debug19", :require => "ruby-debug", :platform => :ruby_19
 end
 
 group :development do
