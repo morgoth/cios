@@ -1,6 +1,6 @@
-jQuery(function($) {
+jQuery(function ($) {
     // opening links in separate window
-    $("a[data-popup=true]").each(function(i, element) {
+    $("a[data-popup=true]").each(function (i, element) {
         $(element).click(function (event) {
             window.open(element.href);
             event.preventDefault();
@@ -22,7 +22,7 @@ jQuery(function($) {
         return text
             .replace(/(https?:\/\/[\w\-:;?&=+.%#\/]+)/gi, '<a href="$1">$1</a>')
             .replace(/(^|\W)@(\w+)/g, '$1<a href="http://twitter.com/$2">@$2</a>')
-            .replace(/(^|\W)#(\w+)/g, '$1#<a href="http://search.twitter.com/search?q=%23$2">$2</a>')
+            .replace(/(^|\W)#(\w+)/g, '$1#<a href="http://search.twitter.com/search?q=%23$2">$2</a>');
     }
 
     $('#menu a').pjax("#content");
