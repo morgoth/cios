@@ -5,6 +5,8 @@ gem "haml"
 gem "sass"
 gem "sass-rails", :git => "git://github.com/rails/sass-rails.git", :branch => "3-1-stable"
 gem "compass", :git => "git://github.com/chriseppstein/compass.git", :branch => "rails31"
+gem "uglifier"
+
 gem "will_paginate", :git => "git://github.com/wantful/will_paginate.git", :ref => "f9825e371a516ef2662a"
 gem "devise"
 gem "simple_form", ">= 1.2.0"
