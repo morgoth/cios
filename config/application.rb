@@ -42,6 +42,7 @@ module Cios
     config.generators do |g|
       g.template_engine      :haml
       g.fixtures_replacement :factory_girl
+      g.stylesheet_engine    :sass
     end
   end
 end
