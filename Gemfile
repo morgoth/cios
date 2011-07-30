@@ -1,12 +1,7 @@
 source :rubygems
 
-gem "rails", "~> 3.1.0.rc4"
+gem "rails", "~> 3.1.0.rc5"
 gem "haml"
-gem "sass"
-gem "sass-rails", :git => "git://github.com/rails/sass-rails.git", :branch => "3-1-stable"
-gem "compass", :git => "git://github.com/chriseppstein/compass.git", :branch => "rails31"
-gem "uglifier"
-
 gem "will_paginate", :git => "git://github.com/wantful/will_paginate.git", :ref => "f9825e371a516ef2662a"
 gem "devise"
 gem "simple_form", ">= 1.2.0"
@@ -18,8 +13,15 @@ gem "httparty"
 gem "sqlite3", :group => [:development, :test]
 gem "jquery-rails"
 
+group :assets do
+  gem "sass"
+  gem "compass", :git => "git://github.com/chriseppstein/compass.git", :branch => "rails31"
+  gem "sass-rails", "~> 3.1.0.rc.5"
+  gem "uglifier"
+end
+
 group :test do
-  gem "factory_girl_rails", "~> 1.1.rc1"
+  gem "factory_girl_rails", "~> 1.1"
   gem "capybara"
   gem "launchy"
   gem "ruby-debug19", :require => "ruby-debug", :platform => :ruby_19
