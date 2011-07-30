@@ -8,7 +8,7 @@
     = javascript_include_tag "application"
     = csrf_meta_tag
     = auto_discovery_link_tag(:rss, posts_path(:rss))
-    %link{:rel => "shortcut icon", :href => "/images/favicon.ico"}
+    %link{:rel => "shortcut icon", :href => "/assets/favicon.ico"}
     %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Ubuntu:regular,bold", :type => "text/css"}
   %body
     #container
@@ -16,9 +16,9 @@
         %h1= link_to "KS „Cios-Adamek” Gilowice", root_path
         #links
           - if I18n.locale.to_sym == :en
-            = link_to image_tag("/images/pl.gif"), current(:pl)
+            = link_to image_tag("/assets/pl.gif"), current(:pl)
           - else
-            = link_to image_tag("/images/en.gif"), current(:en)
+            = link_to image_tag("/assets/en.gif"), current(:en)
           #admin
             - if current_user
               = link_to "Spam", spam_reports_path
