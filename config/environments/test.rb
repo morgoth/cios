@@ -30,6 +30,7 @@ Cios::Application.configure do
   config.action_mailer.delivery_method = :test
   config.action_mailer.default_url_options = {:host => 'localhost:3000'}
 
+  config.i18n.default_locale = :en
   # Use SQL instead of Active Record's schema dumper when creating the test database.
   # This is necessary if your schema can't be completely dumped by the schema dumper,
   # like if you have constraints or database-specific column types
@@ -38,5 +39,6 @@ Cios::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
-  config.i18n.default_locale = :en
+  # Allow pass debug_assets=true as a query parameter to load pages with unpackaged assets
+  config.assets.allow_debugging = true
 end

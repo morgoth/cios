@@ -1,13 +1,3 @@
-GIT
-  remote: git://github.com/chriseppstein/compass.git
-  revision: 22e2458b77519e8eb8463170c1a1fe4bab105f3e
-  branch: rails31
-  specs:
-    compass (0.12.0.alpha.0.22e2458)
-      chunky_png (~> 1.2)
-      fssm (>= 0.2.7)
-      sass (~> 3.1)
-
 GEM
   remote: http://rubygems.org/
   specs:
@@ -59,6 +49,10 @@ GEM
       ffi (~> 1.0.6)
     chunky_png (1.2.1)
     columnize (0.3.4)
+    compass (0.12.alpha.0)
+      chunky_png (~> 1.2)
+      fssm (>= 0.2.7)
+      sass (~> 3.1)
     crack (0.1.8)
     defensio (0.9.1)
       httparty (>= 0.5.0)
@@ -187,7 +181,7 @@ DEPENDENCIES
   RedCloth
   acts_as_list
   capybara
-  compass!
+  compass (~> 0.12.alpha.0)
   defensio
   devise
   factory_girl_rails (~> 1.1)
@@ -199,11 +193,11 @@ DEPENDENCIES
   pg
   picasa (>= 0.1.9)
   rack-rewrite
-  rails (~> 3.1.0.rc5)
+  rails (~> 3.1.0)
   ruby-debug19
   ruby_parser
   sass
-  sass-rails (~> 3.1.0.rc.5)
+  sass-rails (~> 3.1.0)
   simple_form (>= 1.2.0)
   sqlite3
   turn
