@@ -2,7 +2,7 @@ source :rubygems
 
 gem "rails", "~> 3.1.0.rc5"
 gem "haml"
-gem "will_paginate", :git => "git://github.com/wantful/will_paginate.git", :ref => "f9825e371a516ef2662a"
+gem "will_paginate", ">= 3.0"
 gem "devise"
 gem "simple_form", ">= 1.2.0"
 gem "picasa", ">=0.1.9"
