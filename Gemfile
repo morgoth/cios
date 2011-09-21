@@ -14,8 +14,7 @@ gem "httparty"
 gem "jquery-rails"
 
 group :assets do
-  gem "sass"
-  gem "compass", "~>0.12.alpha.0 "
+  gem "compass", "~> 0.12.alpha.0"
   gem "sass-rails", "~> 3.1.0"
   gem "uglifier"
 end
@@ -40,4 +39,5 @@ end
 group :production do
   gem "pg"
   gem "rack-rewrite"
+  gem "thin"
 end
