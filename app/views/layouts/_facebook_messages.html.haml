@@ -1,0 +1,6 @@
+- Facebook.messages(3).each do |message|
+  %div
+    .post= message["message"]
+    %p
+      = link_to("More", message["actions"].first["link"])
+      %span.byline= l(DateTime.parse(message["created_time"]))

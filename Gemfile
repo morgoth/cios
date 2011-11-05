@@ -10,6 +10,7 @@ gem "acts_as_list"
 gem "RedCloth", :require => "redcloth"
 gem "defensio"
 gem "httparty"
+gem "koala"
 
 gem "jquery-rails"
 
@@ -33,7 +34,7 @@ end
 
 group :development, :test do
   gem "sqlite3"
-  gem "ruby-debug19", :require => "ruby-debug", :platform => :ruby_19
+  # gem "ruby-debug19", :require => "ruby-debug", :platform => :ruby_19
 end
 
 group :production do
