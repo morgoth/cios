@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 3.1.0"
+gem "rails", "~> 3.2.0.rc2"
 gem "haml"
 gem "will_paginate", ">= 3.0"
 gem "devise"
@@ -10,13 +10,12 @@ gem "acts_as_list"
 gem "RedCloth", :require => "redcloth"
 gem "defensio"
 gem "httparty"
-
 gem "jquery-rails"
 
 group :assets do
   gem "sass"
-  gem "compass", "~>0.12.alpha.0 "
-  gem "sass-rails", "~> 3.1.0"
+  gem "compass", "~>0.12.alpha.4"
+  gem "sass-rails", "~> 3.2.3"
   gem "uglifier"
 end
 
