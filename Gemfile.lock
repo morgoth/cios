@@ -31,7 +31,6 @@ GEM
       multi_json (~> 1.0)
     acts_as_list (0.1.4)
     addressable (2.2.6)
-    ansi (1.4.1)
     arel (3.0.0)
     bcrypt-ruby (3.0.1)
     builder (3.0.0)
@@ -151,8 +150,6 @@ GEM
     treetop (1.4.10)
       polyglot
       polyglot (>= 0.3.1)
-    turn (0.8.3)
-      ansi
     tzinfo (0.3.31)
     uglifier (1.2.1)
       execjs (>= 0.3.0)
@@ -174,7 +171,7 @@ DEPENDENCIES
   compass (~> 0.12.alpha.4)
   defensio
   devise
-  factory_girl_rails (~> 1.1)
+  factory_girl_rails
   haml
   hpricot
   httparty
@@ -190,6 +187,5 @@ DEPENDENCIES
   simple_form (>= 1.2.0)
   sqlite3
   thin
-  turn
   uglifier
   will_paginate (>= 3.0)

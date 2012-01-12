@@ -14,16 +14,15 @@ gem "jquery-rails"
 
 group :assets do
   gem "sass"
-  gem "compass", "~>0.12.alpha.4"
+  gem "compass", "~> 0.12.alpha.4"
   gem "sass-rails", "~> 3.2.3"
   gem "uglifier"
 end
 
 group :test do
-  gem "factory_girl_rails", "~> 1.1"
+  gem "factory_girl_rails"
   gem "capybara"
   gem "launchy"
-  gem "turn", :require => false
 end
 
 group :development do
