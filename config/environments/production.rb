@@ -78,7 +78,7 @@ Cios::Application.configure do
 
   config.middleware.insert_before(::Rack::Lock, ::Rack::Rewrite) do
     r301 %r{.*}, 'http://kscios.pl$&', :if => Proc.new { |rack_env|
-      "cios.heroku.com" == rack_env['SERVER_NAME']
+      "cios.herokuapp.com" == rack_env['SERVER_NAME']
     }
   end
 end
