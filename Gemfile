@@ -1,4 +1,4 @@
-source :rubygems
+source "https://rubygems.org"
 
 gem "rails", "~> 3.1.0"
 gem "haml"
@@ -34,10 +34,10 @@ end
 
 group :development, :test do
   gem "sqlite3"
-  gem "ruby-debug19", :require => "ruby-debug", :platform => :ruby_19
 end
 
 group :production do
+  gem "thin"
   gem "pg"
   gem "rack-rewrite"
 end
