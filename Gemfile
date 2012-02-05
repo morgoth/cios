@@ -7,13 +7,12 @@ gem "devise"
 gem "simple_form", ">= 1.2.0"
 gem "picasa", ">=0.1.9"
 gem "acts_as_list"
-gem "RedCloth", :require => "redcloth"
+gem "RedCloth", require: "redcloth"
 gem "defensio"
 gem "httparty"
 gem "jquery-rails"
 
 group :assets do
-  gem "sass"
   gem "compass-rails"
   gem "sass-rails", "~> 3.2.3"
   gem "uglifier"
@@ -23,11 +22,6 @@ group :test do
   gem "factory_girl_rails"
   gem "capybara"
   gem "launchy"
-end
-
-group :development do
-  gem "hpricot"
-  gem "ruby_parser"
 end
 
 group :development, :test do
