@@ -2,11 +2,11 @@ $("#comments").next("#notice").remove();
 $("#comments").next("#error").remove();
 
 <% if @comment.persisted? and @comment.approved? %>
-  $("#comments").after('<div id="notice"><%= escape_javascript(flash.delete(:notice)).html_safe %></div>');
+  $("#comments").after('<div id="notice"><%= escape_javascript(flash[:notice]).html_safe %></div>');
   $("#comments").append("<%= escape_javascript(render(:partial => @comment)).html_safe %>");
   $("#new_comment")[0].reset();
 <% elsif @comment.persisted? and !@comment.approved? %>
-  $("#comments").after('<div id="error"><%= escape_javascript(flash.delete(:error)).html_safe %></div>');
+  $("#comments").after('<div id="error"><%= escape_javascript(flash[:error]).html_safe %></div>');
   $("#new_comment")[0].reset();
 <% else %>
   $("#comments").after('<div id="error"><%= escape_javascript(generate_error_messages(@comment)).html_safe %></div>');

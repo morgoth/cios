@@ -10,9 +10,9 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         if @comment.approved?
-          flash[:notice] = t("comment_created")
+          flash.now[:notice] = t("comment_created")
         else
-          flash[:error] = t("spam_comment")
+          flash.now[:error] = t("spam_comment")
         end
         format.html { redirect_to post }
         format.js
