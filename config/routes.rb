@@ -1,4 +1,6 @@
 Cios::Application.routes.draw do
+  filter :locale
+
   devise_for :users
 
   resources :partners, :except => [:new] do

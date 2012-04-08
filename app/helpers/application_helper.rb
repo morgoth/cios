@@ -21,10 +21,6 @@ module ApplicationHelper
     end
   end
 
-  def current(lang)
-    params.merge(:locale => lang)
-  end
-
   def markup(text)
     RedCloth.new(text, [:filter_html]).to_html.html_safe
   end

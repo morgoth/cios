@@ -1,24 +1,26 @@
 !!!
-%html
+%html{lang: I18n.locale}
   %head
-    %meta{:name => "keywords", :content => "cios, tomasz adamek, boks, gilowice, klub sportowy, trening, boxing"}
-    %meta{:name => "description", :content => "KS Cios-Adamek Gilowice - klub bokserski w Gilowicach. Zapraszamy na treningi"}
-    %title KS „Cios-Adamek” Gilowice
-    = stylesheet_link_tag "application"
+    %meta{name: "keywords", content: "cios, tomasz adamek, boks, gilowice, klub sportowy, trening, boxing"}
+    %meta{name: "description", content: "KS Cios-Adamek Gilowice - klub bokserski w Gilowicach. Zapraszamy na treningi"}
+    %meta{name: "content-language", content: I18n.locale}
+    - (I18n.available_locales - [I18n.locale.to_sym]).each do |locale|
+      = tag(:link, href: root_url(locale: locale), hreflang: locale, rel: "alternate")
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Ubuntu:regular,bold", "application"
     = javascript_include_tag "application"
     = csrf_meta_tag
     = auto_discovery_link_tag(:rss, posts_path(:rss))
-    %link{:rel => "shortcut icon", :href => "/assets/favicon.ico"}
-    %link{:rel => "stylesheet", :href => "http://fonts.googleapis.com/css?family=Ubuntu:regular,bold", :type => "text/css"}
+    = favicon_link_tag "favicon.ico"
+    %title KS „Cios-Adamek” Gilowice
   %body
     #container
       #header
         %h1= link_to "KS „Cios-Adamek” Gilowice", root_path
         #links
           - if I18n.locale.to_sym == :en
-            = link_to image_tag("/assets/pl.gif"), current(:pl)
+            = link_to image_tag("pl.gif"), url_for(locale: :pl)
           - else
-            = link_to image_tag("/assets/en.gif"), current(:en)
+            = link_to image_tag("en.gif"), url_for(locale: :en)
           #admin
             - if current_user
               = link_to "Spam", spam_reports_path
@@ -56,7 +58,7 @@
         .clearb
     %footer
       %p
-        &copy; 2011, KS „Cios Adamek”
-        = "Design by"
+        &copy; KS „Cios Adamek”
+        Design by
         = link_to "Free CSS Templates", "http://www.freecsstemplates.org"
     = render "layouts/google_analytics"

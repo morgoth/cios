@@ -11,12 +11,11 @@ class ApplicationController < ActionController::Base
   end
 
   def pjax?
-    env['HTTP_X_PJAX'].present?
+    env["HTTP_X_PJAX"].present?
   end
 
   def set_locale
-    cookies[:cios_locale] = params[:locale] if params[:locale]
-    I18n.locale = params[:locale] || cookies[:cios_locale] || I18n.default_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 
   def set_layout

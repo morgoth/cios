@@ -37,11 +37,11 @@ jQuery(function ($) {
 
     $('#menu a').pjax("#content");
 
-    $('form#new_comment').live('ajax:beforeSend', function(event, xhr, settings) {
-        $(this).find("input[type=submit]").attr("disabled", true)
+    $('form#new_comment').on('ajax:beforeSend', function(event, xhr, settings) {
+        $(this).find("input[type=submit]").prop("disabled", true);
     });
 
-    $('form#new_comment').live('ajax:complete', function(event, xhr, settings) {
-        $(this).find("input[type=submit]").attr("disabled", false)
+    $('form#new_comment').on('ajax:complete', function(event, xhr, settings) {
+        $(this).find("input[type=submit]").prop("disabled", false);
     });
 });

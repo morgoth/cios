@@ -11,6 +11,7 @@ gem "RedCloth", require: "redcloth"
 gem "defensio"
 gem "httparty"
 gem "jquery-rails"
+gem "routing-filter"
 
 group :assets do
   gem "compass-rails"
