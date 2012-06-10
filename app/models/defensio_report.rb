@@ -18,7 +18,7 @@ class DefensioReport < ActiveRecord::Base
   end
 
   def put(allow)
-    DefensioReport.client.put_document(signature, {:allow => allow})
+    DefensioReport.client.put_document(signature, {allow: allow})
   end
 
   def approved?

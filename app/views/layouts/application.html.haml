@@ -5,7 +5,7 @@
     %meta{name: "description", content: "KS Cios-Adamek Gilowice - klub bokserski w Gilowicach. Zapraszamy na treningi"}
     %meta{name: "content-language", content: I18n.locale}
     - (I18n.available_locales - [I18n.locale.to_sym]).each do |locale|
-      = tag(:link, href: root_url(locale: locale), hreflang: locale, rel: "alternate")
+      = tag(:link, href: url_for(locale: locale), hreflang: locale, rel: "alternate")
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Ubuntu:regular,bold", "application"
     = javascript_include_tag "application"
     = csrf_meta_tag
@@ -25,7 +25,7 @@
             - if current_user
               = link_to "Spam", spam_reports_path
               = link_to t("Account"), user_path(current_user), :class => "account"
-              = link_to "Logout #{current_user.login}", destroy_user_session_path, :method => :delete
+              = link_to "Logout #{current_user.login}", destroy_user_session_path, method: :delete
             - else
               = link_to "Login", new_user_session_path
       #banner

@@ -1,6 +1,6 @@
 class Comment < ActiveRecord::Base
   belongs_to :post
-  has_one :defensio_report, :dependent => :destroy
+  has_one :defensio_report, dependent: :destroy
 
   validates_presence_of :content, :name, :post
 
@@ -8,8 +8,8 @@ class Comment < ActiveRecord::Base
 
   attr_accessible :name, :content
 
-  scope :approved, where(:approved => true)
-  scope :not_approved, where(:approved => false)
+  scope :approved, where(approved: true)
+  scope :not_approved, where(approved: false)
 
   def approve!
     update_state!(true)
@@ -31,7 +31,7 @@ class Comment < ActiveRecord::Base
   def update_state!(state)
     self.approved = state
     if defensio_report
-      defensio_report.put(:allow => state)
+      defensio_report.put(allow: state)
     end
     save!
   end
