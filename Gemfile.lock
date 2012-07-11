@@ -91,6 +91,13 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.19)
+    minitest (3.2.0)
+    minitest-rails (0.1)
+      minitest (~> 3.0)
+      rails (~> 3.0)
+    minitest-rails-capybara (0.0.2)
+      capybara
+      minitest-rails
     multi_json (1.3.6)
     multi_xml (0.5.1)
     nokogiri (1.5.5)
@@ -182,6 +189,8 @@ DEPENDENCIES
   httparty
   jquery-rails
   launchy
+  minitest-rails
+  minitest-rails-capybara
   pg
   picasa (>= 0.1.9)
   rack-rewrite

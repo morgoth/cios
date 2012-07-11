@@ -30,6 +30,8 @@ end
 
 group :development, :test do
   gem "sqlite3"
+  gem "minitest-rails"
+  gem "minitest-rails-capybara"
 end
 
 group :production do

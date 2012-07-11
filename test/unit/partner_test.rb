@@ -1,15 +1,15 @@
-require 'test_helper'
+require "minitest_helper"
 
-class PartnerTest < ActiveSupport::TestCase
-  setup { @partner = FactoryGirl.build(:partner) }
+describe Partner do
+  before { @partner = FactoryGirl.build(:partner) }
 
-  test "adds protocol to link if missing" do
+  it "adds protocol to link if missing" do
     @partner.link = "example.com"
     @partner.save!
     assert_equal "http://example.com", @partner.link
   end
 
-  test "does not add protocol to link if hptts used" do
+  it "does not add protocol to link if hptts used" do
     @partner.link = "https://example.com"
     @partner.save!
     assert_equal "https://example.com", @partner.link

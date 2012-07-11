@@ -1,21 +1,23 @@
-require 'test_helper'
+require "minitest_helper"
 
-class PostsTest < ActionController::IntegrationTest
-  setup { @user = FactoryGirl.create(:user) }
+class PostsTest < MiniTest::Rails::ActionDispatch::IntegrationTest
+  before { @user = FactoryGirl.create(:user) }
 
-  test "listing posts" do
+  it "lists posts" do
     FactoryGirl.create(:post, :title => "simple post", :user => @user)
     sign_in(@user)
     visit posts_path
+
     assert page.has_content?("simple post")
   end
 
-  test "creating post with markup" do
+  it "creates post with markup" do
     sign_in(@user)
     visit new_post_path
     fill_in "Title", :with => "Success"
     fill_in "Content", :with => "*great*"
     click_button "Create Post"
+
     within(".post") do
       assert page.has_selector?("strong")
       assert page.has_content?("great")

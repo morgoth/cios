@@ -1,9 +1,9 @@
-require 'test_helper'
+require "minitest_helper"
 
-class PartnersTest < ActionController::IntegrationTest
-  setup { sign_in(FactoryGirl.create(:user)) }
+class PartnersTest < MiniTest::Rails::ActionDispatch::IntegrationTest
+  before { sign_in(FactoryGirl.create(:user)) }
 
-  test "creating partner" do
+  it "creates partner" do
     visit partners_path
     fill_in "Name", :with => "Company"
     select "Partnership", :from => "Kind"
@@ -13,7 +13,7 @@ class PartnersTest < ActionController::IntegrationTest
     assert Partner.assistance.exists?(:name => "Company")
   end
 
-  test "changing partners order" do
+  it "changes partners order" do
     first = FactoryGirl.create(:partner, :kind => "sponsor", :name => "First")
     second = FactoryGirl.create(:partner, :kind => "sponsor", :name => "Second")
     visit partners_path
