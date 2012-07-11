@@ -11,10 +11,10 @@
     - if current_user
       = link_to t('Edit'), edit_post_path(post)
       = " | "
-      = link_to t('Delete'), post, :confirm => t('Are you sure?'), :method => :delete
+      = link_to t('Delete'), post, data: {confirm: t('Are you sure?')}, method: :delete
   .post
     = markup(post.content)
     .comment_count
-      = link_to t('comments_count', :count => post.comments.approved.count), post_path(post, :anchor => "comments")
+      = link_to t('comments_count', count: post.comments.approved.count), post_path(post, anchor: "comments")
 
-= will_paginate @posts, :previous_label => t("pagination_previous"), :next_label => t("pagination_next")
+= will_paginate @posts, previous_label: t("pagination_previous"), next_label: t("pagination_next")
