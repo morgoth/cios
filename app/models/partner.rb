@@ -1,6 +1,6 @@
 class Partner < ActiveRecord::Base
   KINDS = %w(sponsor assistance)
-  acts_as_list :scope => 'kind = \'#{kind}\''
+  acts_as_list scope: 'kind = \'#{kind}\''
 
   validates :name, presence: true
   validates :kind, presence: true, inclusion: KINDS

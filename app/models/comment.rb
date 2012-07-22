@@ -38,9 +38,9 @@ class Comment < ActiveRecord::Base
 
   def defensio_attributes
     {
-      "type" => "comment",
-      "platform" => "rubyonrails",
-      "content" => content,
+      "type"        => "comment",
+      "platform"    => "rubyonrails",
+      "content"     => content,
       "author-name" => name
     }
   end

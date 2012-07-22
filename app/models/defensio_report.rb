@@ -3,17 +3,17 @@ class DefensioReport < ActiveRecord::Base
   validates_presence_of :signature, :comment
 
   def self.client
-    @@defensio ||= Defensio.new(ENV['DEFENSIO_API_KEY'] || "nonexisting")
+    @@defensio ||= Defensio.new(ENV["DEFENSIO_API_KEY"] || "nonexisting")
   end
 
   def post(defensio_attributes)
-    status, attr = DefensioReport.client.post_document(defensio_attributes)
-    build_log attr
+    status, params = DefensioReport.client.post_document(defensio_attributes)
+    build_log(params)
     if status == 200
-      self.signature = attr['signature']
-      self.spaminess = attr['spaminess']
-      self.profanity_match = attr['profanity-match']
-      self.allow = attr['allow']
+      self.signature = params["signature"]
+      self.spaminess = params["spaminess"]
+      self.profanity_match = params["profanity-match"]
+      self.allow = params["allow"]
     end
   end
 

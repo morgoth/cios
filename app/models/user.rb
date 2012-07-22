@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
 
   before_destroy :destroyable?
 
-  validates :login, :presence => true, :uniqueness => true
+  validates :login, presence: true, uniqueness: true
   attr_accessible :login, :password, :password_confirmation, :remember_me, :email
 
   private
@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   end
 
   def self.find_for_authentication(conditions)
-    where(["users.login = :auth OR users.email = :auth", {:auth => conditions[:login]}]).first
+    where(["users.login = :auth OR users.email = :auth", {auth: conditions[:login]}]).first
   end
 
   def password_required?

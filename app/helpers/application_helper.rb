@@ -10,7 +10,7 @@ module ApplicationHelper
   def flash_messages
     messages = ""
     flash.each do |key, msg|
-      messages << content_tag(:div, msg, :id => key)
+      messages << content_tag(:div, msg, id: key)
     end
     messages.html_safe
   end
