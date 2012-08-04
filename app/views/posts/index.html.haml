@@ -17,4 +17,4 @@
     .comment_count
       = link_to t('comments_count', count: post.comments.approved.count), post_path(post, anchor: "comments")
 
-= will_paginate @posts, previous_label: t("pagination_previous"), next_label: t("pagination_next")
+= will_paginate @posts

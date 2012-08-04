@@ -9,7 +9,7 @@ gem "devise"
 gem "devise-encryptable"
 gem "simple_form", ">= 1.2.0"
 gem "picasa", ">=0.1.9"
-gem "acts_as_list"
+gem "acts_as_list", github: "swanandp/acts_as_list"
 gem "RedCloth", require: "redcloth"
 gem "defensio"
 gem "httparty"
@@ -29,6 +29,7 @@ group :test do
 end
 
 group :development, :test do
+  gem "debugger"
   gem "sqlite3"
   gem "minitest-rails"
   gem "minitest-rails-capybara"

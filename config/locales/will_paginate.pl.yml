@@ -1,0 +1,5 @@
+pl:
+  will_paginate:
+    previous_label: "&lt;&lt; Późniejsze"
+    next_label: "Wcześniejsze &gt;&gt;"
+    page_gap: "&hellip;"
