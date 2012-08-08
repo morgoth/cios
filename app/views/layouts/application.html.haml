@@ -4,6 +4,7 @@
     %meta{name: "keywords", content: "cios, tomasz adamek, boks, gilowice, klub sportowy, trening, boxing"}
     %meta{name: "description", content: "KS Cios-Adamek Gilowice - klub bokserski w Gilowicach. Zapraszamy na treningi"}
     %meta{name: "content-language", content: I18n.locale}
+    %meta{name: "alexaVerifyID", content: "nmQF0tF2rtL4yA3RycxQhjgmgBw"}
     - (I18n.available_locales - [I18n.locale.to_sym]).each do |locale|
       = tag(:link, href: url_for(locale: locale), hreflang: locale, rel: "alternate")
     = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Ubuntu:regular,bold", "application"
