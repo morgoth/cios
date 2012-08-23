@@ -1,5 +1,5 @@
 %h1= t('Gallery')
-%h3= link_to t("Slideshow"), @album[:slideshow]
+%h3= link_to t("Slideshow"), @album.links[2].href
 %div
-  - @album[:photos].each do |photo|
-    = link_to(image_tag(photo[:thumbnail_2]), photo[:photo], "data-popup" => true)
+  - @album.photos.each do |photo|
+    = link_to(image_tag(photo.media.thumbnails[1].url), photo.content.src, "data-popup" => true)
