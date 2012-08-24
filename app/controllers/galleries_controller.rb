@@ -1,12 +1,12 @@
 class GalleriesController < ApplicationController
-  respond_to :html
-
   def index
-    respond_with @albums = picasa.album.list
+    @albums = picasa.album.list
   end
 
   def show
-    respond_with @album = picasa.album.show(params[:id])
+    @album = picasa.album.show(params[:id])
+  rescue Picasa::NotFoundError
+    raise ActionController::RoutingError.new("Not Found")
   end
 
   private
