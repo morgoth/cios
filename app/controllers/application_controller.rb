@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :partners_index, :set_locale
+  layout :set_layout
 
   private
 
@@ -9,7 +10,15 @@ class ApplicationController < ActionController::Base
     @assistance_partners = Partner.assistance.ordered
   end
 
+  def pjax?
+    env["HTTP_X_PJAX"].present?
+  end
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def set_layout
+    pjax? ? false : "application"
   end
 end
