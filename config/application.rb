@@ -20,6 +20,9 @@ module Cios
 
     config.filter_parameters += [:password]
 
+    # Enable escaping HTML in JSON.
+    config.active_support.escape_html_entities_in_json = true
+
     config.assets.enabled = true
     config.assets.version = "1.0"
   end
