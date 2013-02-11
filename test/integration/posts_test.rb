@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class PostsTest < MiniTest::Rails::ActionDispatch::IntegrationTest
+class PostsTest < Capybara::Rails::TestCase
   before { @user = FactoryGirl.create(:user) }
 
   it "lists posts" do

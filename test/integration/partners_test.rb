@@ -1,6 +1,6 @@
 require "minitest_helper"
 
-class PartnersTest < MiniTest::Rails::ActionDispatch::IntegrationTest
+class PartnersTest < Capybara::Rails::TestCase
   before { sign_in(FactoryGirl.create(:user)) }
 
   it "creates partner" do

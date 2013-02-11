@@ -16,7 +16,7 @@ end
 
 # MiniTest::Rails.override_testunit!
 
-class MiniTest::Rails::ActionDispatch::IntegrationTest
+class Capybara::Rails::TestCase
   def sign_in(user)
     visit destroy_user_session_path
     visit new_user_session_path
