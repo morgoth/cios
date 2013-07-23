@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :encryptable, :encryptor => :authlogic_sha512
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :encryptable, encryptor: :authlogic_sha512
 
   has_many :posts
 

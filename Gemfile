@@ -1,8 +1,8 @@
 source "https://rubygems.org"
 
-ruby "1.9.3"
+ruby "2.0.0"
 
-gem "rails", ">= 3.2.12"
+gem "rails", "3.2.13"
 gem "haml"
 gem "will_paginate", ">= 3.0"
 gem "devise"
@@ -17,7 +17,6 @@ gem "jquery-rails"
 gem "routing-filter"
 
 group :assets do
-  gem "compass-rails"
   gem "sass-rails", "~> 3.2.3"
   gem "uglifier"
 end
@@ -29,7 +28,7 @@ group :test do
 end
 
 group :development, :test do
-  gem "debugger"
+  gem "debugger", ">= 1.6.1"
   gem "sqlite3"
   gem "minitest-rails"
   gem "minitest-rails-capybara"
