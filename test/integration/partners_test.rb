@@ -1,4 +1,4 @@
-require "minitest_helper"
+require "test_helper"
 
 class PartnersTest < Capybara::Rails::TestCase
   before { sign_in(FactoryGirl.create(:user)) }

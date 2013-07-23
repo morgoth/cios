@@ -1,20 +1,14 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
+require "rails/test_help"
 
-require "minitest/autorun"
 require "minitest/rails"
+require "capybara/rspec/matchers"
 require "minitest/rails/capybara"
 require "minitest/pride"
 
-class MiniTest::Rails::ActiveSupport::TestCase
+class ActiveSupport::TestCase
 end
-
-# Do you want all existing Rails tests to use MiniTest::Rails?
-# Comment out the following and either:
-# A) Change the require on the existing tests to `require "minitest_helper"`
-# B) Require this file's code in test_helper.rb
-
-# MiniTest::Rails.override_testunit!
 
 class Capybara::Rails::TestCase
   def sign_in(user)
