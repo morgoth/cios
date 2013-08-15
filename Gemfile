@@ -34,7 +34,8 @@ group :development, :test do
 end
 
 group :production do
-  gem "thin"
+  gem "rails_12factor" # heroku
+  gem "unicorn", require: false
   gem "pg"
   gem "rack-rewrite"
 end
