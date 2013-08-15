@@ -89,7 +89,7 @@ Cios::Application.configure do
     :domain         => ENV['SENDGRID_DOMAIN']
   }
 
-  config.middleware.insert_before(::Rack::Lock, ::Rack::Rewrite) do
+  config.middleware.insert_before(ActionDispatch::Static, ::Rack::Rewrite) do
     r301 %r{.*}, 'http://kscios.pl$&', :if => Proc.new { |rack_env|
       "cios.herokuapp.com" == rack_env['SERVER_NAME']
     }
