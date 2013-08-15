@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = post.comments.build(params[:comment])
+    @comment = post.comments.build(comment_params)
     respond_to do |format|
       if @comment.save
         if @comment.approved?
@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if comment.update_attributes(params[:comment])
+    if comment.update_attributes(comment_params)
       redirect_to post, :notice => t("comment_updated")
     else
       render :edit
@@ -42,6 +42,10 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def comment_params
+    params.require(:comment).permit(:name, :content)
+  end
 
   def post
     @post ||= Post.find(params[:post_id])

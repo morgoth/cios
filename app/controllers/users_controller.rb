@@ -3,14 +3,15 @@ class UsersController < ApplicationController
   before_filter :account_owner, :only => [:edit, :update]
 
   def index
-    @users = User.all(:order => "login")
+    @users = User.order(:login)
   end
+
   def new
     @user = User.new
   end
 
   def create
-    @user = User.new(params[:user])
+    @user = User.new(user_params)
     if @user.save
       flash[:notice] = "Account registered!"
       redirect_back_or_default account_url
@@ -29,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update_attributes(params[:user])
+    if @user.update_attributes(user_params)
       redirect_to account_url, :notice => "Account updated!"
     else
       render :edit
@@ -47,6 +48,10 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def user_params
+    params.require(:user).permit(:login, :password, :password_confirmation, :remember_me, :email)
+  end
 
   def account_owner
     unless current_user == User.find(params[:id])

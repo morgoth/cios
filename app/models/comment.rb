@@ -6,8 +6,6 @@ class Comment < ActiveRecord::Base
 
   before_create :check_for_spam
 
-  attr_accessible :name, :content
-
   scope :approved, where(approved: true)
   scope :not_approved, where(approved: false)
 

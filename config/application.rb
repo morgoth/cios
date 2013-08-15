@@ -25,5 +25,7 @@ module Cios
 
     config.assets.enabled = true
     config.assets.version = "1.0"
+
+    config.active_record.whitelist_attributes = false
   end
 end

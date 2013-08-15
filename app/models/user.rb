@@ -6,7 +6,6 @@ class User < ActiveRecord::Base
   before_destroy :destroyable?
 
   validates :login, presence: true, uniqueness: true
-  attr_accessible :login, :password, :password_confirmation, :remember_me, :email
 
   private
 
