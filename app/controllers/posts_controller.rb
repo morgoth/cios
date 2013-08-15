@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(params[:post])
+    @post = current_user.posts.build(post_params)
     if @post.save
       redirect_to @post, :notice => t("post_created")
     else
@@ -31,7 +31,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.find(post_params)
     if @post.update_attributes(params[:post])
       redirect_to @post, :notice => t("post_updated")
     else
@@ -43,5 +43,11 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @post.destroy
     redirect_to posts_path, :notice => t("post_destroyed")
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :content)
   end
 end

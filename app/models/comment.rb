@@ -6,8 +6,8 @@ class Comment < ActiveRecord::Base
 
   before_create :check_for_spam
 
-  scope :approved, where(approved: true)
-  scope :not_approved, where(approved: false)
+  scope :approved, -> { where(approved: true) }
+  scope :not_approved, -> { where(approved: false) }
 
   def approve!
     update_state!(true)

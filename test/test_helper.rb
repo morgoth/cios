@@ -16,7 +16,7 @@ class Capybara::Rails::TestCase
     visit new_user_session_path
 
     fill_in "Login/Email", with: user.login
-    fill_in "Password", with: user.password
+    fill_in "user_password", with: user.password
 
     click_button "Log in"
   end

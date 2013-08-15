@@ -5,7 +5,7 @@ class PartnersTest < Capybara::Rails::TestCase
 
   it "creates partner" do
     visit partners_path
-    fill_in "Name", :with => "Company"
+    fill_in "partner_name", :with => "Company"
     select "Partnership", :from => "Kind"
     fill_in "Link", :with => "company.com"
     click_button "Create"

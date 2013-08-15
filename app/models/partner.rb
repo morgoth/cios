@@ -5,9 +5,9 @@ class Partner < ActiveRecord::Base
   validates :name, presence: true
   validates :kind, presence: true, inclusion: KINDS
 
-  scope :ordered, order("kind, position")
-  scope :sponsor, where(kind: "sponsor")
-  scope :assistance, where(kind: "assistance")
+  scope :ordered, -> { order("kind, position") }
+  scope :sponsor, -> { where(kind: "sponsor") }
+  scope :assistance, -> { where(kind: "assistance") }
 
   before_validation :check_link_format
 

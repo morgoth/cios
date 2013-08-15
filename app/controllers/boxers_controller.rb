@@ -15,7 +15,7 @@ class BoxersController < ApplicationController
   end
 
   def create
-    @boxer = Boxer.new(params[:boxer])
+    @boxer = Boxer.new(boxer_params)
     flash[:notice] = t("boxer_created") if @boxer.save
     respond_with @boxer, :location => people_path
   end
@@ -26,7 +26,7 @@ class BoxersController < ApplicationController
 
   def update
     @boxer = Boxer.find(params[:id])
-    flash[:notice] = t("boxer_updated") if @boxer.update_attributes(params[:boxer])
+    flash[:notice] = t("boxer_updated") if @boxer.update_attributes(boxer_params)
     respond_with @boxer
   end
 
@@ -34,5 +34,11 @@ class BoxersController < ApplicationController
     @boxer = Boxer.find(params[:id])
     flash[:notice] = t("boxer_destroyed") if @boxer.destroy
     respond_with @boxer, :location => people_path
+  end
+
+  private
+
+  def boxer_params
+    params.require(:boxer).permit(:first_name, :last_name, :birth_date, :weight, :photo_url, :active)
   end
 end

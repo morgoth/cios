@@ -14,7 +14,7 @@ class PartnersController < ApplicationController
   end
 
   def create
-    @partner = Partner.new(params[:partner])
+    @partner = Partner.new(partner_params)
     if @partner.save
       redirect_to partners_path, :notice => 'Partner was successfully created.'
     else
@@ -24,7 +24,7 @@ class PartnersController < ApplicationController
 
   def update
     @partner = Partner.find(params[:id])
-    if @partner.update_attributes(params[:partner])
+    if @partner.update(partner_params)
       redirect_to partners_path, :notice => 'Partner was successfully updated.'
     else
       render :edit
@@ -47,5 +47,11 @@ class PartnersController < ApplicationController
     @partner = Partner.find(params[:id])
     @partner.move_lower
     redirect_to partners_path, :notice => "#{@partner.name} moved down"
+  end
+
+  private
+
+  def partner_params
+    params.require(:partner).permit(:name, :kind, :link)
   end
 end

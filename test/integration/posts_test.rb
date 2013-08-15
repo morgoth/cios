@@ -14,8 +14,8 @@ class PostsTest < Capybara::Rails::TestCase
   it "creates post with markup" do
     sign_in(@user)
     visit new_post_path
-    fill_in "Title", :with => "Success"
-    fill_in "Content", :with => "*great*"
+    fill_in "post_title", :with => "Success"
+    fill_in "post_content", :with => "*great*"
     click_button "Create Post"
 
     within(".post") do

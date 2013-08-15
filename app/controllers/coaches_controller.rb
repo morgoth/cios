@@ -11,7 +11,7 @@ class CoachesController < ApplicationController
   end
 
   def create
-    @coach = Coach.new(params[:coach])
+    @coach = Coach.new(coach_params)
     flash[:notice] = t("coach_created") if @coach.save
     respond_with @coach, :location => people_path
   end
@@ -22,7 +22,7 @@ class CoachesController < ApplicationController
 
   def update
     @coach = Coach.find(params[:id])
-    flash[:notice] = t("coach_updated") if @coach.update_attributes(params[:coach])
+    flash[:notice] = t("coach_updated") if @coach.update(coach_params)
     respond_with @coach, :location => people_path
   end
 
@@ -30,5 +30,11 @@ class CoachesController < ApplicationController
     @coach = Coach.find(params[:id])
     flash[:notice] = t("coach_destroyed") if @coach.destroy
     respond_with @coach, :location => people_path
+  end
+
+  private
+
+  def coach_params
+    params.require(:coach).permit(:first_name, :last_name, :function, :contact, :photo_url, :about)
   end
 end
