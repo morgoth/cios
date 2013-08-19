@@ -15,6 +15,7 @@ gem "defensio", github: "defensio/defensio-ruby"
 gem "httparty"
 gem "jquery-rails"
 gem "routing-filter", ">= 0.4.0.pre"
+gem "turbolinks"
 
 # assets
 gem "sass-rails", ">= 3.2.3"
