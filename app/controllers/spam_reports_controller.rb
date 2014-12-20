@@ -2,7 +2,7 @@ class SpamReportsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @comments = Comment.not_approved.all(:include => :defensio_report)
+    @comments = Comment.not_approved.includes(:defensio_report)
   end
 
   def update
