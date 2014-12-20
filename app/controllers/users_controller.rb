@@ -30,7 +30,7 @@ class UsersController < ApplicationController
 
   def update
     @user = current_user
-    if @user.update_attributes(user_params)
+    if @user.update(user_params)
       redirect_to account_url, :notice => "Account updated!"
     else
       render :edit

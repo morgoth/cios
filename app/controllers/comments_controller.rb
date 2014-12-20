@@ -24,7 +24,7 @@ class CommentsController < ApplicationController
   end
 
   def update
-    if comment.update_attributes(comment_params)
+    if comment.update(comment_params)
       redirect_to post, :notice => t("comment_updated")
     else
       render :edit
