@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 ruby "2.1.5"
 
-gem "rails", ">= 4.1.8"
+gem "rails", ">= 4.2.0"
 gem "bcrypt"
 gem "haml"
 gem "will_paginate", ">= 3.0"
@@ -13,7 +13,6 @@ gem "RedCloth", require: "redcloth"
 gem "defensio", github: "defensio/defensio-ruby"
 gem "httparty"
 gem "jquery-rails"
-gem "routing-filter", ">= 0.4.0.pre"
 gem "turbolinks"
 
 gem "active_model-session"

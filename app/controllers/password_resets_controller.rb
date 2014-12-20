@@ -6,7 +6,7 @@ class PasswordResetsController < ApplicationController
   def create
     @password_reset = ActiveModel::PasswordReset.new(password_reset_params)
     if @password_reset.valid?
-      UserMailer.reset_password(@password_reset.email, @password_reset.token).deliver
+      UserMailer.reset_password(@password_reset.email, @password_reset.token).deliver_now
       redirect_to root_url, notice: "You will receive an email with instructions."
     else
       render :new

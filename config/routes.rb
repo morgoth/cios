@@ -1,6 +1,4 @@
 Cios::Application.routes.draw do
-  filter :locale
-
   resource :session, only: [:new, :create, :destroy]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
