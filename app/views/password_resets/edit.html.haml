@@ -1,0 +1,5 @@
+%h2= t("change_password")
+= simple_form_for(@user, url: password_reset_path(@password_reset.token)) do |f|
+  = f.input :password, required: true, input_html: {autofocus: true}
+  = f.input :password_confirmation, required: true
+  = f.button :submit, t("change_password")

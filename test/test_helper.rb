@@ -12,11 +12,10 @@ end
 
 class Capybara::Rails::TestCase
   def sign_in(user)
-    visit destroy_user_session_path
-    visit new_user_session_path
+    visit new_session_path
 
-    fill_in "Login/Email", with: user.login
-    fill_in "user_password", with: user.password
+    fill_in "Email", with: user.email
+    fill_in "Password", with: user.password
 
     click_button "Log in"
   end

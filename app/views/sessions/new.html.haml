@@ -1,0 +1,6 @@
+= simple_form_for(@session, :as => :session, url: session_path) do |f|
+  = f.input :email, :label => "Email", :input_html => {:autofocus => true}
+  = f.input :password
+  = f.button :submit, "Log in"
+
+= link_to t("forgot_password"), new_password_reset_path

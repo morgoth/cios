@@ -1,13 +1,12 @@
 source "https://rubygems.org"
 
-ruby "2.0.0"
+ruby "2.1.5"
 
-gem "rails", ">= 4.0.0"
+gem "rails", ">= 4.1.8"
+gem "bcrypt"
 gem "haml"
 gem "will_paginate", ">= 3.0"
-gem "devise"
-gem "devise-encryptable"
-gem "simple_form", ">= 3.0.0.rc"
+gem "simple_form", ">= 3.0.0"
 gem "picasa", ">= 0.6.0"
 gem "acts_as_list",">= 0.1.8"
 gem "RedCloth", require: "redcloth"
@@ -17,9 +16,16 @@ gem "jquery-rails"
 gem "routing-filter", ">= 0.4.0.pre"
 gem "turbolinks"
 
+gem "active_model-session"
+gem "active_model-password_reset"
+
 # assets
 gem "sass-rails", ">= 3.2.3"
 gem "uglifier"
+
+group :development do
+  gem "spring", require: false
+end
 
 group :test do
   gem "factory_girl_rails"
@@ -28,7 +34,7 @@ group :test do
 end
 
 group :development, :test do
-  gem "debugger", ">= 1.6.1"
+  gem "byebug"
   gem "sqlite3"
   gem "minitest-rails"
   gem "minitest-rails-capybara"

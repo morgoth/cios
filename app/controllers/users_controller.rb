@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :account_owner, :only => [:edit, :update]
 
   def index
-    @users = User.order(:login)
+    @users = User.order(:email)
   end
 
   def new
@@ -50,7 +50,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:login, :password, :password_confirmation, :remember_me, :email)
+    params.require(:user).permit(:password, :password_confirmation, :email)
   end
 
   def account_owner

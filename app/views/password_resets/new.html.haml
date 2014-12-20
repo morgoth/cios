@@ -1,0 +1,4 @@
+%h2= t("forgot_password")
+= simple_form_for(@password_reset, as: :password_reset, url: password_resets_path) do |f|
+  = f.input :email, :input_html => {:autofocus => true}
+  = f.button :submit, t("send_reset_password_instructions")

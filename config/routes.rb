@@ -1,7 +1,8 @@
 Cios::Application.routes.draw do
   filter :locale
 
-  devise_for :users
+  resource :session, only: [:new, :create, :destroy]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   resources :partners, :except => [:new] do
     put :up, :on => :member

@@ -9,11 +9,11 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120130173103) do
+ActiveRecord::Schema.define(version: 20141219215421) do
 
-  create_table "comments", :force => true do |t|
+  create_table "comments", force: true do |t|
     t.string   "name"
     t.text     "content"
     t.integer  "post_id"
@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20120130173103) do
     t.boolean  "approved"
   end
 
-  create_table "defensio_reports", :force => true do |t|
+  create_table "defensio_reports", force: true do |t|
     t.integer  "comment_id"
     t.string   "signature"
     t.boolean  "allow"
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(:version => 20120130173103) do
     t.datetime "updated_at"
   end
 
-  create_table "partners", :force => true do |t|
+  create_table "partners", force: true do |t|
     t.string   "name"
     t.string   "link"
     t.datetime "created_at"
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(:version => 20120130173103) do
     t.string   "kind"
   end
 
-  create_table "people", :force => true do |t|
+  create_table "people", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.boolean  "active"
@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(:version => 20120130173103) do
     t.string   "function"
   end
 
-  create_table "posts", :force => true do |t|
+  create_table "posts", force: true do |t|
     t.string   "title"
     t.text     "content"
     t.integer  "user_id"
@@ -64,21 +64,11 @@ ActiveRecord::Schema.define(:version => 20120130173103) do
     t.datetime "updated_at"
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "login",                                 :null => false
-    t.string   "encrypted_password",                    :null => false
-    t.string   "password_salt",                         :null => false
-    t.integer  "sign_in_count",          :default => 0, :null => false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+  create_table "users", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "reset_password_token"
     t.string   "email"
-    t.datetime "remember_created_at"
-    t.datetime "reset_password_sent_at"
+    t.string   "password_digest", null: false
   end
 
 end

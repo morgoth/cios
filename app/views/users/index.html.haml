@@ -8,5 +8,5 @@
 %ul
   - @users.each do |user|
     %li
-      = user.login
+      = user.email
       = link_to t("Delete"), user, :confirm => t("Are you sure?"), :method => :delete

@@ -1,6 +1,0 @@
-- if controller_name != 'sessions'
-  = link_to "Log in", new_session_path(resource_name)
-  %br/
-- if devise_mapping.recoverable? && controller_name != 'passwords'
-  = link_to t("forgot_password"), new_password_path(resource_name)
-  %br/
