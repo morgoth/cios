@@ -4,6 +4,8 @@
 //= require_tree .
 
 jQuery(function ($) {
+    Turbolinks.enableProgressBar();
+
     // opening links in separate window
     $("a[data-popup=true]").each(function (i, element) {
         $(element).click(function (event) {

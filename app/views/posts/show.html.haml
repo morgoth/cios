@@ -10,9 +10,9 @@
   - if @post.comments.approved.present?
     %h2= t("Comments")+':'
     = render :partial => @post.comments.approved
-%h2= t('Add')+' '+t('comment')+':'
+-# %h2= t('Add')+' '+t('comment')+':'
 
-= simple_form_for([@post, Comment.new], :remote => true) do |f|
-  = f.input :name
-  = f.input :content, :hint => t("textile_hint_html", :url => link_to("textile", "http://www.textism.com/tools/textile/"))
-  = f.button :submit, t("Add")
+-# = simple_form_for([@post, Comment.new], :remote => true) do |f|
+-#   = f.input :name
+-#   = f.input :content, :hint => t("textile_hint_html", :url => link_to("textile", "http://www.textism.com/tools/textile/"))
+-#   = f.button :submit, t("Add")
