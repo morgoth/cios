@@ -1,7 +1,7 @@
 %h1.title= @post.title
 %div.byline
   = t('Author')
-  = @post.user.email.capitalize if @post.user
+  = @post.user.email if @post.user
   = @post.created_at.strftime("%d.%m.%y %H:%M")
 %div.post
   = markup(@post.content)

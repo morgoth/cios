@@ -6,7 +6,7 @@
   %h1.title= link_to post.title, post
   .byline
     = t('Author')+': '
-    = post.user.email.capitalize if post.user
+    = post.user.email if post.user
     = post.created_at.strftime("%d.%m.%y %H:%M")
     - if current_user
       = link_to t('Edit'), edit_post_path(post)
